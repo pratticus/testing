@@ -1,0 +1,413 @@
+<?php
+	session_start();
+
+	if($_SERVER['REQUEST_METHOD']=="POST")
+	{
+
+		header("Location: https://vividlearningsystems.com/thank-you/subscribe");
+	}
+?>
+<!-- main/safety_resources -->
+{embed="_includes/header"}
+				<!-- main container of all the page elements -->
+				<main id="main">
+					<div class="main-area">
+						
+						<!--<div class="row">
+							<div class="medium-12 column">
+								<h1>Safety Tips</h1>
+								<p><a href="/safety-toolbox">< Back to Safety Toolbox</a></p>
+							</div>
+						</div>-->
+						<div class="row">
+							<div class="small-12 medium-12 large-8 columns" id="subscribePage">
+								<h1>Receive free safety support tools delivered to your inbox each week.</h1>
+								
+								<h2>Let's start with your contact information</h2>
+								<form id="subscribe" class="cmxform" action="<?php echo($_SERVER['PHP_SELF']);?>" method="post">
+									<!--<input type="hidden" name="referrer" value="<?php echo(htmlspecialchars($_GET['referrer'])); ?>" />-->
+									<input type="hidden" name="referrer" value="" />
+									<input type="hidden" name="leadtype" value="MQL" />
+									<input type="hidden" name="asset" value="" />
+									<input type="hidden" name="namesource" value="" />									
+									<input type="hidden" name="channel" value="" />
+									<input type="hidden" name="gclid" value="" />
+									
+								<div class="row">
+									<div class="small-12 medium-6 large-6 columns">
+										<label for="First_Name">First Name</label>
+										<input type="text" name="First_Name" id="First_Name" />
+									</div>
+									<div class="small-12 medium-6 large-6 columns">
+										<label for="Last_Name">Last Name</label>
+										<input type="text" name="Last_Name" id="Last_Name" />
+									</div>
+								</div>
+								<div class="row">
+									<div class="small-12 columns">
+										<label for="Email">Email Address</label>
+										<input type="text" name="Email" id="Email" />
+									</div>
+								</div>
+								<div class="row">
+									<div class="small-12 medium-6 large-6 columns">
+										<label for="Company">Company Name</label>
+										<input type="text" name="Company" id="Company" />
+									</div>
+									<div class="small-12 medium-6 large-6 columns">
+										<label for="Business_Phone">Phone</label>
+										<input type="text" name="Business_Phone" id="Business_Phone" />
+									</div>
+								</div>
+								<div class="row">
+									<div class="small-12 columns">
+										<h2>Now select the categories that most interest you.</h2>
+									</div>
+								</div>
+								
+								<div class="row">
+									<div class="small-2 columns">
+										<div class="onoffswitch">
+											<input type="checkbox" name="Subscription Categories" class="onoffswitch-checkbox" id="myonoffswitch" value="Blog" checked>
+											<label class="onoffswitch-label" for="myonoffswitch">
+												<span class="onoffswitch-inner"></span>
+												<span class="onoffswitch-switch"></span>
+											</label>
+										</div>
+									</div>
+									<div class="small-10 columns">
+										<h3>Our Blog</h3>
+										<p>
+											With tips on promoting a safety culture, hazards to look out for, as well as regulation changes and updates, this is the place to go for today's safety professional.
+										</p>
+									</div>
+								</div>
+								<div class="row alt">
+									<div class="small-2 columns">
+										<div class="onoffswitch">
+											<input type="checkbox" name="Subscription Categories" class="onoffswitch-checkbox" id="myonoffswitch2" value="Resources" checked>
+											<label class="onoffswitch-label" for="myonoffswitch2">
+												<span class="onoffswitch-inner"></span>
+												<span class="onoffswitch-switch"></span>
+
+											</label>
+
+										</div>
+									</div>
+									<div class="small-10 columns">
+										<h3>Resources</h3>
+										<p>You can be the ultimate safety champion with resources that arm you with the knowledge to support best-practices in your workplace.</p>
+									</div>
+								</div>
+								
+								<div class="row">
+									<div class="small-2 columns">
+										<div class="onoffswitch">
+											<input type="checkbox" name="Subscription Categories" class="onoffswitch-checkbox" id="myonoffswitch3" value="Not-So-Great Moments in Safety" checked>
+											<label class="onoffswitch-label" for="myonoffswitch3">
+												<span class="onoffswitch-inner"></span>
+												<span class="onoffswitch-switch"></span>
+
+											</label>
+
+										</div>
+									</div>
+									<div class="small-10 columns">
+										<h3>Not-So-Great-Moments</h3>
+										<p>Reach for better moments in safety, through sometimes terrifying and sometimes hilarious examples of doing safety completely wrong.</p>
+									</div>
+								</div>
+								
+								<div class="row alt">
+									<div class="small-2 columns">									
+										<div class="onoffswitch">
+											<input type="checkbox" name="Subscription Categories" class="onoffswitch-checkbox" id="myonoffswitch4" value="Safety Tip Videos" checked>
+											<label class="onoffswitch-label" for="myonoffswitch4">
+												<span class="onoffswitch-inner"></span>
+												<span class="onoffswitch-switch"></span>
+
+											</label>
+
+										</div>
+									</div>
+									<div class="small-10 columns">
+										<h3>Safety Tip Videos</h3>
+										<p>These videos are delivered weekly and highlight tips to keep safe while on the job. Great for using at team meetings for job briefings.</p>
+									</div>
+								</div>
+								<!--
+								<div class="row">
+									<div class="small-2 columns">
+										<div class="onoffswitch">
+											<input type="checkbox" name="five" class="onoffswitch-checkbox" id="myonoffswitch5" checked>
+											<label class="onoffswitch-label" for="myonoffswitch5">
+												<span class="onoffswitch-inner"></span>
+												<span class="onoffswitch-switch"></span>
+
+											</label>
+
+										</div>
+									</div>
+									<div class="small-10 columns">									
+										<h3>Course of the Month</h3>
+										<p>Each month get the chance to take one course from beginning to end. Your best opportunity to see why our product really is the best.</p>
+									</div>
+								</div>
+								-->
+								<div class="row" style="margin-top:2rem;">
+									<div class="small-12 medium-4 columns">
+										<button type="submit" id="FormSubit" class="button" value="Subscribe" style="width: 100%;">Subscribe</button>
+									</div>
+								</div>
+								</form>
+								
+								
+							</div>
+							<div class="large-4 show-for-large-up columns" id="subscribeSide">
+								<img src="{site_url}assets/img/subscribe/sidebar-header.png" style="display: block; margin: auto;" alt="" title="" />
+								<div class="blueBox">
+									<h2>We develop safety heroes.</h2>
+									<p>You choose whatever helps you do your job and boosts your safety culture.</p>
+									<p>This way, you’ll never have to prep for another safety meeting.</p>
+									<ul>
+										<li>Read articles written by safety experts.</li>
+										<li>Watch fantastic videos.</li>
+										<li>Get inspired.</li>
+										<li>Master the art of selling safety.</li>
+										<li>Get in touch with subject matter experts.</li>
+										<li>Learn practical best practices for keeping safety top-of-mind.</li>
+										<li>Gain access to free online safety training courses.</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						
+					</div>			
+                    
+                    
+{embed="_includes/footer"}
+<style type="text/css">
+	.error{
+		color: red;
+		padding-bottom: 1rem;
+	}
+					</style>
+<script src="/assets/js/validate/jquery.validate.min.js"></script>
+<script src="/assets/js/validate/additional-methods.min.js"></script>
+
+<script type="text/javascript">
+jQuery(function($) {
+  var validator = $('#subscribe').validate({
+    rules: {
+      First_Name: {
+        required: true
+		},
+	  Last_Name: {
+        required: true
+
+      },
+	  Email: {
+        required: true,
+		email: true
+      },
+	 Company: {
+		 required: true
+	 },
+	  Business_Phone: {
+        required: true,
+		phoneUS: true
+      },
+    },
+    messages: {
+		First_Name:
+		{
+			required: "Please enter your first name"
+		},
+		Last_Name:
+		{
+			required: "Please enter your last name"
+		},
+		Email:
+		{
+			required: "Please enter your email address"
+		},
+		Company:
+		{
+			required: "Please enter your company name"
+		},
+		Business_Phone:
+		{
+			required: "Please enter your phone number"
+		},
+
+
+
+
+		},
+    errorElement : 'div',
+    //errorLabelContainer: '.errorTxt'
+  });
+});
+	
+	
+	
+	
+	
+	
+	/* SUBMIT FORM */
+	$( "#subscribe" ).submit(function( event ) {
+		if ( $( "#subscribe" ).valid() ) {
+			var myForm = document.getElementById("subscribe");
+			AoProcessForm(myForm);
+			window.location.href="https://vividlearningsystems.com/thank-you/subscribe";
+		}
+      return false;
+    });
+ <!-- snippet for Act-On Connectivity -->
+
+function AoProcessForm(formelement) {
+console.log("submit to acton");
+for (AoI = 0; AoI < aoArr.length; AoI++) {
+  if ( aoArr[AoI].aid && aoArr[AoI].fid && aoArr[AoI].did && aoArr[AoI].server && ( aoArr[AoI].formId || aoArr[AoI].formName )) {
+    var d = document,
+    thisFormId = formelement.id || '',
+    thisFormName = formelement.name || '',
+    bi = function(i) {
+      return d.getElementById(i)
+    },
+    bn = function(i) {
+      return d.getElementsByName(i)[0]
+    },
+    names = [],
+    values = [],
+    params = {},
+    w = window,
+    targetIdOrName = aoArr[AoI].formName ? bn(aoArr[AoI].formName) : bi(aoArr[AoI].formId),
+    len = targetIdOrName.elements.length,
+    isLoaded = false,
+    ud = 'undefined',
+    st = function(f, i) {
+      w.setTimeout(f, i)
+    },
+    ce = function(t) {
+      return d.createElement(t)
+    },
+    gid = function(p) {
+      var j, i = 0,
+      n = Math.random,
+      r = [],
+      c = '0123456789abcdef'.split('');
+      for (; i < 16; i++) r[i] = c[(0 | n() * 16) & 0xf];
+      j = p + r.join('');
+      return bi(j) == null ? j : gid(p);
+    },
+    addInput = function( form, name, value )
+    {
+      var el = ce('input');
+      el.name = name;
+      el.value = value;
+      form.appendChild( el );
+    },
+    idifr = gid('aoCapT');
+
+    if (aoArr[AoI].formName == thisFormName || aoArr[AoI].formId == thisFormId) {
+      var dTarget = ce('div');
+      dTarget.style.display = 'none';
+      d.body.appendChild(dTarget);
+      dTarget.innerHTML = '<iframe name="' + idifr + '" id="' + idifr + '"><\/iframe>'; // generate iframe
+
+      var dForm = ce('form'), idform = gid('aoCapD');
+      dForm.id = idform;
+      dForm.style.display = "none";
+      dForm.method = 'POST';
+      dForm.enctype = 'multipart/form-data';
+      dForm.acceptCharset = 'UTF-8';
+      dForm.target = idifr; // form targets iframe
+      dForm.action = (aoCAP.protocol || w.location.protocol) + '//' + aoCAP.server + '/acton/forms/userSubmit.jsp';
+      d.body.appendChild(dForm); // generate form
+
+      for (i = 0; i < len; i++) {
+        var el = targetIdOrName.elements[i];
+        var name = typeof(el.name) != ud ? el.name : null;
+        var value = typeof(el.value) != ud ? el.value : null;
+        tagName = el.nodeName.toLowerCase();
+        if (tagName == 'input' && (el.type == 'radio' || el.type == 'checkbox') && !el.checked) {
+          name = null;
+        } else if (tagName == 'select' && el.selectedIndex && el.selectedIndex != -1 && el.options[el.selectedIndex] && el.options[el.selectedIndex].value)
+        {
+          value = el.options[el.selectedIndex].value
+        };
+        if (name != null && name != '') {
+          names.push(name);
+          values.push(el.value);
+          console.log("Element name: " + el.name + " / Element value: " + el.value);
+          params[name] = el.value;
+        };
+        addInput( dForm, el.name, el.value );
+      }
+
+      aoCAP.pid = 0;
+      aoCAP.cuid = aoCAP.cuid || '';
+      aoCAP.srcid = aoCAP.srcid || '';
+      aoCAP.camp = aoCAP.camp || '';
+      addInput( dForm, 'ao_a', aoArr[AoI].aid );
+      addInput( dForm, 'ao_f', aoArr[AoI].fid );
+      addInput( dForm, 'ao_d', aoArr[AoI].fid+":"+aoArr[AoI].did );
+      addInput( dForm, 'ao_p', 0 );
+      addInput( dForm, 'ao_jstzo', new Date().getTimezoneOffset() );
+      addInput( dForm, 'ao_form_neg_cap', '' );
+      addInput( dForm, 'ao_refurl', d.referrer );
+      addInput( dForm, 'ao_cuid', aoCAP.cuid );
+      addInput( dForm, 'ao_srcid', aoCAP.srcid );
+      addInput( dForm, 'ao_camp', aoCAP.camp );
+      bi(idform).submit();
+
+      var dTargetFrame = bi( idifr );
+        dTargetFrame.onload = function() {
+        isLoaded = true;
+      };
+      var waitForSubmit = function()
+      {
+        this.count = "";
+        if ( ! ( isLoaded || dTargetFrame.readyState == "complete" ) ) {
+          st( waitForSubmit, 200 );
+          this.count ++;
+        } else if (this.count > 7) {
+          return true;
+          console.log("skipping dForm");
+        }
+      else {
+        d.body.removeChild( dForm );
+        d.body.removeChild( dTarget );
+      }
+    };
+
+    st( waitForSubmit, 100 );
+
+    }
+  } else {
+    console.log('aoCAP property missing');
+    }
+  }
+};
+</script>
+
+<script type="text/javascript">
+var aoProtocol = location.protocol;
+if ( aoProtocol.indexOf('http') < 0 ) aoProtocol = 'http:';
+var aoCAP = {
+aid: '2931',
+fid: '00ff',
+did: 'd-0001',
+server: 'go.vividlearningsystems.com',
+formId: 'subscribe',
+protocol: aoProtocol
+};
+var aoArr = aoArr || []; aoArr.push(aoCAP);
+
+function setReferrer(){
+	document.querySelector('[name=referrer]').value = window.location;
+}
+
+setTimeout(setReferrer, 1500);
+</script>

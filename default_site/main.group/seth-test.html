@@ -1,0 +1,19 @@
+{exp:channel:entries channel="blog" dynamic="off" category="107" orderby="date" limit="2"}
+<div>
+	<a class="overlay" href="{page_url}">
+		<h4>{title}</h4>
+		<h5 class="blog_date">{entry_date format="%F %n, %Y"}</h5>
+	</a>
+{blog_image}
+									{if blog_url== ''}
+										{exp:ce_img:pair src='{blog_image}' width='522' height='365' crop='yes|center,center|0,0|yes' overwrite_cache='yes' filter='grayscale'}
+										<img src="{made}" alt="" height="{height}" width="{width}" />
+										{/exp:ce_img:pair}
+									{if:else}
+										{exp:ce_img:pair src='{blog_url}' width='522' height='365' crop='yes|center,center|0,0|yes' overwrite_cache='yes'}
+										<img src="{made}" alt="" height="{height}" width="{width}" />
+										{/exp:ce_img:pair}
+									{/if}
+								{/blog_image}
+</div>
+{/exp:channel:entries}

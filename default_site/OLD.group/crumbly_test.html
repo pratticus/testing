@@ -1,0 +1,72 @@
+{embed="_includes/header"}
+				<!-- main container of all the page elements -->
+				<main id="main">
+				<div class="row bread">
+						<div class="medium-8 column">
+							{exp:structure:breadcrumb inc_here="no"} »
+							{exp:channel:entries channel="{segment_3}-courses" limit="1"}
+								{categories}
+								{if parent_id !=0}
+							      <a href="http://vividlearningsystems.com/index.php/solutions/courses/{segment_3}/{category_url_title}">{category_name}</a> » {/if}
+								{/categories}
+								<span class="last">{title}</span>
+							{/exp:channel:entries}
+						</div>
+						<div class="medium-4 column">
+							{exp:channel:entries channel="{segment_3}-courses" limit="1"}
+							{categories}
+								{if parent_id !=0}
+							      {if category_name=="MSHA Part 48 Surface New Miner Training"}
+							     	<a href="/index.php/part-48-purchase" class="button" style="margin:0;width: 200px;float: right;"><span><span>Buy Now</span></span></a>
+							     	
+							     {if:else}
+							     	<a href="/index.php/landing-pages/demo" class="button" style="margin:0;"><span><span>Need help? Request a demo.</span></span></a>
+							     {/if} 
+							     {/if}
+								{/categories}
+								{/exp:channel:entries}
+							
+						</div>
+					</div>
+					<div class="row gallery">
+						{exp:channel:entries channel="{segment_3}-courses" limit="1"}
+							{course_images}
+								{exp:ed_imageresizer
+											    image="{image}"
+											    maxWidth="1044"
+											    cropratio="1044:497"
+											    class="blog_thumb course_image"
+												alt="{image_description}"}
+							{/course_images}
+						{/exp:channel:entries}
+					</div>
+					
+					<div class="main-area" style="padding:0;">
+						<div class="row">
+							<div class="medium-8 column" id="content">
+								{exp:channel:entries channel="{segment_3}-courses" limit="1"}
+									<h1>{title}</h1>
+									<p><strong>DURATION:</strong> {course_duration}</p>
+										<p><strong>LANGUAGES:</strong> {if language==""}English{if:else}English, {language}{/if}</p>
+										{if course_outline}
+											<h2>Course Outline</h2>
+											{course_outline}
+										{/if}
+										{if learning_objectives}
+											<h2>Learning Objectives</h2>
+											{learning_objectives}
+										{/if}
+										{if regulations}
+											<h2>Regulations</h2>
+											{regulations}
+										{/if}
+								{/exp:channel:entries}
+								{if catalog!=""}
+									
+									<a href="{catalog}"><img src="{site_url}assets/img/pdf_icon.png" /> Download catalog</a>
+								{/if}
+							</div>
+						</div>
+					</div>
+					
+{embed="_includes/footer"}

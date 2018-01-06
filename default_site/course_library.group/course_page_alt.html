@@ -1,0 +1,168 @@
+{embed="_includes/header"}
+<!-- main container of all the page elements -->
+<main id="main">
+	<div class="full-width-course-header">                 
+		<div class="row bread">
+			<div class="medium-12 column">
+				{exp:structure:breadcrumb here_as_title="yes"}
+				{exp:channel:entries channel="{segment_2}-courses" limit="1"}<h1 class="course-title">{title}</h1>{/exp:channel:entries}
+			</div>
+		</div>
+	</div>
+
+	<div class="main-area">
+		<div class="row" id="twocolumns">
+			<div class="medium-9 medium-push-3 column">
+				{exp:channel:entries channel="{segment_2}-courses" limit="1" track_views="one"}
+					{if video!=""}
+					<div class='embed-container'>
+						{video}
+					</div>
+					{if:else}
+						{course_images_grid}
+							{if course_images_grid:image != ""}
+								{exp:ce_img:single src="{course_images_grid:image}" max="785" width="100%" height="300" crop="yes|center" attributes='class="course-header-image" alt="{course_images_grid:title}" title="{course_images_grid:title}" '}   
+							{/if}
+						{/course_images_grid}
+
+					{/if}  
+
+					<div class="row">
+						<div class="medium-9 columns course-content">
+							{if learning_objectives}
+								<h4>Learning Objectives</h4>
+								{learning_objectives}
+							{/if}
+							{if segment_3 == 'msha'}
+								{course_information}
+								{course_information_part_2}
+							{/if}
+					{/exp:channel:entries}
+
+						<table width="100%" class="catalog">
+							<tr>
+								<th width="70%">Course Collection</th>
+							</tr>
+						{if segment_3 == "personal-protective-equipment"}	
+
+							{exp:channel:entries dynamic="no" sort="asc" orderby="date" category="{exp:freebie:category_id segment='3'}" parse="inward"}
+								<tr>
+									<td width="50%"><a href="{page_url}">{title}</a></td>
+								</tr>
+							{/exp:channel:entries}	
+						{if:elseif segment_3 == "basic-first-aid"}
+							{exp:channel:entries dynamic="no" sort="asc" orderby="date" category="132" parse="inward"}
+								<tr>
+									<td width="50%"><a href="{page_url}">{title}</a></td>
+								</tr>
+							{/exp:channel:entries}
+						{if:elseif segment_3 == "forklift-operator"}
+							{exp:channel:entries dynamic="no" sort="asc" orderby="date" category="69" parse="inward"}
+								<tr>
+									<td width="50%"><a href="{page_url}">{title}</a></td>
+								</tr>
+							{/exp:channel:entries}	
+						{if:else}
+
+							{exp:channel:entries dynamic="no" sort="asc" orderby="title" category="{exp:freebie:category_id segment='3'}" parse="inward"}
+								<tr>
+									<td width="50%"><a href="{page_url}">{title}</a></td>
+								</tr>
+							{/exp:channel:entries}
+						{/if}	
+
+
+						</table>
+
+						{exp:channel:entries channel="{segment_2}-courses" limit="1"}	
+						</div>
+						<div class="medium-3 columns course-features">
+							{if buy!=""}<a href="{buy}" class="buy-button" target="_blank">Buy Now</a>{/if}
+							{if msha_enrollment !=""}<a href="{msha_enrollment}" class="enroll-button" target="_blank">Enroll Now</a>{/if}
+							<h4>Available in {if language==""}English{if:else}English, {language}{/if}</h4>
+							{if course_duration}<h4>{course-duration-icon} {course_duration}</h4>{/if}
+							{if {flags:selected option="Mobile"} }
+								<h4>{mobile-icon} Mobile Ready</h4>
+							{/if}
+							
+							{if {flags:selected option="5-Min Overview"} }
+								<h4>{5-min-icon} 5-Min Reminder</h4>
+							{/if}
+							
+							{if {flags:selected option="Instant Safety Video"} }
+								<h4>{instant-safety-icon} Instant Safety Video</h4>
+							{/if}
+							<div>{exp:ce_vars:get name="mobile"}</div><div>{exp:ce_vars:get name="5min"}</div><div>{exp:ce_vars:get name="ISS"}</div>
+						</div>
+					</div>
+
+
+					{course_quote_grid}
+						<hr />
+						<div class="course_quote">	
+							{course_quote_grid:course_quote}
+							<p><cite>{if course_quote_grid:course_quote_auth}<strong>{course_quote_grid:course_quote_auth}</strong>, {/if}{course_quote_grid:course_quote_co}</cite></p>
+						</div>
+
+						<hr />
+					{/course_quote_grid}
+					<div class="course-content">
+					{if segment_3 != 'msha'}
+						{course_information}
+
+						{course_information_part_2}
+					{/if}
+					</div>
+				{/exp:channel:entries}
+			</div>
+			<section class="medium-3 medium-pull-9 column course-info-sidebar">
+				{exp:channel:entries channel="{segment_2}-courses" limit="1"}
+				{if landing_page_url!="" || buy !=""}
+				<div class="row course_btns">
+					{if landing_page_url!=""}
+					<div class="medium-12 column">
+						<a href="{site_url}demos/sign-up?ao_campid=70150000000zVHK" target="_blank" class="demo-button">Try this course now</a>
+					</div>
+					{/if}
+				</div>
+				{/if}
+				{if course_outline != "" OR regulations != ""}
+				<div id="course-information" data-accordion-group> 
+					{if course_outline}
+					<section data-accordion>
+					<div data-control>Course Outline</div>
+					<div data-content>{course_outline}</div>
+					</section>
+					{/if}
+					{if regulations}
+					<section data-accordion>
+					<div data-control>Regulations</div>
+					<div data-content>{regulations}</div>
+					</section>
+					{/if}
+				</div>
+				{/if}
+				{/exp:channel:entries}
+				<div class="library-nav">
+					<h3>Course Libraries</h3>
+					<nav class="side-menu">
+						<ul id="nav-sub">
+					{exp:structure_entries parent="3" depth="1"}
+						{if {sibling_count} == 1}
+							<li class="first {if {current_page}}here{/if}"><a href="{page_uri}" rel="nofollow">{title}</a></li>
+						{if:elseif {last_sibling} && {sibling_count} == {sibling_total}}
+							<li class="last {if {current_page}}here{/if}"><a href="{page_uri}" rel="nofollow">{title}</a></li>
+						{if:else}
+							<li class="{if {current_page}}here{/if}"><a href="{page_uri}" rel="nofollow">{title}</a></li>
+						{/if}
+					{/exp:structure_entries}										
+						</ul>
+					</nav>
+
+				</div>
+
+			</section>
+		</div>
+	</div>
+					
+{embed="_includes/footer"}

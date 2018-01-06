@@ -1,0 +1,155 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+	<!-- set the encoding of your site -->
+	<meta charset="utf-8">
+	<!-- set the viewport width and initial-scale on mobile devices -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--[if (IE)&(lt IE 9) ]>
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8">
+	<![endif]-->
+	<!--[if (IE)&(gt IE 8) ]>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<![endif]-->
+	{exp:channel:entries require_entry="yes"}
+	  {!--{if no_results}{redirect="404"}{/if}--}
+	    {exp:nsm_better_meta:template entry_id="{entry_id}"}
+	{/exp:channel:entries}
+	{if freebie_1==""}
+		{!-- Override the page title and hide the default site title --}
+		  {exp:nsm_better_meta:template
+		    title="Online Safety Training Experts | Vivid Learning Systems"
+		    hide_site_title = "y"
+		    description="Vivid is an online safety training company. Making life easier for safety professionals is what we do. Call us at 1-800-956-0333."
+		  }
+	{/if}
+	<!-- include the normalize stylesheet -->
+	<link rel="stylesheet" href="{site_url}assets/css/normalize.css">
+	<!-- include the Foundation stylesheet -->
+	<link rel="stylesheet" href="{site_url}assets/css/foundation.min.css">
+	<!-- include the facnybox stylesheet -->
+	<link rel="stylesheet" href="{site_url}assets/css/fancybox.css">
+	<!-- include the site stylesheet -->
+	<link rel="stylesheet" href="{site_url}assets/css/all.css">
+	<!-- include modernizr JavaScript -->
+	<script src="{site_url}assets/js/vendor/modernizr.js"></script>
+	<!--[if lt IE 9]>
+		<link rel="stylesheet" href="{site_url}assets/css/ie.css" media="screen">
+	<![endif]-->
+</head>
+<body>
+	<div class="off-canvas-wrap mobile-nav-canvas" data-offcanvas>
+		<div class="inner-wrap">
+			<div class="page">
+				<!-- header of the page -->
+				<header id="header">
+					<!-- top panel -->
+					<div class="top-panel">
+						<div class="row">
+							<div class="large-12 columns">
+
+							</div>
+						</div>
+					</div>
+					<!-- header area -->
+					<div class="header-holder">
+						<div class="row">
+							<div class="large-12 columns">
+													<div class="holder">
+									<strong class="logo"><a href="http://vividlearningsystems.com">VIVID learning systems</a></strong>
+									
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</header>
+				<!-- main container of all the page elements -->
+				<main id="main">
+					<div class="main-area">
+						<div class="row" style="padding-top:20px;">
+							<div class="medium-8 column" id="content">
+							{exp:channel:entries channel="landing_page_partner" limit="1"}
+									<h1>{title}</h1>
+                                 	<h2>{landing_partner_subtitle}</h2>
+									{!--<img src="http://placehold.it/350x150" style="float:left;padding:5px 35px 0 0;">--} {landing_partner_content}
+									
+								{/exp:channel:entries}
+								
+							</div>
+							<aside class="medium-4 column right-sidebar">
+								{exp:channel:entries channel="landing_page" limit="1"}
+
+									<iframe name="Stack" style="float:right;" src="{form_link}" frameborder="0" scrolling="no" id="ifrm" height="1000" ></iframe>
+								{/exp:channel:entries}
+							</aside>	
+						</div>
+					</div>
+<!-- contact section -->
+					<section class="contact-section">
+						<div class="row">
+							<div class="medium-6 column">
+								
+							</div>
+							<div class="medium-6 column">
+							
+							</div>
+						</div>
+					</section>
+				</main>
+				<!-- footer of the page -->
+				<footer id="footer">
+					<div class="row footer-area">
+						<!-- footer navigation -->
+						<div class="large-3 column show-for-large-up">
+							
+						</div>
+						<div class="large-4 medium-5 column">
+							<div class="info-box">
+							
+							</div>
+							<div class="info-box show-for-medium-up">
+								
+							</div>
+							<div class="info-box">
+								
+							</div>
+						</div>
+						<div class="large-5 medium-7 column">
+						
+						</div>
+					</div>
+					<div class="row">
+						<div class="small-12 column">
+							
+						</div>
+					</div>
+				</footer>
+				
+			</div>
+		</div>
+	</div>
+	<!-- include jQuery library -->
+	<script>
+		if(window.addEventListener) { // W3C compatible browsers
+			document.write('<script src="{site_url}assets/js/vendor/jquery.js"><\/script>');
+		} else if(window.attachEvent) { // IE8 and less
+			document.write('<script src="{site_url}assets/js/vendor/jquery-1.11.1.min.js"><\/script>');
+		}
+	</script>
+	<!-- include Foundation JavaScript -->
+	<script src="{site_url}assets/js/foundation.min.js"></script>
+	<script src="{site_url}assets/js/vendor/placeholder.js"></script>
+	<!-- include custom JavaScript -->
+	<script src="{site_url}assets/js/jquery.main.js"></script>
+	<script>$(document).foundation();</script>
+	<!-- include rem units polyfill JavaScript -->
+	<script src="{site_url}assets/js/vendor/rem.min.js"></script>
+	<!-- include JavaScript for IE8 -->
+	<!--[if lt IE 9]>
+		<script src="//s3.amazonaws.com/nwapi/nwmatcher/nwmatcher-1.2.5-min.js"></script>
+		<script src="//html5base.googlecode.com/svn-history/r38/trunk/js/selectivizr-1.0.3b.js"></script>
+		<script src="{site_url}assets/js/vendor/respond-1.1.0.min.js"></script>
+	<![endif]-->
+</body>
+</html>

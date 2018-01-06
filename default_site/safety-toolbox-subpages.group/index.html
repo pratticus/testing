@@ -1,0 +1,156 @@
+<!-- main/safety_resources -->
+{embed="_includes/header"}
+				<!-- main container of all the page elements -->
+				<main id="main">
+					<div class="main-area">
+						<div class="row">
+                        	<div class="large-12 columns">
+                            	<h2 class="contentHubH2">Everything you need to champion<br />safety awareness in the workplace.</h2>
+                            </div>
+                        </div>
+						<div class="row">
+							<div class="medium-12 column landing_list_search">
+								<div class="medium-4 column"> 
+									<!-- search form -->
+                                    {exp:search:advanced_form channel="landing_page|case_studies" category="128|127|46|100|101|102|103|104|105|53|54|55|56|57|58|59|60|61|62|63|64|65|66|67" result_page="search/toolbox_search_results"}
+                                        <input type="search" name="keywords" id="keywords" value="" size="18" maxlength="100">
+                                        <input type="submit" class="submit_btn" value="Go" />
+                                    {/exp:search:advanced_form}
+	
+								</div>
+							</div>
+						</div>
+                        <div class="row" id="tools">
+                        	<div class="small-12 columns">
+	                        	<div class="t4cContainer greyBorder">
+	                            	<h3 class="contentHubH3">What Training Do You Need?</h3>
+	                                <a href="{site_url}training-needs-assessment/?namesource=Safety%20Toolbox&leadtype=MQL&channel=Marketing&asset=T4C&ao_campid=70150000001H8pB" class="button" target="_blank">Let’s Find Out</a>
+	                            </div>
+	                            <div class="roiContainer greyBorder">
+	                            	<h3 class="contentHubH3">The ROI of Online Safety Training</h3>
+	                                <a href="{site_url}roi?ao_campid=70150000000zVny" class="button" target="_blank">Find Your Number</a>
+	                            </div>
+	                            <div class="nsgContainer greyBorder">
+	                            	<a href="{site_url}safety-toolbox/not-so-great-moments-in-safety?ao_campid=70150000000zVlE" target="_blank">Not So Great Moments in Safety</a>
+	                            </div>
+	                            <div class="engagementContainer greyBorder">
+	                            	<h3 class="contentHubH3">Safety Engagement Quiz</h3>
+	                                <a href="{site_url}safety-toolbox/safety-engagement?ao_campid=70150000000zVq4" class="button" target="_blank">How are you doing?</a>
+	                            </div>
+                        	</div>
+                        </div>
+						<div class="row">
+                        		
+								<div class="medium-12 column" id="content">
+									<div class="row">
+                                    	<div class="small-8 medium-6 columns">
+                                        	<h1>Safety Tips</h1>
+                                        </div>
+                                        <div class="small-4 medium-6 columns" style="text-align:right;">
+                                        	<h2 style="margin-top:10px;"><a href="{site_url}safety-toolbox/safety-tips?namesource=LearnAtVivid&leadtype=MQL&channel=VLS-SafetyTips&ao_campid=70150000000zVP0">See More >></a></h2>
+                                        </div>
+                                    </div>
+									<ul class="small-block-grid-2 medium-block-grid-4 toolbox-grid">
+                                        
+                                        {exp:channel:entries channel="landing_page" dynamic="off" category="128" limit="4" orderby="date" sort="desc"}
+                                            <li>										
+                                                <a href="{page_url}" target="_blank">{landing_thumbnail_grid}
+                                                    {exp:ce_img:single src="{landing_thumbnail_grid:landing_image}" width="250" height="170" crop="yes" allow_scale_larger="yes" quality="80" attributes='alt="{landing_thumbnail_grid:landing_alt_text}" title="{landing_thumbnail_grid:landing_alt_text}" '}
+                                                {/landing_thumbnail_grid}</a>
+                                                <a href="{page_url}" target="_blank"><span>{title}</span></a><br />
+                                                {!--{categories}{if category_name!="Safety Toolbox" && category_name!="Resources"}<span class="cat_tag">{category_name}</span>{/if}{/categories}--}
+                                            </li>
+                                        {/exp:channel:entries}
+									</ul>
+									<div class="row">
+                                    	<div class="small-8 medium-6 columns">
+                                        	<h1>Supervisor Safety Tips</h1>
+                                        </div>
+                                        <div class="small-4 medium-6 columns" style="text-align:right;">
+                                        	<h2 style="margin-top:10px;"><a href="{site_url}safety-toolbox/supervisor-safety-tips?namesource=LearnAtVivid&leadtype=MQL&channel=VLS-SupervisorSafetyTips&ao_campid=70150000000zVPA">See More >></a></h2>
+                                        </div>
+                                    </div>
+									<ul class="small-block-grid-2 medium-block-grid-4 toolbox-grid">
+									
+									{exp:channel:entries channel="landing_page" dynamic="off" category="127" limit="4" orderby="date" sort="desc"}
+										<li>										
+											<a href="{page_url}" target="_blank">{landing_thumbnail_grid}
+												{exp:ce_img:single src="{landing_thumbnail_grid:landing_image}" width="250" height="170" crop="yes" allow_scale_larger="yes" quality="80" attributes='alt="{landing_thumbnail_grid:landing_alt_text}" title="{landing_thumbnail_grid:landing_alt_text}" '}
+											{/landing_thumbnail_grid}</a>
+											<a href="{page_url}" target="_blank"><span>{title}</span></a><br />
+											{!--{categories}{if category_name!="Safety Toolbox" && category_name!="Resources"}<span class="cat_tag">{category_name}</span>{/if}{/categories}--}
+										</li>
+									{/exp:channel:entries}
+									</ul>
+                                    
+									<div class="row">
+                                    	<div class="small-8 medium-6 columns">
+                                        	<h1>Resources</h1>
+                                        </div>
+                                        <div class="small-4 medium-6 columns" style="text-align:right;">
+                                        	<h2 style="margin-top:10px;"><a href="{site_url}safety-toolbox/resources?namesource=LearnAtVivid&leadtype=MQL&channel=VLS-Resources&ao_campid=70150000000zVOq">See More >></a></h2>
+                                        </div>
+                                    </div>
+									<ul class="small-block-grid-2 medium-block-grid-4 toolbox-grid">
+									
+									{exp:channel:entries channel="landing_page" dynamic="off" category="46|100|102|103|104|105" limit="4" orderby="date" sort="desc"}
+										<li>										
+											<a href="{page_url}" target="_blank">{landing_thumbnail_grid}
+												{exp:ce_img:single src="{landing_thumbnail_grid:landing_image}" width="250" height="170" crop="yes" allow_scale_larger="yes" quality="80" attributes='alt="{landing_thumbnail_grid:landing_alt_text}" title="{landing_thumbnail_grid:landing_alt_text}" '}
+											{/landing_thumbnail_grid}</a>
+											<a href="{page_url}" target="_blank"><span>{title}</span></a><br />
+											{!--{categories}{if category_name!="Safety Toolbox" && category_name!="Resources"}<span class="cat_tag">{category_name}</span>{/if}{/categories}--}
+										</li>
+									{/exp:channel:entries}
+									</ul>
+                                    
+                                    
+									
+									<div class="row">
+                                    	<div class="small-8 medium-6 columns">
+                                        	<h1>Webcasts</h1>
+                                        </div>
+                                        <div class="small-4 medium-6 columns" style="text-align:right;">
+                                        	<h2 style="margin-top:10px;"><a href="{site_url}safety-toolbox/webcasts?namesource=LearnAtVivid&leadtype=MQL&channel=VLS-webcasts&ao_campid=70150000000zVPP">See More >></a></h2>
+                                        </div>
+                                    </div>
+									
+									
+									<ul class="small-block-grid-2 medium-block-grid-4 toolbox-grid">
+									
+									{exp:channel:entries channel="landing_page" dynamic="off" category="101" limit="4" orderby="date" sort="desc"}
+										<li>										
+											<a href="{page_url}" target="_blank">{landing_thumbnail_grid}
+												{exp:ce_img:single src="{landing_thumbnail_grid:landing_image}" width="250" height="170" crop="yes" allow_scale_larger="yes" quality="80" attributes='alt="{landing_thumbnail_grid:landing_alt_text}" title="{landing_thumbnail_grid:landing_alt_text}" '}
+											{/landing_thumbnail_grid}</a>
+											<a href="{page_url}" target="_blank"><span>{title}</span></a><br />
+											{!--{categories}{if category_name!="Safety Toolbox" && category_name!="Resources"}<span class="cat_tag">{category_name}</span>{/if}{/categories}--}
+										</li>
+									{/exp:channel:entries}
+									</ul>
+									<div class="row">
+                                    	<div class="small-8 medium-6 columns">
+                                        	<h1>Case Studies</h1>
+                                        </div>
+                                        <div class="small-4 medium-6 columns" style="text-align:right;">
+                                        	<h2 style="margin-top:10px;"><a href="{site_url}safety-toolbox/case-studies?namesource=LearnAtVivid&leadtype=MQL&channel=VLS-CaseStudies&ao_campid=70150000000zVPe">See More >></a></h2>
+                                        </div>
+                                    </div>
+									<ul class="small-block-grid-2 medium-block-grid-4 toolbox-grid">
+									
+									{exp:channel:entries channel="case_studies" dynamic="off" limit="4" orderby="date" sort="desc"}
+										<li>										
+											<a href="{page_url}" target="_blank">{case_study_bio_grid}
+												{exp:ce_img:single src="{case_study_bio_grid:image}" width="250" height="170" crop="no" allow_scale_larger="no" quality="80" attributes='alt="{name}" title="{name}" '}
+											{/case_study_bio_grid}</a>
+											<a href="{page_url}" target="_blank"><span>{title}</span></a><br />
+											{!--{categories}{if category_name!="Safety Toolbox" && category_name!="Resources"}<span class="cat_tag">{category_name}</span>{/if}{/categories}--}
+										</li>
+									{/exp:channel:entries}
+									</ul>
+							</div>
+							
+						</div>
+					</div>				
+{embed="_includes/footer"}
+<!-- safety_resources -->

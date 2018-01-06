@@ -1,0 +1,85 @@
+<?php
+session_start();
+$_SESSION["page"]= "webcasts";
+$cookie_name = "toolbox";
+if(isset($_COOKIE[$cookie_name])) {
+    //header('Location: https://vividlearningsystems.com/demos/library');
+	$cookieSet=true;
+
+}
+else
+{
+//header('Location: https://vividlearningsystems.com/demos/sign-up');
+$cookieSet = false;
+}
+
+?>
+<!-- main/safety_resources -->
+{embed="_includes/header"}
+				<!-- main container of all the page elements -->
+				<main id="main">
+					<div class="main-area">
+
+						<div class="row">
+<div class="medium-12 columns">
+<h1>Webcasts</h1>
+<p><a href="/safety-toolbox">< Back to Safety Toolbox</a></p>
+</div>
+
+						</div>
+						<div class="row">
+								<div class="medium-12 column" id="content">
+
+							
+							
+							
+								<ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-5 toolbox-grid">
+
+									{exp:channel:entries channel="landing_page" dynamic="off" category="101" orderby="title" sort="asc" sticky="no"}
+										<li>
+											<a href='{page_url}' target='_blank'>
+                                            
+                                             {landing_thumbnail_grid}
+												{exp:ce_img:single src="{landing_thumbnail_grid:landing_image}" width="250" height="170" crop="yes" allow_scale_larger="yes" quality="80" attributes='alt="{landing_thumbnail_grid:landing_alt_text}" title="{landing_thumbnail_grid:landing_alt_text}" '}
+											{/landing_thumbnail_grid}</a>
+											<a href='{page_url}' target='_blank'><span>{title}</span></a><br />
+
+
+											{!--{categories}{if category_name!="Safety Toolbox" && category_name!="Resources"}<span class="cat_tag">{category_name}</span>{/if}{/categories}--}
+										</li>
+									{/exp:channel:entries}
+									</ul>
+
+
+
+
+
+							</div>
+
+						</div>
+					</div>
+					<div id="toolboxForm" data-reveal aria-labelledby="modalTitle" data-options="close_on_background_click:false" aria-hidden="true" role="dialog" class="reveal-modal small" style="position:absolute; border: 20px solid #ff9e16; padding-top: 0; padding-bottom: 0; min-width: 240pt;">
+                        <div style="margin:3rem 0; text-align:center;">
+                            <h2>Sign in for Safety</h2>
+                            <p>Unlock <em>your</em> toolbox for unlimited access to no-cost safety resources.</p>
+                            <p>And you'll never have to prep for another safety meeting.</p>
+                            <iframe name="Stack" src="https://go.vividlearningsystems.com/acton/form/2931/0196:d-0001/0/-/-/-/-/index.htm" frameborder="0" scrolling="no" id="ifrm" style="height: 530px; width:100%;" ></iframe>
+                            <!--<a class="close-reveal-modal" aria-label="Close">&#215;</a>-->
+                        </div>
+                    </div>	
+<style>
+.reveal-modal-bg {
+	-webkit-backdrop-filter: blur(5px);
+	backdrop-filter: blur(5px);
+}	
+</style>
+{embed="_includes/footer"}
+<!-- safety_resources -->
+<?php
+if(!isset($_COOKIE[$cookie_name])) 
+{
+ 	echo("<script type='text/javascript'>");
+    echo("\$(document).ready(function(){\$('#toolboxForm').foundation('reveal', 'open')});");
+    echo("</script>");
+}
+?>

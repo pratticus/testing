@@ -1,0 +1,92 @@
+<!-- new_blog/listing/ -->
+{embed="_includes/header"}
+				<main id="main" class="blog">
+				<!--	{blog_subscribe} -->
+					<div class="main-area" style="padding-top: 3.5625rem;">
+						<div class="row" id="twocolumns">
+							<div class="small-12 medium-9 column">
+								<div class="row blog-list">
+									<h2 class="section-header">{if segment_3}{segment_3_category_name} {/if}Posts</h2>
+									<div class="small-12 columns listing">
+									{exp:channel:entries channel="blog" dynamic="off" orderby="date" limit="8" paginate="bottom" {if segment_3}category="{segment_3_category_id}"{/if}}
+										<div class="row single-entry {categories}{category_url_title} {/categories}">
+											<div class="medium-3 small-4 columns">
+											{blog_image}
+											{if blog_url== ''}
+												{exp:ce_img:pair src='{blog_image}' width='333' height='200' crop='yes|center,center|0,0|yes'}
+												<img src="{made}" alt="{title}" title="{title}" height="{height}" width="{width}" />
+												{/exp:ce_img:pair}
+											{if:else}
+												{exp:ce_img:pair src='{blog_url}' width='333' height='200' crop='yes|center,center|0,0|yes'}
+												<img src="{made}" alt="{title}" title="{title}" height="{height}" width="{width}" />
+												{/exp:ce_img:pair}
+											{/if}
+											{/blog_image}
+											</div>
+											<div class="medium-9 small-8 columns">
+												<a href="{page_url}"><h4>{title}</h4></a>
+												<h5 class="blog_date">{if show_date == 'y' }{entry_date format="%F %n, %Y"}{/if}</h5>
+											</div>
+											<div class="medium-9 small-12 columns text-content">
+												<p>{exp:eehive_hacksaw chars="195" append="&nbsp;| <a href='{page_url}'>Read the full article ></a>"}{blog_content}{/exp:eehive_hacksaw}</p>
+											</div>
+										</div>
+										
+										{if paginate}
+										{paginate}
+										<br />
+										<div class="row">
+											<div class="small-12 columns pagination-centered">
+											{pagination_links page_padding="4" }
+										    <ul class="pagination">
+										      {first_page}
+										        <li><a href="{pagination_url}" class="">&laquo;</a></li>
+										      {/first_page}
+										
+										      {previous_page}
+										        <li class="arrow"><a rel="prev" href="{pagination_url}" class="">&lsaquo;</a></li>
+										      {/previous_page}
+										
+										      {page}
+										        <li {if current_page}class="current"{/if}><a href="{pagination_url}" class="page-{pagination_page_number}">{pagination_page_number}</a></li>
+										      {/page}
+										
+										      {next_page}
+										        <li class="arrow"><a rel="next" href="{pagination_url}" class="arrow">&rsaquo;</a></li>
+										      {/next_page}
+										
+										      {last_page}
+										        <li><a href="{pagination_url}" class="">&raquo;</a></li>
+										      {/last_page}
+										    </ul>
+										  {/pagination_links}
+											</div>
+										</div>
+										{/paginate}
+										{/if}
+									{/exp:channel:entries}
+									</div>
+								</div>
+							</div>
+							{!--<div id="sticky-anchor"></div>--}
+							<div class="show-for-medium-up medium-3 column">
+								<div class="row category-list" {!--id="sticky"--}>
+									<h2 class="section-header">Categories</h2>
+									
+									<div class="medium-12 large-12 column">
+										<ul class="category-list">
+											<li class="clear_category"><a class="button tiny blue" href="/blog/listing/">Clear Selection</a></li>
+											{exp:channel:category_archive channel="blog" style="linear" show_empty="no"}
+										    {categories}
+										    <li class="{category_url_title}"><a class="button tiny{if category_id == '{segment_3_category_id}' }{if:else} blue{/if}" href="/blog/listing/{category_url_title}/">{category_name}</a></li>
+										    {/categories}
+										    {/exp:channel:category_archive}
+										</ul>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+{embed="_includes/footer"}
+<script async src="/assets/js/blog-script.js" type="text/javascript"></script>

@@ -1,0 +1,68 @@
+{embed="_includes/header"}
+				<!-- main container of all the page elements -->
+
+				<main id="main">
+					<div class="main-area">
+						<div class="row" id="twocolumns">
+							<aside class="medium-4 column" id="sidebar">
+								<nav class="side-menu">
+									{exp:structure:nav start_from="/{freebie_1}" max_depth="1"}
+								</nav>
+
+							</aside>
+							<div class="medium-8 column" id="content">
+								{exp:channel:entries channel="basic_page" limit="1"}
+									<h1>{title}</h1>
+									{content}
+									
+								{/exp:channel:entries}
+								
+								{if segment_1=="courses" && segment_2!=""}
+										<div id="icons"><img src="{site_url}assets/img/completions.png" style="margin-left:0; "/> Most Completions <img src="{site_url}assets/img/views.png" /> Most Views <img src="{site_url}assets/img/top_10.png" /> Top 10</div><img src="{site_url}assets/img/mobile.png" /> Mobile</div>
+											<table width="100%" class="catalog">
+												<tr>
+													<th width="70%">Course Title</th>
+													<th>Details</th>
+												</tr>
+												{exp:channel:entries channel="{segment_2}-courses" dynamic="no"}
+														<tr>
+															<td width="50%"><a href="{page_url}">{title}</a></td>
+															<td>{if '{flags:selected option="Top 10"}'}
+																  <img alt="Top 10 Course" title="Top 10 Course" src="{site_url}assets/img/top_10.png" />
+																{/if}
+																{if '{flags:selected option="Most Views"}'}
+																  <img alt="Most Viewed Course" title="Most Viewed Course" src="{site_url}assets/img/views.png" />
+																{/if}
+																{if '{flags:selected option="Most Completions"}'}
+																  <img alt="Top Completed Course" title="Top Completed Course" src="{site_url}assets/img/completions.png" />
+																{/if}
+																{if '{flags:selected option="Mobile"}'}
+																  <img alt="Mobile Ready Course" title="Mobile Ready Course" src="{site_url}assets/img/mobile.png" />
+																{/if}
+															</td>
+														</tr>
+												{/exp:channel:entries}
+											</table>
+								{/if}
+<img src="http://placehold.it/673x90">
+							</div>
+							<aside class="medium-4 column additional-sidebar">
+								<div class="additional-posts">
+									<h2>Also on Vivid</h2>
+									<article class="item">
+										<h3>Blog Title</h3>
+										<time datetime="2014-04-25">APRIL 25, 2014</time>
+										<p>Little snippet teaser for users to...<a href="#">read more</a>.</p>
+									</article>
+									<article class="item">
+										<h3>Blog Title</h3>
+										<time datetime="2014-04-25">APRIL 25, 2014</time>
+										<p>Little snippet teaser for users to...<a href="#">read more</a>.</p>
+									</article>
+								</div>
+							</aside>
+						</div>
+					</div>
+					
+{embed="_includes/footer"}
+<!-- courses -->

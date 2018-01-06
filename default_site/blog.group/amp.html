@@ -1,0 +1,108 @@
+{exp:channel:entries channel="blog" limit="1" dynamic="no" url_title="{segment_3}"}
+<!doctype html>
+<html amp lang="en">
+	<head>
+	    <meta charset="utf-8">
+	    <script async src="https://cdn.ampproject.org/v0.js"></script>
+	    <title>{title} | Vivid Learning Systems</title>
+	    <link rel="canonical" href="{page_url}" />
+	    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,900,400italic' rel='stylesheet' type='text/css'>
+	    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+	    <script type="application/ld+json">
+		    {
+                "@context": "http://schema.org",
+                "@type": "NewsArticle",
+                "headline": "{title}"
+                "datePublished": "{entry_date format='%Y-%m-%dT%H:%i:%s%P'}",
+                "image": [
+                "/assets/img/structured-data-logo.png"
+                ]
+            }
+	    </script>
+    	<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    
+		<style amp-custom>
+			.amp-content-image {padding-top:80px;}
+			.amp-content { font-family: -apple-system-body, 'Roboto', 'Segoe UI', sans-serif; padding: 0 20px 20px 20px; color: #434a54; }
+			.amp-content h1 {font-family: "Lato", sans-serif; font-weight: 300; color:#ff9e16;}
+			.amp-content a {color: #009bde;}
+			.amp-content, .amp-top-bar .logo { max-width: 768px; margin: 0 auto; }
+			.logo { text-align: center; }
+			.amp-top-bar { width:100%; height:57px; padding: 8px 0; background-color: #ffffff; border-bottom: 1px solid #cdcdcd; border-top: 15px solid #434a54; position: fixed; z-index: 5710; }
+			.amp-author {border-top: 1px solid #cdcdcd;border-bottom: 1px solid #cdcdcd; padding: 20px 0;}
+			.amp-author h4 {margin-top: 0; margin-bottom: 8px;}
+			.amp-author h5 {margin-top: 0; margin-bottom: 8px;}
+			.amp-author p {font-size: .75rem;}
+			.amp-author table {vertical-align: top;}
+			.amp-other-posts ul {list-style: none; padding: 0; margin-top: 0;}
+			.amp-other-posts ul li {border-bottom: 1px solid #cdcdcd; padding: 20px 0; }
+			.amp-other-posts h2 {text-transform: uppercase; font-size: 1.2rem; letter-spacing: 1.3; font-weight: 900; color:#ff9e16;margin-bottom: 0;}
+			.amp-other-posts h4 {margin:0; font-weight: 400;}
+			.amp-other-posts .related-image {border:1px solid #cdcdcd; width: 100%; height: auto;}
+		</style>
+		<!-- AMP Analytics --><script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+		<script src="//fast.wistia.com/assets/external/E-v1.js" async></script>
+	</head>
+	
+	<body>
+		<!-- Google Tag Manager -->
+		<amp-analytics config="https://www.googletagmanager.com/amp.json?id=GTM-MM62WMF&gtm.url=SOURCE_URL" data-credentials="include">
+
+		</amp-analytics>
+		
+		
+		<div class="amp-top-bar">
+            <nav class="logo">
+                <a href="/"><amp-img src="/assets/img/logo-small.png" width="183" height="58" alt="Vivid Learning Systems Logo"></amp-img></a>
+            </nav>
+        </div>
+        <div class="amp-content-image">
+			{blog_image var_prefix="image"}
+			{exp:ce_img:pair src='{image:blog_image}{url}{/image:blog_image}' width='400' height='200' crop='yes|center,center|0,0|yes'}
+			<amp-img src="{image:blog_image}{made}{/image:blog_image}" width="{width}" height="{height}" layout="responsive"></amp-img>
+			{/exp:ce_img:pair}
+			{/blog_image}	        
+        </div>
+		<div class="amp-content">
+			<p><a class="https://vividlearningsystems.com/blog/">< More blog posts</a></p>
+	    	<h1>{title}</h1>
+		  {exp:low_replace find="img" replace="amp-img"}{blog_content}{/exp:low_replace}
+		    <div class="amp-author">
+			    <table cellpadding="0" cellspacing="0" border="0">
+					{blog_authors}
+					<tr>
+						<td width="125" valign="top">
+							<amp-img width="110" height="165" src="{blog_authors:author_image}" alt="{blog_authors:title}" title="{blog_authors:title}" />
+						</td>
+						<td valign="top">
+							<h4>{blog_authors:title}</h4>
+							<h5>{blog_authors:author_job_title}</h5>
+							{blog_authors:author_description}
+						</td>
+					</tr>
+					{/blog_authors}
+				</table>
+		    </div>
+{/exp:channel:entries}
+		    <div class="amp-other-posts" id="other-posts">
+				<h2 class="section-header">Other Posts You Might Be Interested In</h2>
+				<ul class="">
+				{exp:tag:related_entries channel="blog" orderby="relevance" sort="desc" limit="4"}
+					<li>
+
+						{blog_image}
+						{exp:ce_img:pair src='{blog_image}' width='360' height='167' crop='yes|center,center|0,0|yes'}
+						<amp-img class="related-image" src="{made}" alt="{title}" title="{title}" height="{height}" width="{width}" /></amp-img>
+						{/exp:ce_img:pair}
+						{/blog_image}
+						<a href="{page_url}">
+							<h4>{title}</h4>
+						</a>
+
+					</li>
+				{/exp:tag:related_entries}
+				</ul>
+		    </div>
+		</div>	
+	</body>
+</html>

@@ -1,0 +1,23 @@
+{embed="_includes/header"}
+				<!-- main container of all the page elements -->
+				<main id="main">
+                {solutions_nav}
+					<div class="main-area">
+						<div class="row" style="padding-top:20px;">
+							<div class="medium-8 column" id="content">
+							
+                            {exp:channel:entries channel="contractor_program" limit="1"}
+                                <h1>{title}</h1>
+                                <h2>{course_sub_title}</h2>
+                                {course_information}
+			{/exp:channel:entries}
+							
+				</div>
+							<aside class="medium-4 column right-sidebar">
+								{exp:channel:entries channel="contractor_program" limit="1"}
+									<iframe name="Stack" style="float:right;" src="{landing_page_url}" frameborder="0" scrolling="no" id="ifrm" height="{if segment_2=='demo'}950{if:elseif segment_1=='part-48-purchase'}1300{if:else}700{/if};" ></iframe>
+								{/exp:channel:entries}
+							</aside>	
+						</div>
+					</div>
+{embed="_includes/footer"}

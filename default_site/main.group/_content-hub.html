@@ -1,0 +1,100 @@
+<!-- main/safety_resources -->
+{embed="_includes/header"}
+				<!-- main container of all the page elements -->
+				<main id="main">
+					<div class="main-area">
+						<div class="row">
+                        	<div class="large-12 columns">
+                            	<h2 class="contentHubH2">Everything you need to champion<br />safety awareness in the workplace.</h2>
+                            </div>
+                        </div>
+						<div class="row">
+							<div class="medium-12 column landing_list_search">
+								<div class="medium-4 column"> 
+									<!-- search form -->
+                                    {exp:search:advanced_form channel="landing_page" category="128|127|46|100|101|102|103|104|105" result_page="search/toolbox_search_results"}
+                                        <input type="search" name="keywords" id="keywords" value="" size="18" maxlength="100">
+                                        <input type="submit" class="submit_btn" value="Go" />
+                                    {/exp:search:advanced_form}
+	
+								</div>
+							</div>
+						</div>
+                        <div class="row">
+                        	<div class="small-12 medium-6 large-6 columns">
+                            	<h2>What Training Do You Need?</h2>
+                                <img src="/assets/uploads/images/content_hub/t4c-icon.png" />
+                            </div>
+                            <div class="small-12 medium-6 large-6 columns">
+                            	<h2>The ROI of Online Safety Training</h2>
+                                <img src="/assets/uploads/images/content_hub/roi-icon.png" />
+                            </div>
+                        </div>
+						<div class="row">
+                        		
+								<div class="medium-12 column" id="content">
+								
+								<ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4 toolbox-grid">
+									<h1>Safety Tips</h1>
+									{exp:channel:entries channel="landing_page" dynamic="off" category="128" limit="4" orderby="date" sort="desc"}
+										<li>										
+											<a href="{page_url}">{landing_thumbnail_grid}
+												{exp:ce_img:single src="{landing_thumbnail_grid:landing_image}" width="250" height="170" crop="yes" allow_scale_larger="yes" quality="80" attributes='alt="{landing_thumbnail_grid:landing_alt_text}" title="{landing_thumbnail_grid:landing_alt_text}" '}
+											{/landing_thumbnail_grid}</a>
+											<a href="{page_url}"><span>{title}</span></a><br />
+											{!--{categories}{if category_name!="Safety Toolbox" && category_name!="Resources"}<span class="cat_tag">{category_name}</span>{/if}{/categories}--}
+										</li>
+									{/exp:channel:entries}
+									</ul>
+									<div class="medium-12 column" style="text-align:right;"><h2><a href="{site_url}safety-toolbox/safety-tips">See More >></a></h2></div>
+									<ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4 toolbox-grid">
+									<h1>Supervisor Safety Tips</h1>
+									{exp:channel:entries channel="landing_page" dynamic="off" category="127" limit="4" orderby="date" sort="desc"}
+										<li>										
+											<a href="{page_url}">{landing_thumbnail_grid}
+												{exp:ce_img:single src="{landing_thumbnail_grid:landing_image}" width="250" height="170" crop="yes" allow_scale_larger="yes" quality="80" attributes='alt="{landing_thumbnail_grid:landing_alt_text}" title="{landing_thumbnail_grid:landing_alt_text}" '}
+											{/landing_thumbnail_grid}</a>
+											<a href="{page_url}"><span>{title}</span></a><br />
+											{!--{categories}{if category_name!="Safety Toolbox" && category_name!="Resources"}<span class="cat_tag">{category_name}</span>{/if}{/categories}--}
+										</li>
+									{/exp:channel:entries}
+									</ul>
+									<div class="medium-12 column" style="text-align:right;"><h2><a href="{site_url}safety-toolbox/supervisor-safety-tips">See More >></a></h2></div>
+									<ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4 toolbox-grid">
+									<h1>Resources</h1>
+									{exp:channel:entries channel="landing_page" dynamic="off" category="46|100|102|103|104|105" limit="4" orderby="title" sort="asc"}
+										<li>										
+											<a href="{page_url}">{landing_thumbnail_grid}
+												{exp:ce_img:single src="{landing_thumbnail_grid:landing_image}" width="250" height="170" crop="yes" allow_scale_larger="yes" quality="80" attributes='alt="{landing_thumbnail_grid:landing_alt_text}" title="{landing_thumbnail_grid:landing_alt_text}" '}
+											{/landing_thumbnail_grid}</a>
+											<a href="{page_url}"><span>{title}</span></a><br />
+											{!--{categories}{if category_name!="Safety Toolbox" && category_name!="Resources"}<span class="cat_tag">{category_name}</span>{/if}{/categories}--}
+										</li>
+									{/exp:channel:entries}
+									</ul>
+									<div class="medium-12 column" style="text-align:right;"><h2><a href="{site_url}safety-toolbox/resources">See More >></a></h2></div>
+									
+									<ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4 toolbox-grid">
+									<h1>Webcasts</h1>
+									{exp:channel:entries channel="landing_page" dynamic="off" category="101" limit="4" orderby="title" sort="asc"}
+										<li>										
+											<a href="{page_url}">{landing_thumbnail_grid}
+												{exp:ce_img:single src="{landing_thumbnail_grid:landing_image}" width="250" height="170" crop="yes" allow_scale_larger="yes" quality="80" attributes='alt="{landing_thumbnail_grid:landing_alt_text}" title="{landing_thumbnail_grid:landing_alt_text}" '}
+											{/landing_thumbnail_grid}</a>
+											<a href="{page_url}"><span>{title}</span></a><br />
+											{!--{categories}{if category_name!="Safety Toolbox" && category_name!="Resources"}<span class="cat_tag">{category_name}</span>{/if}{/categories}--}
+										</li>
+									{/exp:channel:entries}
+									</ul>
+									<div class="medium-12 column" style="text-align:right;"><h2><a href="{site_url}safety-toolbox/webcasts">See More >></a></h2></div>
+																		
+									
+
+
+
+							</div>
+							
+						</div>
+					</div>				
+{embed="_includes/footer"}
+<!-- safety_resources -->

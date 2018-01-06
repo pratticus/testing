@@ -1,0 +1,15 @@
+{exp:tag:related_entries channel="blog" entry_id="{embed:entry_id}" orderby="relevance" sort="desc" limit="4"}
+<li>
+{exp:channel:entries entry_id="{entry_id}" dynamic="off"}
+	<a href="{page_url}">
+	{blog_image_grid}
+		{exp:ce_img:pair src='{blog_image_grid:blog_image}' width='250' height='125' crop='yes|center,center|0,0|yes'}
+		<img src="{blog_image_grid:blog_image}" alt="{blog_image_grid:alt_text}" title="{blog_image_grid:alt_text}" height="{height}" width="{width}" />
+		{/exp:ce_img:pair}
+	{/blog_image_grid}
+			
+				{title}
+	</a>
+{/exp:channel:entries}
+</li>
+{/exp:tag:related_entries}

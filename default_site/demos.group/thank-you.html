@@ -1,0 +1,64 @@
+<?php
+$cookie_name = "demo";
+$cookie_value = "access";
+setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 30 days
+header("Location: https://vividlearningsystems.com/demos/library");
+exit();
+?>
+
+<!-- main/safety_resources -->
+{embed="_includes/header"}
+				<!-- main container of all the page elements -->
+				<main id="main">
+					<div class="main-area">
+						<div class="row">
+							<div class="medium-12 column">
+								{!--{exp:channel:entries channel="toolbox_resources"}
+									<h1>{title}</h1>
+									<h2>{subtitle}</h2>
+								{/exp:channel:entries}--}
+							</div>
+						</div>
+						
+                        
+                        
+                        {!--<div class="row">
+							<div class="medium-12 column landing_list_search">
+								<div class="medium-6 column"> 
+									<!-- search form -->
+                                  
+                                    
+                                    {exp:low_search:form query="{segment_3}" result_page="/demos/test"}
+                                    <select name="category[]" style="width:90%; float:left;">
+                                        <option value="">Verticals</option>
+                                        {exp:channel:categories category_group="7" style="linear"}
+                                          <option value="{category_id}">
+                                            {category_name}
+                                          </option>
+                                        {/exp:channel:categories}
+                                      </select><input type="submit" value="GO" class="submit_btn" style="display:inline; margin:2px 0 0 5px;">
+                                      {/exp:low_search:form}
+                                   
+                                    
+	
+								</div>
+							</div>
+						</div>--}
+                        
+                        
+                        
+						<div class="row">
+							<div class="medium-12 column" id="content">
+								
+                                <h1>Thanks for checking us out!</h1>
+                                <p> Now you can demo as many courses as you want. <a href="https://dev.vividlearningsystems.com/demos/library">Click here to proceed >></a></p>
+                               
+                                
+                                
+									
+							</div>
+							
+						</div>
+					</div>				
+{embed="_includes/footer"}
+<!-- safety_resources -->

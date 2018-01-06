@@ -1,0 +1,339 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+	<!-- set the encoding of your site -->
+	<meta charset="utf-8">
+	<!-- set the viewport width and initial-scale on mobile devices -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--[if (IE)&(lt IE 9) ]>
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8">
+	<![endif]-->
+	<!--[if (IE)&(gt IE 8) ]>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<![endif]-->
+	<!-- include the normalize stylesheet -->
+	<link rel="stylesheet" href="{site_url}assets/css/normalize.css">
+	<!-- include the Foundation stylesheet -->
+	<link rel="stylesheet" href="{site_url}assets/css/foundation.min.css">
+	<!-- include the facnybox stylesheet -->
+	<link rel="stylesheet" href="{site_url}assets/css/fancybox.css">
+	<!-- include the site stylesheet -->
+	<link rel="stylesheet" href="{site_url}assets/css/all.css">
+	<link rel="shortcut icon" href="favicon.png">
+	<!-- include modernizr JavaScript -->
+	<script src="{site_url}assets/js/vendor/modernizr.js"></script>
+	<!--[if lt IE 9]>
+		<link rel="stylesheet" href="{site_url}assets/css/ie.css" media="screen">
+	<![endif]-->
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+	<div class="off-canvas-wrap mobile-nav-canvas" data-offcanvas>
+		<div class="inner-wrap">
+			<!-- mobile main navigation -->
+			<div class="mobile-nav-panel right-off-canvas-menu">
+				<div class="panel-holder">
+					<nav>
+						<ul>
+							<li><a href="/index.php/">Home</a></li>
+							<li><a href="/index.php/why-vivid">Why Vivid</a></li>
+							<li>
+								<a href="/index.php/solutions">Solutions</a>
+							</li>
+							<li><a href="/index.php/case-studies">Case Studies</a></li>
+							<li><a href="/index.php/blog">Blog</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+			<div class="page">
+				<!-- header of the page -->
+				<header id="header">
+					<!-- top panel -->
+					<div class="top-panel" style="background-color:#009bde;">
+						<div class="row">
+							<div class="large-12 columns">
+								{!--<<strong class="hide-for-small-only ico-logo">VIVID learning systems</strong>
+								<ul class="links">
+									<li><a href="/index.php/safety-toolbox">Safety Toolbox</a></li>
+									li><a href="/index.php/resources">Resources</a></li>
+								</ul>--}
+								<div class="links-holder">
+									{!--<a href="tel:18009560333" class="hide-for-small-only tel">1-800-956-0333</a>
+									<ul class="links">
+										<li><a href="/index.php/landing-pages/demo">Demo</a></li>
+										<li class="hide-for-small-only login"><a href="http://www.vividlearningsystems.com/site/login/">Login</a></li>
+									</ul>--}
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- header area -->
+					<div class="kb_nav header-holder">
+						<div class="row">
+							<div class="large-12 columns">
+								<div class="holder">
+									<strong class="logo"><a href="/index.php">VIVID learning systems</a></strong>
+									<nav id="nav" class="hide-for-small-only">
+										<ul>
+											{exp:channel:category_archive channel="knowledge_base" style="linear" show_empty="yes"}
+											
+										         {categories}
+										            <li><a href="/knowledge-base/category/{category_url_title}"{if freebie_3 == category_url_title} class="active_nav"{/if}>{category_name}</a></li>
+										         {/categories}
+										    {/exp:channel:category_archive}
+										</ul>
+									</nav>
+									<a href="#" class="right-off-canvas-toggle nav-opener" >Menu</a>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+				</header>
+				<!-- main container of all the page elements -->
+				<main id="main">
+					<div class="main-area kb">
+
+							<div class="row">
+								<div class="medium-8 column">
+									<h1>Knowledge Base:Search Results</h1>
+								</div>
+								<div class="medium-4 column">
+									<div class="search-panel" style="margin:0;">
+									<!-- search form -->
+									{exp:search:simple_form channel="knowledge_base" form_class="search-form" where="all" search_in="everywhere" result_page="knowledge_base/results"}
+										<fieldset>
+							                <input type="search" name="keywords" id="keywords" value="" size="18" maxlength="100">
+							                <input type="submit" value="GO" class="button">
+									      </fieldset>
+									{/exp:search:simple_form}
+									
+								</div>
+								</div>
+							</div>
+								
+								<div class="row">
+								<div class="medium-12 column">
+                                <table width="100%" id="myTable" class="tablesorter"><thead><tr><th width="25%" class="header">Title</th><th width="60%" class="header">Description</th><th width="15%" class="header">Type</th></tr></thead>
+									{exp:search:search_results}
+                                    
+									{if count == 1}
+										<p>Search for: <strong><em>{exp:search:keywords}</em></strong>, {total_results} result{if total_results > 1}s{/if}.</p>
+  {/if}								<tr>
+										<td>
+                                        {if file=="" && link==""}
+                                            <p><a href="{page_url}">{title}</a><br />
+                                        {if:elseif file!=""}
+                                                <p><a href="{file}" target="_blank">{title}</a><br />
+                                        {if:elseif link!=""}
+                                                <p><a href="{link}" target="_blank">{title}</a><br />
+                                        {/if}
+										</p>
+                                    </td>
+                                    <td>{description}</td>
+                                    <td>{categories}
+    {category_name}
+    {/categories}</td>
+                                 </tr>
+								    {paginate}
+								        <p>Page {current_page} of {total_pages} pages {pagination_links}</p>
+								    {/paginate}
+									{/exp:search:search_results}
+										</table>
+								</div>
+								
+								</div>
+							</div>
+						</div>
+					</div>
+<!-- contact section -->
+					<section class="contact-section">
+						<div class="row">
+							<div class="medium-6 column">
+								
+							</div>
+							<div class="medium-6 column">
+								
+							</div>
+						</div>
+					</section>
+				</main>
+				<!-- footer of the page -->
+				<footer id="footer">
+					<div class="row footer-area">
+						<!-- footer navigation -->
+						<div class="large-3 column show-for-large-up">
+							<ul class="footer-nav">
+								<li>
+									<a href="/index.php/why-vivid">Why Vivid</a>
+									<ul>
+										<li><a href="/index.php/why-vivid/our-service/">Our Service</a></li>
+										<li><a href="/index.php/case-studies">Case Studies</a></li>
+										<li><a href="/index.php/why-vivid/careers/">Careers</a></li>
+									</ul>
+								</li>
+								{!--<li>
+									<a href="/index.php/solutions/courses/osha/">Industries We Serve  </a>
+									<ul>
+										<li><a href="/index.php/solutions/solutions-by-industry/mining">Mining</a></li>
+										<li><a href="/index.php//solutions/solutions-by-industry/electric-utilities/">Electrical Utilities</a></li>
+										<li><a href="/index.php/solutions/solutions-by-industry/colleges-universities/">Colleges & Universities</a></li>
+										<li><a href="/index.php/solutions/solutions-by-industry/food-processing/">Food Safety</a></li>
+										<li><a href="/index.php/solutions/solutions-by-industry/government">Government</a></li>
+										<li><a href="/index.php/solutions/solutions-by-industry/general-industry/">General Industry</a></li>
+									</ul>
+								</li>--}
+								<li>
+									<a href="/index.php/solutions/">Online Safety Training Solutions</a>
+									<ul>
+										<li>
+											<a href="/index.php/solutions/courses">On Demand Safety Courses</a>
+											<ul>
+												<li><a href="/index.php/solutions/courses/osha/">OSHA</a></li>
+												<li><a href="/index.php/solutions/courses/msha/">MSHA</a></li>
+												
+												<li><a href="/index.php/solutions/courses/electric-utilities/">1910.269</a></li>
+												<li><a href="/index.php/solutions/courses/food-safety-haccp/">HACCP</a></li>
+												<li><a href="/index.php/solutions/courses/nfpa-70e-arc-flash/">NFPA 70E</a></li>
+											</ul>
+										</li>
+										<li><a href="/index.php/solutions/safety-training-systems"><strong>Safety Training Systems</strong></a></li>
+										<li><a href="/index.php/solutions/custom-training"><strong>Custom Development</strong></a></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+						<div class="large-4 medium-5 column">
+							<div class="info-box">
+								<h3>Corporate Headquarters</h3>
+								<address>
+									<span>5728 Bedford Street</span>
+									<span>Pasco, WA 99301</span>
+									<span>T: 1-800-956-0333</span>
+									<span>F: 509-542-8869</span>
+									<span>E: <a href="mailto:&#115;&#097;&#108;&#101;&#115;&#064;&#108;&#101;&#097;&#114;&#110;&#097;&#116;&#118;&#105;&#118;&#105;&#100;&#046;&#099;&#111;&#109;">&#115;&#097;&#108;&#101;&#115;&#064;&#108;&#101;&#097;&#114;&#110;&#097;&#116;&#118;&#105;&#118;&#105;&#100;&#046;&#099;&#111;&#109;</a></span>
+								</address>
+							</div>
+							<div class="info-box show-for-medium-up">
+								<h3>Training Center</h3>
+								<address>
+									<span>2345 Stevens Drive</span>
+									<span>Richland, WA 99354</span>
+									<span>M-F 7:00 AM - 4:00 PM PST</span>
+									<span>T: 509-372-0335</span>
+								</address>
+							</div>
+							<div class="info-box">
+								<h3>Client Service</h3>
+								<address>
+									<span>M-F 7:00 AM - 5:00 PM PST</span>
+									<span><a  href="mailto:&#099;&#117;&#115;&#116;&#111;&#109;&#101;&#114;&#115;&#101;&#114;&#118;&#105;&#099;&#101;&#064;&#108;&#101;&#097;&#114;&#110;&#097;&#116;&#118;&#105;&#118;&#105;&#100;&#046;&#099;&#111;&#109;">&#099;&#117;&#115;&#116;&#111;&#109;&#101;&#114;&#115;&#101;&#114;&#118;&#105;&#099;&#101;&#064;&#108;&#101;&#097;&#114;&#110;&#097;&#116;&#118;&#105;&#118;&#105;&#100;&#046;&#099;&#111;&#109;</a></span>
+									<span><a href="http://chat.vls01.com/CuteSoft_Client/CuteChat/SupportClient.aspx" onclick="javascript:void window.open('http://chat.vls01.com/CuteSoft_Client/CuteChat/SupportClient.aspx','1409780099525','width=700,height=500,toolbar=0,menubar=0,location=0,status=1,scrollbars=0,resizable=1,left=0,top=0');return false;">Live Chat</a> | 1-800-956-0333</span>
+								</address>
+							</div>
+						</div>
+						<div class="large-5 medium-7 column">
+							<div class="visual-box">
+								<a href="#lightbox1" class="lightbox">
+									<img src="{site_url}assets/img/img-02.jpg" width="417" height="237" alt="image description">
+									<span class="button btn-play">Play</span>
+								</a>
+							</div>
+							<!-- newsletter form -->
+							<div class="newsletter-form">
+								<h3>Vivid eNewsletter</h3>
+								<form action="#">
+									<fieldset>
+										<div class="form-holder">
+											<div class="input-box">
+												<iframe name="Stack" style="width:100%" src="https://go.vividlearningsystems.com/af2?LinkID=CH00096486eR00000047AD" frameborder="0" scrolling="no" id="ifrm" ></iframe>
+											</div>
+											{!--<div class="btn-box">
+												<input type="submit" value="Subscribe" class="button">
+											</div>--}
+										</div>
+									</fieldset>
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="small-12 column">
+							<div class="footer-info-holder">
+								<!-- social networks -->
+								<ul class="social-networks">
+									<li><a class="icon-googleplus" href="https://plus.google.com/117112327114464944830" target="_blank" title="Google+">Google +</a></li>
+									<li><a class="icon-facebook" href="http://www.facebook.com/VividLearningSystems" target="_blank" title="Facebook">Facebook</a></li>
+									<li><a class="icon-twitter" href="http://www.twitter.com/learnatvivid" target="_blank" title="Twitter">Twitter</a></li>
+									<li><a class="icon-linked" href="http://www.linkedin.com/company/vivid-learning-systems" target="_blank" title="Linkedin">LinkedIn</a></li>
+								</ul>
+								<div class="site-info">
+									<p>&copy; 2014 Vivid Learning Systems Inc. All rights reserved.</p>
+									<ul>
+										{!--<li class="show-for-medium-up"><a href="#">Site Map</a></li>--}
+										<li><a href="/index.php/terms-conditions">Terms &amp; Conditions</a></li>
+										<li><a href="/index.php/privacy-policy">Privacy Policy</a></li>
+										{!--<li><a href="/index.php/faqs">FAQ</a></li>--}
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</footer>
+				
+				
+			</div>
+			<!-- close the off-canvas menu -->
+			<a class="exit-off-canvas"></a>
+		</div>
+	</div>
+	<div class="popup-holder">
+		<div id="lightbox1">
+			<div class="video-block">
+				<iframe src="//fast.wistia.net/embed/iframe/5j26k2w69p?videoFoam=true" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="640" height="360"></iframe>
+			</div>
+		</div>
+	</div>
+	<!-- include jQuery library -->
+	<script>
+		if(window.addEventListener) { // W3C compatible browsers
+			document.write('<script src="{site_url}assets/js/vendor/jquery.js"><\/script>');
+		} else if(window.attachEvent) { // IE8 and less
+			document.write('<script src="{site_url}assets/js/vendor/jquery-1.11.1.min.js"><\/script>');
+		}
+	</script>
+	<!-- include Foundation JavaScript -->
+	<script src="{site_url}assets/js/foundation.min.js"></script>
+	<script src="{site_url}assets/js/vendor/placeholder.js"></script>
+	<!-- include custom JavaScript -->
+	<script src="{site_url}assets/js/jquery.main.js"></script>
+	<script>$(document).foundation();</script>
+    <script type="text/javascript" src="https://vividlearningsystems.com/assets/js/table_sort/jquery.tablesorter.js"></script>
+	<!-- include rem units polyfill JavaScript -->
+	<script src="{site_url}assets/js/vendor/rem.min.js"></script>
+	<script type="text/javascript">
+ 
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-4461291-2']);
+  _gaq.push(['_trackPageview']);
+ 
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+ $(document).ready(function() 
+		    { 
+		        $("#myTable").tablesorter(); 
+		    } 
+		); 
+</script>
+	<!-- include JavaScript for IE8 -->
+	<!--[if lt IE 9]>
+		<script src="//s3.amazonaws.com/nwapi/nwmatcher/nwmatcher-1.2.5-min.js"></script>
+		<script src="//html5base.googlecode.com/svn-history/r38/trunk/js/selectivizr-1.0.3b.js"></script>
+		<script src="{site_url}assets/js/vendor/respond-1.1.0.min.js"></script>
+	<![endif]-->
+</body>
+</html>

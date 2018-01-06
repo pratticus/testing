@@ -1,0 +1,58 @@
+<!-- main/safety_resources -->
+{embed="_includes/header"}
+				<!-- main container of all the page elements -->
+				<main id="main">
+					<div class="main-area">
+						<div class="row">
+							<div class="medium-12 column">
+								{exp:channel:entries channel="toolbox_resources" entry_id="137"}
+									<h1>{title}</h1>
+									<h2>Essential information for making the right training investment.</h2>
+								{/exp:channel:entries}
+							</div>
+						</div>
+						<!--<div class="row">
+							<div class="medium-12 column landing_list_search">
+								<div class="medium-4 column"> 
+                                    {exp:search:advanced_form channel="landing_page" category="45" result_page="search/toolbox_search_results"}
+                                        <input type="search" name="keywords" id="keywords" value="" size="18" maxlength="100">
+                                        <input type="submit" class="submit_btn" value="Go" />
+                                    {/exp:search:advanced_form}
+	
+								</div>
+							</div>
+						</div>-->
+						<div class="row">
+							<div class="medium-8 column" id="content">
+								<div class="toolbox_feature">{exp:channel:entries channel="landing_page" category="46" dynamic="off" limit="1" search:featured_download="Yes" orderby="title" sort="asc"}
+									{landing_thumbnail_grid}
+									{exp:ce_img:single src="{landing_thumbnail_grid:landing_image}" width="245" height="245" crop="yes" allow_scale_larger="yes" quality="80" attributes='alt="{landing_thumbnail_grid:landing_alt_text}" class="toolbox_thumb"'}
+											<h3><strong>Feature:</strong> {title}</h3>
+											{exp:trunchtml chars="200" inline="..."}{page_content}{/exp:trunchtml}
+														
+									{/landing_thumbnail_grid}
+									<a href="{page_url}" class="button" style="margin: 0;"><span><span>Learn More</span></span></a>
+								{/exp:channel:entries}</div>
+									<ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4 toolbox-grid">
+									{exp:channel:entries channel="landing_page" dynamic="off" category="46" parse="inward" orderby="title" sort="asc"}
+										<li>										
+											<a href="{page_url}{if acton_demo_media_link!=""}{acton_demo_media_link}{/if}">{landing_thumbnail_grid}
+												{exp:ce_img:single src="{landing_thumbnail_grid:landing_image}" width="153" height="153" crop="no" allow_scale_larger="yes" quality="90" attributes='alt="{title}" title="{title}"'}
+											{/landing_thumbnail_grid}</a>
+											<a href="{page_url}{if acton_demo_media_link!=""}{acton_demo_media_link}{/if}"><span style="line-height: inherit;">{title}</span></a><br />
+											{categories}{if category_name!="Safety Toolbox" && category_name!="Resources"}<span class="cat_tag">{category_name}</span>{/if}{/categories}
+										</li>
+									{/exp:channel:entries}
+									</ul>
+							</div>
+							<aside class="medium-3 column right-sidebar">
+								{social_sidebar}
+								<div class="additional-posts">
+									<h2>Also on Vivid</h2>
+									{blog_sidebar}
+								</div>
+							</aside>
+						</div>
+					</div>				
+{embed="_includes/footer"}
+<!-- safety_resources -->

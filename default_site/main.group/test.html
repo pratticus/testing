@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="blogNewsletter" name="blogNewsletter" class="cmxform" action="">
+    <input class="email" name="Email Address" id="Email Address" type="text" value="Enter your email address here..." onblur="if (this.value=='') this.value=this.defaultValue" onclick="if (this.defaultValue==this.value) this.value=''" /><br /><br />
+    <input type="submit">
+</form>
+
+<!-- snippet for Act-On Connectivity -->
+<script type="text/javascript">
+	var aoProtocol = location.protocol;
+	
+	if ( aoProtocol.indexOf('http') < 0 ) aoProtocol = 'http:';
+	
+	var aoCAP = {
+		aid: '2931',
+		fid: '001c',
+		did: 'd-0001',
+		server: 'go.vividlearningsystems.com',
+		formId: 'blogNewsletter',
+		protocol: aoProtocol
+	};
+	
+	document.write( '<script type="text/javascript" src="'+aoCAP.protocol+'//'+aoCAP.server+'/acton/js/formcap.min.js"><'+'/script>' );
+</script>
+</body>
+</html>

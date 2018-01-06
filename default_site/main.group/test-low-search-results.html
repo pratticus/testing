@@ -1,0 +1,16 @@
+{exp:low_search:results 
+query="{segment_3}" 
+limit="20"
+paginate="bottom"
+}
+  <p><a href="{page_url}">{title}</a> - {low_search_score}<br />
+{low_search_excerpt}
+
+	</p>
+  {if count == total_results}</ol>{/if}
+  {if no_results}No search results{/if}
+         {paginate}
+        <p>Page {current_page} of {total_pages} pages {pagination_links}</p>
+    {/paginate}
+
+{/exp:low_search:results}

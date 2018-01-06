@@ -1,0 +1,95 @@
+{embed="_includes/header"}
+				<!-- main container of all the page elements -->
+				<main id="main">
+					<div class="main-area">
+						<div class="row" id="twocolumns">
+							<aside class="medium-4 column" id="sidebar">
+								<nav class="side-menu">
+									<ul id="nav-sub">
+										<li class="first"><a href="/case-studies">More Case Studies</a></li>
+									</ul>								
+								</nav>
+							</aside>
+							<div class="medium-8 column case_study_bio" id="content">
+								{exp:channel:entries channel="case_studies" limit="1"}
+									<div class="row">
+										<div class="medium-7 column"><h1>{title}</h1></div>
+										<div class="medium-5 column">
+											{if article!=""}
+											  <span><a href="{article}"><img src="{site_url}assets/img/article.png" /> Article</span></a>
+											{/if}
+											{if printable!=""}
+											  <span><a href="{printable}" target="_blank" onClick="_gaq.push(['_trackEvent', 'Downloads', 'PDF', 'Case Studies: {title}']);"><img src="{site_url}assets/img/printable.png" alt="Printable" title="Printable" /> Printable</span></a>
+											{/if}
+											{if video!=""}
+											  <span><a href="{video}"><img src="{site_url}assets/img/video.png" /> Video</span></a>
+											{/if}
+										</div>
+									</div>
+									<div class="row cs_quote">
+										{case_study_bio_grid}
+											<div class="medium-4 column cs_thumb">
+												{exp:ed_imageresizer
+														    image="{case_study_bio_grid:image}"
+														    maxWidth="400"
+														    cropratio="400:274"
+															alt="{case_study_bio_grid:name}"
+															title="{case_study_bio_grid:name}"}
+											</div>
+											<div class="medium-8 column cs_quote">		
+												{if case_study_bio_grid:name != "" && case_study_bio_grid:title != ""}<strong>{case_study_bio_grid:name}</strong>, <em>{case_study_bio_grid:title}</em>{/if}
+												{case_study_bio_grid:quote}
+											</div>
+										{/case_study_bio_grid}
+									</div>
+									<div class="row"><br /><br />
+								
+								</div>
+									{if cs-video !=""}
+                                    {cs-video}
+                                 {/if}<br /><br />
+                                 <ul class="small-block-grid-5" style="line-height: normal;">	
+									<li class="text-center"><a href="https://twitter.com/share" class="twitter-share-button" data-url="{exp:channel:entries}{page_url}{/exp:channel:entries}?utm_source=twitter&utm_medium=social-share&utm_campaign=case-studies/" data-via="learnatvivid" data-size="small" data-count="none">Share</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></li>
+									<li class="text-center"><div class="fb-share-button" data-href="{exp:channel:entries}{page_url}{/exp:channel:entries}?utm_source=facebook&utm_medium=social-share&utm_campaign=case-studies/" data-layout="button"></div></li>
+									<li class="text-center"><!-- Place this tag where you want the share button to render. -->
+										<div class="g-plus" data-action="share" data-annotation="none" data-href="{exp:channel:entries}{page_url}{/exp:channel:entries}?utm_source=google-plus&utm_medium=social-share&utm_campaign=case-studies/"></div></li>
+									<li class="text-center">
+										<script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
+										<script type="IN/Share" data-url="{exp:channel:entries}{page_url}{/exp:channel:entries}?utm_source=linkedin&utm_medium=social-share&utm_campaign=case-studies/"></script>
+									</li>
+									<li class="text-center"><a href="mailto:?subject=I think you’d find this useful!&body=I found this great Case Study. Check it out!%0D%0A%0D%0A{exp:channel:entries}{exp:url_encode}{page_url}{/exp:url_encode}{/exp:channel:entries}?utm_source=email%26utm_medium=personal-email%26utm_campaign=case-studies" style="background-color: none;" class="fa fa-envelope fa-lg"> Email</a></li>
+								</ul>
+                                    {case_study_content}
+									
+                                 <div class="row"><br /><br />
+								<ul class="small-block-grid-5" style="line-height: normal;">	
+									<li class="text-center"><a href="https://twitter.com/share" class="twitter-share-button" data-url="{exp:channel:entries}{page_url}{/exp:channel:entries}?utm_source=twitter&utm_medium=social-share&utm_campaign=case-studies/" data-via="learnatvivid" data-size="small" data-count="none">Share</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></li>
+									<li class="text-center"><div class="fb-share-button" data-href="{exp:channel:entries}{page_url}{/exp:channel:entries}?utm_source=facebook&utm_medium=social-share&utm_campaign=case-studies/" data-layout="button"></div></li>
+									<li class="text-center"><!-- Place this tag where you want the share button to render. -->
+										<div class="g-plus" data-action="share" data-annotation="none" data-href="{exp:channel:entries}{page_url}{/exp:channel:entries}?utm_source=google-plus&utm_medium=social-share&utm_campaign=case-studies/"></div></li>
+									<li class="text-center">
+										<script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
+										<script type="IN/Share" data-url="{exp:channel:entries}{page_url}{/exp:channel:entries}?utm_source=linkedin&utm_medium=social-share&utm_campaign=case-studies/"></script>
+									</li>
+									<li class="text-center"><a href="mailto:?subject=I think you’d find this useful!&body=I found this great Case Study. Check it out!%0D%0A%0D%0A{exp:channel:entries}{exp:url_encode}{page_url}{/exp:url_encode}{/exp:channel:entries}?utm_source=email%26utm_medium=personal-email%26utm_campaign=case-studies" style="background-color: none;" class="fa fa-envelope fa-lg"> Email</a></li>
+								</ul>
+								</div>
+                                    {if printable != ""}
+                                    
+									<p><big><a href="{printable}" target="_blank" onClick="_gaq.push(['_trackEvent', 'Downloads', 'PDF', 'Case Studies: {title}']);">Download the printable PDF</a> for the full story.</big></p>
+                                    {/if}
+								{/exp:channel:entries}
+								
+							</div>
+							<aside class="medium-4 column additional-sidebar">
+								<div class="additional-posts">
+									<h2>Also on Vivid</h2>
+									{blog_sidebar}
+								</div>
+							</aside>
+						</div>
+					</div>
+					<!-- Place this tag in your head or just before your close body tag. -->
+					<script src="https://apis.google.com/js/platform.js" async defer></script>
+{embed="_includes/footer"}
+<!-- case_study_detail -->

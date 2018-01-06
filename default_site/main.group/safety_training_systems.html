@@ -1,0 +1,72 @@
+{embed="_includes/header"}
+
+				<!-- main container of all the page elements -->
+				<main id="main">
+				{solutions_nav}
+					<div class="section section-systems-hero">
+						<div class="row">
+							<div class="large-5 large-push-7 medium-12 medium-push-0 column systems-hero-text" style="margin-bottom: 0;">
+								{exp:channel:entries channel="safety_training_systems" limit="1"}
+									{intro_text}
+								{/exp:channel:entries}
+							</div>
+							<div class="large-6 large-pull-12 hide-for-small-only column systems-hero-image text-center">
+								<figure class="systems-image"></figure>
+							</div>
+						</div>
+					</div>
+					<section class="testimonial-section different" style="padding-bottom:0;">
+						<div class="row section-title">
+							<div class="small-12 column">
+							<h1>Why Our Systems Are Better</h1>
+							{exp:channel:entries channel="safety_training_systems" limit="1"}
+							<p>{simplicity_subtitle}</p>
+							{/exp:channel:entries}
+							</div>
+						</div>
+						<div class="row" data-equalizer>
+							{exp:channel:entries channel="safety_training_systems" limit="1"}
+							<ul class="small-block-grid-1 medium-block-grid-3 different systems-boxes">
+								{value_propositions_grid}
+								<li class="text-center">
+									<div>
+										<div data-equalizer-watch class="text-center">
+										<h2>{value_propositions_grid:title}</h2>
+											<img class="" src="{value_propositions_grid:icon}" alt="{value_propositions_grid:title}" title="{value_propositions_grid:title}" />
+											{value_propositions_grid:text}
+										</div>
+											{!--<a href="#" class="button"><span><span>{title}</span></span></a>--}
+									</div>
+								</li>
+									{/value_propositions_grid}
+							</ul>
+							{/exp:channel:entries}
+						</div>
+					</section><!--End section-->
+					<section class="features-section">
+						<div class="row section-title">
+							<div class="small-12 column">
+								<h1 style="text-align:center;margin-bottom:30px;font-size: 2.5rem;">Features</h1>
+							</div>
+						</div>
+						<div class="row">
+							<div class="small-12 text-center column">
+								<ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3">
+								{exp:channel:entries channel="safety_training_systems" limit="1"}
+								{features_grid}			
+									<li>
+										<div style="height: 145px;">
+											<img src="{features_grid:image}" alt="{features_grid:title}" title="{features_grid:title}" style="position: relative; top:50%; transform: translateY(-50%);" />
+										</div>
+										<h2>{features_grid:title}</h2>
+										{features_grid:text}
+									</li>
+								{/features_grid}
+								{/exp:channel:entries}
+								</ul>
+							</div>
+						</div>
+					</section>
+				</main>
+{embed="_includes/footer"}
+<!-- safety_training_systems -->

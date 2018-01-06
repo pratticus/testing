@@ -1,0 +1,133 @@
+<!-- course_library/test_courses_listing -->
+{embed="_includes/header"}
+				<!-- main container of all the page elements -->
+				<main id="main">
+					<div class="full-width-course-header">                 
+	                    <div class="row bread">
+							<div class="medium-12 column">
+								{exp:structure:breadcrumb here_as_title="yes"}
+								{exp:channel:entries channel="course_library"}<h1 class="course-title">{title}</h1>{/exp:channel:entries}
+							</div>
+						</div>
+					</div>
+					<div class="main-area">
+						<div class="row" id="twocolumns">
+							
+							<div class="medium-9 column" id="content">
+							{!--	{exp:channel:entries channel="course_library" limit="1"}
+									<h1>{title}</h1>
+									{overview}
+									
+								{/exp:channel:entries} --}
+								
+								{exp:channel:entries channel="course_library"}
+									{overview}
+								{/exp:channel:entries}
+								
+									<div id="icons" class="hide-for-small-only">
+										{5-min-icon} <span>5-min Reminder</span> {instant-safety-icon} <span>Safety Toolbox Video</span> {mobile-icon} <span>Mobile Ready</span> {multi-language-icon} <span>Multi-Language</span>
+									</div>
+											<table width="100%" class="catalog" data-accordion-group>
+												{exp:channel:entries channel="{segment_2}-courses" dynamic="no" sort="asc" orderby="title" category_group="not 3"}
+														<tr>
+															<td data-accordion>
+																
+																
+																{if entry_id == "181" OR entry_id == "182" OR entry_id == " 206"OR entry_id == "187" OR entry_id == "191" OR entry_id == "194" OR entry_id == "121" OR entry_id == "132" OR entry_id == "482"}
+																<span class="course-title-no-link" data-control>{title}</span>
+																{if:else}
+																<a href="{page_url}">{title}{if entry_id == '160'}*{/if}</a>
+																{/if}
+																{if ({current_time format="%U"} - {entry_date format="%U"}) <= 7776000 }<span class="new-flag">New</span>{/if}
+																{if updated_date != ''}
+																		{if ({current_time format="%U"} - {entry_date format="%U"}) > 7776000 && ({current_time format="%U"} - {updated_date format="%U"}) <= 7776000 }<span class="updated-flag">Updated</span>{/if} 
+																
+																{/if}
+																{!-- {if {flags:selected option="Top 10"} }<span class="top-10-flag">Top 10</span>{/if}
+																--}
+																{if {flags:selected option="Purchase"} }
+																<span class="buy-now-flag"><a href="{buy}">Buy Now</a></span>{/if}
+																
+																<div data-content>
+																{if entry_id == "182"}
+																	{embed="course_library/food_safety_manager_bundle"}
+																{if:elseif entry_id == "181"}
+																	{embed="course_library/food_safety_operator_bundle"}
+																{if:elseif entry_id == "121"}
+																	{embed="course_library/ppe_bundle"}
+																{if:elseif entry_id == "132"}
+																	{embed="course_library/first_aid_bundle"}
+																{if:elseif entry_id == "206"}
+																	{embed="course_library/dot_hazmat_bundle"}
+																{if:elseif entry_id == "187"}
+																	{embed="course_library/bereavement_bundle"}
+																{if:elseif entry_id == "191"}
+																	{embed="course_library/medical_mandatory_bundle"}
+																{if:elseif entry_id == "194"}
+																	{embed="course_library/laboratory_bundle"}
+																{if:elseif entry_id == "482"}
+																	{embed="course_library/forklift_bundle"}	
+																{/if}
+																</div>
+															</td>
+															<td class="icon-features hide-for-small-only" valign="top">
+															{if {flags:selected option="5-Min Overview"} }
+																{5-min-icon}
+															{if:else}
+																<img class="five-min-icon-holder" src="/assets/img/icon-spacer.gif" width="24px" alt="No Icon" title="No Icon"/>
+															{/if}
+
+															{if {flags:selected option="Instant Safety Video"} }
+	                                                            {instant-safety-icon}
+	                                                        {if:elseif '{flags:selected option="5-Min Overview"}' }
+	                                                        	<img class="instant-safety-icon-holder" src="/assets/img/icon-spacer.gif" width="25px" alt="No Icon" title="No Icon"/>
+															{/if}
+															
+															{if {flags:selected option="Mobile"} }
+																{mobile-icon}
+															{if:elseif '{flags:selected option="Instant Safety Video"}' OR '{flags:selected option="5-Min Overview"}' }
+																<img class="mobile-icon-holder" src="/assets/img/icon-spacer.gif" width="12px" alt="No Icon" title="No Icon"/>
+															{/if}
+																
+															{if {flags:selected option="Multi-language"} }
+																{multi-language-icon}
+															{if:elseif '{flags:selected option="Mobile"}' OR '{flags:selected option="Instant Safety Video"}' OR '{flags:selected option="5-Min Overview"}' }
+																<img class="multi-language-icon-holder" src="/assets/img/icon-spacer.gif" width="22px" alt="No Icon" title="No Icon"/>
+															{/if}														
+														{if entry_id == "112" OR entry_id == "113" OR entry_id == "114" OR entry_id == "115"}
+																<span class="enroll-flag"><a href="{msha_enrollment}">Enroll Now</a></span>
+														{/if}		
+															</td>
+														</tr>
+												{/exp:channel:entries}
+											</table>
+											{if segment_3 == 'human-resources-compliance'}<p class="specialty-disclaimer" style="color:#898787; font-size: .7rem;padding: 0;margin: -1rem 0 0 0;border: none;">*Has separate pricing.</p>{/if}
+								{exp:channel:entries channel="course_library" limit="1"}
+									{course_banner_grid}
+										<a href="{course_banner_grid:banner_link}"><img style="padding:30px 0;" src="{course_banner_grid:banner}" alt="{course_banner_grid:banner_alt_text}" /></a>
+									{/course_banner_grid}
+								{/exp:channel:entries}
+							</div>
+							<aside class="medium-3 column">
+								<!--<h3>Course Libraries</h3>-->
+								<nav class="side-menu">
+
+									<ul id="nav-sub">
+									{exp:structure_entries parent="3" depth="1"}
+										{if {sibling_count} == 1}
+										<li class="first {if {current_page}}here{/if}"><a href="{page_url}" rel="nofollow">{title}</a></li>
+										{if:elseif {last_sibling} && {sibling_count} == {sibling_total}}
+										<li class="last {if {current_page}}here{/if}"><a href="{page_url}" rel="nofollow">{title}</a></li>
+										{if:else}
+										<li class="{if {current_page}}here{/if}"><a href="{page_url}" rel="nofollow">{title}</a></li>
+										{/if}
+										{/exp:structure_entries}										
+									</ul>
+
+								</nav>
+
+							</aside>
+						</div>
+					</div>
+					
+{embed="_includes/footer"}

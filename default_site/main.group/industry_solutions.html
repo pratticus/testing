@@ -1,0 +1,33 @@
+{embed="_includes/header"}
+{exp:structure:first_child_redirect}
+				<!-- main container of all the page elements -->
+				<main id="main">
+				{solutions_nav}
+					<div class="main-area">
+						<div class="row" id="twocolumns">
+							<aside class="medium-4 column" id="sidebar" style="padding-bottom:0;">
+								<nav class="side-menu">
+									{exp:structure:nav start_from="{segment_1}" max_depth="1" current_class="active"}
+								</nav>
+							</aside>
+							<div class="medium-8 column" id="content">
+								{exp:channel:entries channel="industry_solutions" limit="1"}
+									<h1>{title}</h1>
+									{industry_infosheet_grid}
+										<div class="sol_infosheet" style="background-image: url('{industry_infosheet_grid:image}');">
+											<a href="{industry_infosheet_grid:info_file}" target="_blank"><img src="{site_url}assets/img/download_icon.png" alt="View Infosheet" title="View Infosheet" />View Infosheet</a>
+										</div>
+									{/industry_infosheet_grid}
+									{industry_content}
+									
+								{/exp:channel:entries}								
+							</div>
+							<aside class="medium-4 column additional-sidebar">
+								{exp:channel:entries channel="industry_solutions" limit="1"}
+										<iframe name="Stack" width="100%" src="{industry_form_link}" frameborder="0" scrolling="no" id="ifrm" height="700" ></iframe>
+									{/exp:channel:entries}
+							</aside>
+						</div>
+					</div>
+{embed="_includes/footer"}
+<!-- industry_solutions -->

@@ -1,0 +1,164 @@
+{embed="_includes/header"}
+				<!-- main container of all the page elements -->
+				<main id="main">
+					{!--<div class="row bread">
+						<div class="medium-12 column">
+							{exp:structure:breadcrumb here_as_title="yes"}
+						</div>
+						<div class="medium-4 column">
+							<a href="/index.php/landing-pages/demo" class="button" style="margin:0 0 -20px 0;float: right;"><span><span>Need help? Request a demo.</span></span></a>
+						</div>
+					</div>--}
+					<!--<div class="row gallery">
+							<div class="medium-12 column">
+								{exp:channel:entries channel="{segment_3}-courses" limit="1"}
+									{course_images}
+                                    
+											{exp:ce_img:single src="{image}" max="1044" width="1044" height="400" crop="yes|center" attributes='class="blog_thumb" alt="{title}" '}
+										
+									{/course_images}
+								{/exp:channel:entries}
+							</div>
+					</div>-->
+                    
+                    <div class="row bread">
+						<div class="medium-8 column">
+							{exp:structure:breadcrumb here_as_title="yes"}
+                            
+						</div>
+						<div class="medium-4 column">
+							{!--<a href="/index.php/landing-pages/demo" class="button" style="margin:0 0 -20px 0;float: right;"><span><span>Need help? Request a demo.</span></span></a>--}
+						</div>
+					</div>
+                    
+					<div class="main-area">
+						<div class="row" id="twocolumns">
+							<div class="medium-8 column" id="content">
+								{exp:channel:entries channel="{segment_3}-courses" limit="1"}
+								
+									<h1>{title}</h1>
+									<h2>{course_sub_title}</h2>
+									
+									{!--{course_images}
+                                    {if image!=""}
+											{exp:ce_img:single src="{image}" max="700" width="700" height="300" crop="yes|center" attributes='class="course-header-image" alt="{title}" '}
+										{if:else}
+                                            {if member_group=="1"}
+                                            {exp:ce_img:pair src='https://d7upfscxn8nlk.cloudfront.net/acton/attachment/2931/f-05fc/1/-/-/-/-/maritime-lock-and-tag-online-safety-training-vivid-learning-systems.jpg' width='333' height='150' crop='yes|center,center|0,0|yes'}
+												TEST: {made}<img src="{made}" alt="" height="{height}" width="{width}" />
+											{/exp:ce_img:pair}
+                                            <img src="{image_url}" alt="{title}" /><br />
+                                            	{image_url}
+                                                {exp:ce_img:single src="{image_url}" max="1044" width="1044" height="400" crop="yes|center" attributes='class="blog_thumb" alt="{title}" '}
+                                            {/if}
+                                    {/if}
+									{/course_images}--}
+									{if video!=""}
+										{video}
+									{/if}
+									
+									
+									
+									{course_information}
+                                    
+                                 {course_information_part_2}   
+									{course_quote}
+										<hr />
+										<div class="course_quote">	
+											{course_quote}
+											<p><cite><strong>—{course_quote_auth}</strong>, {course_quote_co}</cite></p>
+										</div>
+										
+										<hr />
+									{/course_quote}
+									
+                                    {if ad !=""}
+                                        {ad}
+                                            <a href="{ad_url}"><img style="padding:30px 0;" src="{ad_image}" alt="ad_alt_text" /></a>
+                                        {/ad}
+                                     {/if}
+                                    
+								{/exp:channel:entries}
+								{if catalog!=""}
+									<a href="{catalog}"><img src="{site_url}assets/img/pdf_icon.png" /> Download catalog</a>
+								{/if}
+							</div>
+							<aside class="medium-4 column additional-sidebar">
+								{exp:channel:entries channel="{segment_3}-courses" limit="1"}
+									{if landing_page_url!="" || buy !=""}
+									<div class="row course_btns">
+										{if landing_page_url!=""}
+											<div class="medium-6 column">
+												<a href="{landing_page_url}" target="_blank" class="button"><span><span>Demo</span></span></a>
+											</div>
+										{/if}
+										{if buy!=""}
+											<div class="medium-6 column">
+												<a href="{buy}" class="button" target="_blank"><span><span>Buy</span></span></a>
+											</div>
+										{/if}
+                                    {!--{if member_group=="1" && video!=""}
+                                    	
+                                    	<div class="medium-6 column">
+												<a href="{landing_page_url}" target="_blank" class="button"><span><span>Video</span></span></a>
+											</div>
+                                    {/if}--}
+									</div>
+									{/if}
+									<div id="course_information">
+                                    
+										<p><strong>DURATION:</strong> {course_duration}</p>
+										<p><strong>LANGUAGES:</strong> {if language==""}English{if:else}English, {language}{/if}</p>
+                                        
+                                            {exp:ce_vars:alt_if parse="inward"}
+                                                {alt:if} '{flags:selected option="Mobile"}'{/alt:if}
+                                                    {exp:ce_vars:mobile}<p><strong>MOBILE DELIVERY</strong>: Available</p>{/exp:ce_vars:mobile}
+                                            {/exp:ce_vars:alt_if}
+                                            
+                                            {exp:ce_vars:alt_if parse="inward"}
+                                                {alt:if} '{flags:selected option="Instant Safety Video"}'{/alt:if}
+                                                    {exp:ce_vars:ISS}<p><strong>INSTANT SAFETY VIDEO</strong>: Available</p>{/exp:ce_vars:ISS}
+                                            {/exp:ce_vars:alt_if}
+                                            
+                                            {exp:ce_vars:alt_if parse="inward"}
+                                                {alt:if} '{flags:selected option="5-Min Overview"}'{/alt:if}
+                                                    {exp:ce_vars:5min}<p><strong>5-MIN OVERVIEW</strong>: Available</p>{/exp:ce_vars:5min}
+                                            {/exp:ce_vars:alt_if}
+                                            <div>{exp:ce_vars:get name="mobile"}</div><div>{exp:ce_vars:get name="ISS"}</div><div>{exp:ce_vars:get name="5min"}</div>
+                                            {if course_outline}
+											
+                                       
+											<h4>Course Outline</h4>
+											{course_outline}
+										{/if}
+										{if learning_objectives}
+											<h4>Learning Objectives</h4>
+											{learning_objectives}
+										{/if}
+										{if regulations}
+											<h4>Regulations</h4>
+											{regulations}
+										{/if}
+									</div>	
+								{/exp:channel:entries}
+								{!--<div class="row">
+									<div class="medium-12 column">
+										<div class="text-holder same-height-left" style="height: 186px; padding-top:25px;">
+										<blockquote style="border-left: 5px solid #ddd;">
+											<q>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis adipiscing gravida tempus.</q>
+											<cite><strong>Jane Smith</strong>, Intersoll Rand</cite>
+										</blockquote>
+									</div>
+								</div>
+								</div>--}
+                                
+                                
+								<div class="additional-posts">
+									<h2>Also on Vivid</h2>
+									{blog_sidebar}
+								</div>
+						</aside>
+						</div>
+					</div>
+					
+{embed="_includes/footer"}

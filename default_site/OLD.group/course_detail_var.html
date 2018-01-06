@@ -1,0 +1,88 @@
+{embed="_includes/header"}
+				<!-- main container of all the page elements -->
+				<main id="main">
+				<div class="row bread">
+						<div class="medium-8 column">
+							{exp:structure:breadcrumb inc_here="no"} »
+							{exp:channel:entries channel="{segment_3}-courses" limit="1"}
+								{categories limit="2"}
+								{if parent_id !=0}
+							      <a href="http://vividlearningsystems.com/index.php/solutions/courses/{segment_3}/{category_url_title}">{category_name}</a> » {/if}
+								{/categories}
+								<span class="last">{title}</span>
+								
+							{/exp:channel:entries}
+						</div>
+						
+						<div class="medium-4 column">
+							{exp:channel:entries channel="{segment_3}-courses" limit="1"}
+							{categories}
+								{if parent_id !=0}
+							      {if category_name=="MSHA Part 48 Surface New Miner Training"}
+							     	<a href="https://vividlearningsystems.com/part-48-purchase?namesource=LearnAtVivid&asset=Part%2048%20New%20Miner%20Sign%20Up&leadtype=MSHA&channel=Web&ao_campid=70150000000xlo1" class="button" style="margin:0;"><span><span>Buy Now</span></span></a>
+							     	{if:elseif category_name=="HACCP Manager"}
+                                 <a href="http://ondemand.vividlms.com/?utm_source=learnatvivid&utm_medium=website&utm_campaign=%20HACCP" class="button" style="margin:0;"><span><span>Buy Now</span></span></a>
+                                  {if:elseif segment_4=="prerequisites-to-haccp-operator" || segment_4=="biological-hazards-and-controls-operator" || segment_4=="chemical-hazards-and-controls-operator" || segment_4=="physical-hazards-and-control-operator" || segment_4=="initial-and-preliminary-tasks-operator" || segment_4=="hazard-analysis-operator" || segment_4=="critical-control-points-operators" || segment_4=="critical-limits-operators" || segment_4=="monitoring-critical-control-points-operators" || segment_4=="corrective-actions-operator" || segment_4=="verification-procedures-operator" || segment_4=="recordkeeping-operator"}
+                                             <a href="http://ondemand.vividlms.com/?utm_source=learnatvivid&utm_medium=website&utm_campaign=%20HACCP" class="button" style="margin:0;"><span><span>Buy Now</span></span></a>
+                                     {/if}
+							     {/if}
+                                
+								{/categories}
+								{/exp:channel:entries}
+                               {if segment_3!="osha-10-and-30"}
+										{if segment_3=="food-safety-haccp" || segment_3=="laboratory-safety" || segment_3=="healthcare" || segment_3=="transportation"}
+	            							<a href="https://vividlearningsystems.com/landing-pages/contact-msha-specialist?namesource=LearnAtVivid&leadtype=MSHA&asset=Contact%20MSHA%20Specialist&channel=Web&ao_campid=70150000001Cy3F" class="button" style="margin:0;"><span><span>Contact Us</span></span></a>
+                            			{if:else}
+											<a href="https://vividlearningsystems.com/landing-pages/contact-msha-specialist?namesource=LearnAtVivid&leadtype=MSHA&asset=Contact%20MSHA%20Specialist&channel=Web&ao_campid=70150000000dsqZ" class="button" style="margin:0;"><span><span>Contact Us</span></span></a>
+                                    {/if}
+                                    {/if}
+                            &nbsp;&nbsp;
+                            {if segment_3=="osha-10-and-30"}
+         							     <a href="http://ondemand.vividlms.com/?utm_source=learnatvivid&utm_medium=website&utm_campaign=OSHA%2010%2030" class="button" style="margin:0;"><span><span>Buy Now</span></span></a>
+                                 {/if}  
+						</div>
+                       
+					</div>
+					<div class="row gallery">
+						{exp:channel:entries channel="{segment_3}-courses" limit="1"}
+							{course_images}
+								{exp:ed_imageresizer
+											    image="{image}"
+											    maxWidth="1044"
+											    cropratio="1044:497"
+											    class="blog_thumb course_image"
+												alt="{image_description}"}
+							{/course_images}
+						{/exp:channel:entries}
+					</div>
+					
+					<div class="main-area" style="padding:0;">
+						<div class="row">
+							<div class="medium-8 column" id="content">
+								
+								{exp:channel:entries channel="{segment_3}-courses" limit="1"}
+									<h1>{title}</h1>
+									<p><strong>DURATION:</strong> {course_duration}</p>
+										<p><strong>LANGUAGES:</strong> {if language==""}English{if:else}English, {language}{/if}</p>
+										{if course_outline}
+											<h2>Course Outline</h2>
+											{course_outline}
+										{/if}
+										{if learning_objectives}
+											<h2>Learning Objectives</h2>
+											{learning_objectives}
+										{/if}
+										{if regulations}
+											<h2>Regulations</h2>
+											{regulations}
+										{/if}
+								{/exp:channel:entries}
+								{if catalog!=""}
+									
+									<a href="{catalog}"><img src="{site_url}assets/img/pdf_icon.png" /> Download catalog</a>
+								{/if}
+							</div>
+						</div>
+					</div>
+					
+{embed="_includes/footer"}

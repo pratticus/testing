@@ -1,0 +1,297 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<meta charset="utf-8">
+	<!--[if IE]><![endif]-->
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="white">
+	<!-- set the viewport width and initial-scale on mobile devices -->
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1, user-scalable=no">
+	<!--[if lt IE 9 ]>
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8">
+	<![endif]-->
+	{exp:channel:entries require_entry="yes"}
+	  {!--{if no_results}{redirect="404"}{/if}--}
+	    {exp:nsm_better_meta:template entry_id="{entry_id}"}
+	{/exp:channel:entries}
+{if segment_1=="roi"}
+	<link rel="canonical" href="https://vividlearningsystems.com/roi" />
+{/if}
+{if segment_2=="sign-up"}
+	<meta name="description" content="Looking for online safety training? Then you’re in the right place. Sign-up to see what we can do." />
+{if segment_2 == "sales_support" OR segment_2 == "engagement_survey" OR segment_2 == "industry_main"}
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="pragma" content="no-cache">
+{/if}	
+<title>Online Safety Training Courses at Vivid Learning Systems</title>
+{/if}
+	{if freebie_1==""}
+		{!-- Override the page title and hide the default site title --}
+		  {exp:nsm_better_meta:template
+		    title="Occupational Health and Safety Training | Vivid Learning Systems"
+		    hide_site_title = "y"
+		    description="Vivid Learning Systems is an online safety training company. Reduce accidents, advance OSHA compliance, and train your workforce faster."
+		  }
+	{/if}
+    
+       
+	<link rel="stylesheet" href="{url_toggle}assets/css/normalize.css" type="text/css">
+	<link rel="stylesheet" href="{url_toggle}assets/css/foundation.min.css" type="text/css">
+	<link rel="stylesheet" href="{url_toggle}assets/css/fancybox.css" type="text/css">
+	<link rel="stylesheet" href="{url_toggle}assets/css/lity.min.css" type="text/css">
+  	<link rel="stylesheet" href="{site_url}assets/css/all.css" type="text/css">
+   	
+   
+     <link rel="stylesheet" href="{url_toggle}assets/css/home-styles.css" type="text/css">
+	<link rel="stylesheet" href="{url_toggle}assets/css/osa.css" type="text/css">
+	<link rel="stylesheet" href="{url_toggle}assets/css/ewt.css" type="text/css">
+
+{if segment_1==""}
+	<link rel="stylesheet" href="{url_toggle}vcp/assets/css/vcp.css" type="text/css">
+	<style type="text/css">
+		.whyVividSubs{
+			text-align:center;
+		 	font-size:1.3rem;
+		 	margin:1.5rem 0;
+	 	}
+		.video{
+			background:#fff;
+		}
+	</style>
+{/if}
+
+	<link rel="stylesheet" href="{url_toggle}assets/css/content-hub.css" type="text/css">
+
+{if segment_1=="active-shooter"}
+	<link rel="stylesheet" href="{url_toggle}assets/active-shooter/css/slick.css" type="text/css">
+    <link rel="stylesheet" href="{url_toggle}assets/active-shooter/css/slick-theme.css" type="text/css">
+	<link rel="stylesheet" href="{url_toggle}assets/active-shooter/css/as.css" type="text/css">
+	<style type="text/css">
+	.video{
+		background:#fff;
+		}
+	</style>
+{/if}
+{if segment_2=="not-so-great-moments-in-safety"}
+<link rel="stylesheet" href="{url_toggle}assets/active-shooter/css/slick.css" type="text/css">
+    <link rel="stylesheet" href="{url_toggle}assets/active-shooter/css/slick-theme.css" type="text/css">
+{/if}
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	
+<!-- VIMEO -->
+	<style type="text/css">
+		.embed-container 
+		{ 
+			position: relative; 
+			padding-bottom: 56.25%; 
+			height: 0; 
+			overflow: hidden; 
+			max-width: 100%; 
+		} 
+		.embed-container iframe, .embed-container object, .embed-container embed 
+		{ 
+			position: absolute; 
+			top: 0; 
+			left: 0; 
+			width: 100%; 
+			height: 100%;
+		}
+	</style>
+
+	{if segment_1 == 'pricing'}<link rel="stylesheet" href="{url_toggle}assets/css/pricing.css" type="text/css">{/if}
+	
+	{if segment_1 == 'courses' OR segment_2 == 'courses'}<link rel="stylesheet" href="{url_toggle}assets/css/courses.css" type="text/css">{/if}
+	
+	{if segment_2 == 'sales_support'}<link rel="stylesheet" href="{url_toggle}assets/css/sales_support.css" type="text/css">{/if}
+	
+	{if segment_2 == 'engagement_survey'}<link rel="stylesheet" href="{url_toggle}assets/css/engagement_survey.css" type="text/css">{/if}
+	
+		{if segment_2 == 'industry_main'}<link rel="stylesheet" href="{url_toggle}assets/css/industry_main.css" type="text/css">{/if}
+	
+	{if segment_1 == "new_blog" OR segment_1 == "blog"}
+	<link rel="stylesheet" href="{url_toggle}assets/css/blog.css">
+	{/if}
+	
+	{if segment_1 == "search"}
+	<link rel="stylesheet" href="{url_toggle}assets/css/search.css" type="text/css">
+	{/if}
+	
+	<!-- RSS Syndication Links -->
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="https://vividlearningsystems.com/main/blog_rss" />
+
+	<!-- Favicon Link -->
+	<link rel="shortcut icon" href="{url_toggle}favicon.png">
+
+	<!-- include modernizr JavaScript -->
+	    <!--<script async src="/assets/js/vendor/modernizr.js"></script>
+
+        <!--[if lt IE 9]>
+		<link rel="stylesheet" href="{site_url}assets/css/ie.css" media="screen">
+	<![endif]-->
+
+
+	<!-- Start Visual Website Optimizer Asynchronous Code -->
+	<script type='text/javascript'>
+	var _vwo_code=(function(){
+	var account_id=262565,
+	settings_tolerance=2000,
+	library_tolerance=2500,
+	use_existing_jquery=false,
+	// DO NOT EDIT BELOW THIS LINE
+	f=false,d=document;return{use_existing_jquery:function(){return use_existing_jquery;},library_tolerance:function(){return library_tolerance;},finish:function(){if(!f){f=true;var a=d.getElementById('_vis_opt_path_hides');if(a)a.parentNode.removeChild(a);}},finished:function(){return f;},load:function(a){var b=d.createElement('script');b.src=a;b.type='text/javascript';b.innerText;b.onerror=function(){_vwo_code.finish();};d.getElementsByTagName('head')[0].appendChild(b);},init:function(){settings_timer=setTimeout('_vwo_code.finish()',settings_tolerance);var a=d.createElement('style'),b='body{opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;}',h=d.getElementsByTagName('head')[0];a.setAttribute('id','_vis_opt_path_hides');a.setAttribute('type','text/css');if(a.styleSheet)a.styleSheet.cssText=b;else a.appendChild(d.createTextNode(b));h.appendChild(a);this.load('//dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(d.URL)+'&r='+Math.random());return settings_timer;}};}());_vwo_settings_timer=_vwo_code.init();
+	</script>
+	<!-- End Visual Website Optimizer Asynchronous Code -->
+</head>
+
+<body class="{if segment_1 == 'solutions'}sols{/if}">
+
+	<!-- Google Tag Manager -->
+	<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-TWV373"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-TWV373');</script>
+	<!-- End Google Tag Manager -->
+
+
+	<div class="off-canvas-wrap mobile-nav-canvas" data-offcanvas>
+		<div class="inner-wrap">
+			<!-- mobile main navigation -->
+			<aside class="mobile-nav-panel right-off-canvas-menu">
+				<div class="panel-holder">
+					<nav>
+						<ul>
+								<li><a id="ga-mobilenav-home" href="{site_url}">Home</a></li>
+								<li><a id="ga-mobilenav-why-vivid" href="{site_url}safety-toolbox">Safety Toolbox</a></li>
+								<li><a id="ga-mobilenav-solutions" href="{site_url}solutions">Solutions</a>
+									{!--<ul>
+										<li>Test</li>
+									</ul>--}
+								</li>
+								<li><a id="ga-mobilenav-case-studies" href="{site_url}pricing">Pricing</a></li>
+								<li><a id="ga-mobilenav-blog" href="{site_url}faqs">FAQs</a></li>
+							</ul>
+					</nav>
+				</div>
+			</aside>
+			<div class="page">
+				<!-- header of the page -->
+				<header id="header">
+					<!-- top panel -->
+					<div class="top-panel">
+						<div class="row">
+							<div class="large-12 columns">
+								<!--<strong class="hide-for-small-only ico-logo">Vivid learning systems</strong>-->
+								<ul class="links">
+									<li><a id="ga-header-safety-toolbox" href="{site_url}blog">Blog</a></li>
+									<li><a id="ga-header-faqs" href="{site_url}faqs">FAQs</a></li>
+									<!--<li><a id="ga-header-resources" href="{site_url}resources">Resources</a></li>-->
+									<!--<li><a id="ga-header-demos" href="{site_url}demos?namesource=Top%20Navigation%20Referral&leadtype=MQL&channel=Demo%20Download&ao_campid=70150000000xmET">Preview Our Courses</a></li>-->
+								</ul>
+								<div class="links-holder">
+									{if segment_1 =='utilities-course-of-the-month'}<a id="ga-header-telephone" href="tel:18448845269" onclick="_gaq.push(['_trackEvent','Click-to-Call','COTM EWT Header','844-884-5269']);" class="tel">1-844-884-5269</a>{if:else}<a id="ga-header-telephone" href="tel:18009560333" onclick="_gaq.push(['_trackEvent','Click-to-Call','Header','800-956-0333']);" class="tel">1-800-956-0333</a>{/if}
+									<ul class="links">
+										{!--<li><a id="ga-header-demo" href="https://vividlearningsystems.com/pricing?namesource=LearnAtVivid&asset=Price%20Quote%20Request &leadtype=MQL&channel=Web&ao_campid=70150000000xzqD">Pricing</a></li>--}
+										{!--<li class="hide-for-small-only login"><a href="https://www.vividlearningsystems.com/site/login/">Login</a></li>--}
+                                    
+				{!--
+                                    	<li><a id="ga-header-knowledgebase" href="{site_url}knowledge-base">KnowledgeBase</a></li>
+
+                                    --}
+
+										<li><input type="button" class="button" id="logInBtn" value="Log In" onClick="window.location='/login';" /></li>
+                                    
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- header area -->
+					<div class="header-holder">
+						<div class="row">
+							<div class="large-12 columns">
+								<div class="holder">
+									<strong class="logo"><a id="ga-nav-logo" href="{site_url}">Vivid learning systems</a></strong>
+									<nav class="hide-for-small-only drop">
+										<ul>
+											
+											<li><a id="ga-nav-courses" {if segment_1=="courses"}class="active_nav"{/if} href="{site_url}courses">Courses</a></li>
+											<li><a id="ga-nav-lms" {if segment_1==""}class="active_nav"{/if} href="{site_url}solutions/safety-training-systems">Training System (LMS)</a></li>
+											<li><a id="ga-nav-case-studies" {if segment_1=="pricing"}class="active_nav"{/if} href="{site_url}pricing">Pricing</a></li>
+											<li><a id="ga-nav-industries" {if segment_1=="industries"}class="active_nav"{/if} href="{site_url}solutions">Industries</a></li>
+											<li><a id="ga-nav-safety-toolbox" {if segment_1=="safety-toolbox"}class="active_nav"{/if} href="{site_url}safety-toolbox">Safety Toolbox</a></li>
+											
+											<!--<li><a id="ga-nav-case-faqs" {if segment_1=="faqs"}class="active_nav"{/if} href="{site_url}faqs">FAQs</a></li>											
+											
+											
+											<ul class="dropdown"> 
+													<li><a id="ga-nav-solutions-courses" href="{site_url}solutions/courses ">Courses &#9656;</a> 
+                                                    	<ul> 
+                                                        	<li><a id="ga-nav-solutions-on-demand-courses-osha" href="{site_url}solutions/courses/osha/">OSHA</a></li> 
+                                                            <li class="third"><a id="ga-nav-solutions-on-demand-courses-msha" href="{site_url}solutions/courses/msha/">MSHA &#9656;</a>
+                                                                		
+																<ul>
+																	<li><a id="ga-nav-solutions-on-demand-courses-msha-part46-new-miner" href="{site_url}landing-pages/msha-part-46-new-miner-online-training-sign-up?namesource=LearnAtVivid&leadtype=MSHA&channel=Web&ao_campid=70150000000dsqK">Part 46 New Miner</a></li>
+																	<li><a id="ga-nav-solutions-on-demand-courses-msha-part46-refresher" href="{site_url}landing-pages/msha-part-46-refresher-online-training-sign-up?namesource=LearnAtVivid&leadtype=MSHA&channel=Web&ao_campid=70150000000dsqU">Part 46 Refresher</a></li>
+																	<li><a id="ga-nav-solutions-on-demand-courses-msha-part-48-new-miner" href="{site_url}part-48-purchase?namesource=LearnAtVivid&leadtype=MSHA&channel=Web&ao_campid=70150000000xlo1">Part 48 New Miner</a></li>
+																	<li><a id="ga-nav-solutions-on-demand-courses-msha-part-48-refresher" href="{site_url}landing-pages/msha-part-48-refresher-online-training-sign-up?namesource=LearnAtVivid&leadtype=MSHA&channel=Web&ao_campid=70150000000dsqP">Part 48 Refresher</a></li>
+																</ul>
+
+                                                            </li> 
+															<li><a id="ga-nav-solutions-on-demand-courses-electric-utilities" href="{site_url}solutions/courses/electric-utilities/">Electric Utilities</a></li> 
+															<li><a id="ga-nav-solutions-on-demand-courses-nfpa-70e" href="{site_url}solutions/courses/nfpa-70e/">NFPA 70E</a></li>
+															<li><a id="ga-nav-solutions-on-demand-courses-human-resources" href="{site_url}solutions/courses/human-resources-compliance/">Human Resources</a></li>                                                                
+															<li><a id="ga-nav-solutions-on-demand-courses-environmental-management" href="{site_url}solutions/courses/environmental-management/">Environmental Management</a></li>
+															<li><a id="ga-nav-solutions-on-demand-courses-construction" href="{site_url}solutions/courses/construction-safety/">Construction</a></li>
+															<li><a id="ga-nav-solutions-on-demand-courses-osha-10-30" href="{site_url}solutions/courses/osha-10-and-30/">OSHA 10 &amp; 30</a></li>
+															<li><a id="ga-nav-solutions-on-demand-courses-hazwoper" href="{site_url}solutions/courses/hazwoper/">HAZWOPER</a></li>
+															<li><a id="ga-nav-solutions-on-demand-courses-higher-education" href="{site_url}solutions/courses/higher-education/">Higher Education</a></li>
+															<li><a id="ga-nav-solutions-on-demand-courses-transportation" href="{site_url}solutions/courses/transportation/">Transportation</a></li>
+															<li><a id="ga-nav-solutions-on-demand-courses-food-safety" href="{site_url}solutions/courses/food-safety-haccp/">Food Safety</a></li>
+															<li><a id="ga-nav-solutions-on-demand-courses-canadian-hs" href="{site_url}solutions/courses/canadian-safety-health/">Canadian H&amp;S</a></li>
+															<li><a id="ga-nav-solutions-on-demand-courses-healthcare" href="{site_url}solutions/courses/healthcare/">Healthcare</a></li> 
+														</ul>
+                                                        </li>
+													
+                                                  
+                                                    
+													<li><a id="ga-nav-solutions-safety-training-systems" href="{site_url}solutions/safety-training-systems" style="line-height: 1;">Safety Training System (LMS)</a></li> 
+													<li><a id="ga-nav-solutions-custom-training" href="{site_url}solutions/custom-training">Custom Training</a></li> 
+													<li><a id="ga-nav-solutions-contractor-program" href="{site_url}solutions/contractor-program">Contractor Program</a></li>
+                                                    
+                                                    <li><a id="ga-nav-solutions-solutions-by-industry" href="#" rel="nofollow">Solutions by Industry &#9656;</a>
+														<ul> 
+															<li><a id="ga-nav-solutions-solutions-by-industry-colleges-universities" href="{site_url}solutions/solutions-by-industry/colleges-universities/">Colleges & Universities</a></li> 
+															<li><a id="ga-nav-solutions-solutions-by-industry-electric-utilities" href="{site_url}solutions/solutions-by-industry/electric-utilities/">Electric Utilities</a></li> 
+															<li><a id="ga-nav-solutions-solutions-by-industry-food-processing" href="{site_url}solutions/solutions-by-industry/food-processing/">Food Processing</a></li> 
+															<li><a id="ga-nav-solutions-solutions-by-industry-general-industry" href="{site_url}solutions/solutions-by-industry/general-industry/">General Industry</a></li>
+															<li><a id="ga-nav-solutions-solutions-by-industry-government" href="{site_url}solutions/solutions-by-industry/government/">Government</a></li> 
+															<li><a id="ga-nav-solutions-solutions-by-industry-mining" href="{site_url}solutions/solutions-by-industry/mining">Mining</a></li> 
+														</ul>
+													</li>
+                                                    
+                                                    <li><a id="ga-nav-solutions-instant-safety-videos" href="{site_url}solutions/safety-toolbox-videos?namesource=Internet%20Search&leadtype=MSHA&channel=Web&ao_campid=70150000000xm4n ">Safety Toolbox Videos</a></li>
+                                                    						</ul> -->
+
+										</ul>
+									</nav>
+									<a id="ga-nav-menu-toggle" href="#" rel="nofollow" class="right-off-canvas-toggle nav-opener" >Menu</a>
+								</div>
+								<!-- search form -->
+								<!--<div class="search-panel">
+									
+                                    {exp:low_search:form result_page="search/results-low" form_class="search-form"}
+										<fieldset>
+											<input type="search" name="keywords" id="keywords" value="Search" size="18" maxlength="100" onFocus="this.value='', this.className='focus'" class="search_input" />
+											<input type="submit" value="GO" class="button">
+										</fieldset>                                    
+								    {/exp:low_search:form}
+                                    
+								</div>-->
+							</div>
+						</div>
+					</div>
+				</header>

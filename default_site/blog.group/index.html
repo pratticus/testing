@@ -1,0 +1,51 @@
+<!-- new_blog/index/ -->
+{embed="_includes/header"}
+				<main id="main" class="blog">
+					<section id="latest-most-popular">
+						<div class="row">
+							<article>
+							{exp:channel:entries channel="blog" dynamic="off" orderby="date" limit="1" category="not 106|107"}
+							{blog_image_grid}
+								<img src="{blog_image_grid:blog_image}" alt="{blog_image_grid:alt_text}" title="{blog_image_grid:alt_text}" />
+							{/blog_image_grid}
+							<span><h6>Latest Entry</h6></span>
+								<h2><a href="{page_url}">{title}</a></h2>
+							{/exp:channel:entries}
+							</article>
+							<div class="sidebar">
+								<h4>Most Popular</h4>
+								<ol>
+								{exp:channel:entries channel="blog" dynamic="off" limit="5" orderby="view_count_four"}
+								<li><a href="{page_url}">{title}</a></li>
+								{/exp:channel:entries}
+								</ol>
+							</div>
+						</div>
+					</section>
+
+					<section id="from-the-cso">
+						<div class="row">
+					<h4>From the desk of Jill James</h4>
+					{exp:channel:entries channel="blog" dynamic="off" category="106" limit="2"}
+					<item>
+						<h3><a href="{page_url}">{title}</a></h3>
+							<p>{exp:conditionaltrunchtml basedontext="{title}" maxlengths="50|105" charstolimits='200|150' defaultchars="200" inline="..."}
+							{exp:tagstripper:stripAllTags}
+							{blog_content}
+							{/exp:tagstripper:stripAllTags}
+							{/exp:conditionaltrunchtml}</p>
+							<p><a class="read-more" href="{page_url}">Read the full article</a></p>
+					</item>
+					{/exp:channel:entries}
+						</div>
+					</section>
+					<section id="post-grid">
+					<div class="loader">
+						<svg class="circular" viewBox="25 25 50 50">
+							<circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+						</svg>
+					</div>
+					</section>
+
+{embed="_includes/footer"}
+<script src="{site_url}assets/js/blog-script.js" type="text/javascript"></script>

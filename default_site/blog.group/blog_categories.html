@@ -1,0 +1,43 @@
+{embed="_includes/header"}
+				<main id="main" class="blog">
+					<div class="main-area" style="padding-top: 3.5625rem;">
+						<div class="row" id="twocolumns">
+							<div class="medium-8 column">
+								<h1>Featured Posts</h1>
+								{exp:channel:entries channel="blog" limit="3" dynamic="off"}
+									{if featured_post=="Yes"}
+										<div class="medium-6 column">
+											<a href="{page_url}">{exp:ed_imageresizer
+											    image="{blog_image}{blog_image}"{/blog_image}"
+											    default=""/images/site/image_coming_soon.jpg"
+											    maxWidth="325"
+											    cropratio="325:160"
+											    class="myimgclass"
+												alt="{title}"
+												title="{title}"}</a>
+												<a href="{page_url}"><h4>{title}</h4></a>
+										</div>
+									{/if}
+								{/exp:channel:entries}
+								<hr style="margin:2rem 0;"/>
+								{exp:channel:entries channel="blog" limit="4" paginate="bottom" dynamic="off" category="{segment_4_category_id}"}
+								
+								    <div class="medium-12 column blog_feed">
+									    {exp:ce_img:single src="{blog_image}{blog_image}{/blog_image}" max="200" width="200" height="100" crop="yes|center" attributes='class="blog_thumb" alt="{title}" title="{title} '}
+								      <a href="{url_title_path='blog/blog_post'}"><h5>{title}</h5></a>
+								      {exp:trunchtml chars="100" inline="<a href='{page_url}'>...read more</a>"}{blog_content}{/exp:trunchtml}
+								    </div>
+								    {paginate}
+								    	<p class="paginate">Page {current_page} of {total_pages} pages {pagination_links}</p>
+								    {/paginate}
+							    {/exp:channel:entries}
+							</div>
+							<div class="medium-4 column">
+																	
+								{categories_sidebar}
+
+							</div>
+						</div>
+						
+					</div>
+{embed="_includes/footer"}

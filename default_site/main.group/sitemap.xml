@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+  <loc>https://vividlearningsystems.com</loc>
+  <lastmod>{current_time format="%Y-%m-%dT06:00:00+00:00"}</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>1</priority>
+</url>
+{exp:channel:entries channel="canadian-safety-health-courses|construction-safety-courses|course_library|electric-utilities-courses|human-resources-compliance-courses|environmental-management-courses|food-safety-haccp-courses|hazwoper-courses|healthcare-courses|higher-education-courses|msha-courses|nfpa-70e-courses|osha-courses|osha-10-and-30-courses|safety_training_courses|transportation-courses" status="open" limit="1600"}<url>
+  <loc>{page_url}</loc>
+  <lastmod>{edit_date format="%Y-%m-%dT06:00:00+00:00"}</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.9</priority>
+</url>{/exp:channel:entries}
+{exp:channel:entries channel="basic_page" status="open" entry_id="45"}
+<url>
+  <loc>{page_url}</loc>
+  <lastmod>{edit_date format="%Y-%m-%dT06:00:00+00:00"}</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.9</priority>
+</url>{/exp:channel:entries}
+{exp:channel:entries channel="blog" status="open" limit="1600"}
+<url>
+  <loc>{page_url}</loc>
+  <lastmod>{edit_date format="%Y-%m-%dT06:00:00+00:00"}</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.9</priority>
+</url>{/exp:channel:entries}
+<url>
+  <loc>https://vividlearningsystems.com/training-needs-assessment/</loc>
+  <lastmod>{current_time format="%Y-%m-%dT06:00:00+00:00"}</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.8</priority>
+</url>
+{exp:channel:entries channel="basic_page" status="open" entry_id="1429|1417|1416|1415|1414"}
+<url>
+  <loc>{page_url}</loc>
+  <lastmod>{edit_date format="%Y-%m-%dT06:00:00+00:00"}</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.8</priority>
+</url>{/exp:channel:entries}
+{exp:channel:entries channel="landing_page" status="open" limit="2000" entry_id="not 16|17|20|37|356|501|504|543|611|625|653|695|778|788|791|1080|1094|1122|1157|1218|1220|1300|1303|1305|1317|1318|1319|1320|1321|1328|1329|1330|1332|1337|1496|1497|1505|1573|1709"}
+<url>
+  <loc>{page_url}</loc>
+  <lastmod>{edit_date format="%Y-%m-%dT06:00:00+00:00"}</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.8</priority>
+</url>{/exp:channel:entries}
+{exp:channel:entries channel="basic_page" status="open" entry_id="1407"}
+<url>
+  <loc>{page_url}</loc>
+  <lastmod>{edit_date format="%Y-%m-%dT06:00:00+00:00"}</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.7</priority>
+</url>{/exp:channel:entries}
+<url>
+  <loc>https://vividlearningsystems.com/pricing/</loc>
+  <lastmod>{current_time format="%Y-%m-%dT06:00:00+00:00"}</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.7</priority>
+</url>
+{exp:channel:entries channel="case_studies" status="open"}
+<url>
+  <loc>{page_url}</loc>
+  <lastmod>{edit_date format="%Y-%m-%dT06:00:00+00:00"}</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.7</priority>
+</url>{/exp:channel:entries}
+{exp:channel:entries channel="industry_solutions" status="open"}
+<url>
+  <loc>{page_url}</loc>
+  <lastmod>{edit_date format="%Y-%m-%dT06:00:00+00:00"}</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.7</priority>
+</url>{/exp:channel:entries}
+{exp:channel:entries channel="safety_training_systems" status="open"}
+<url>
+  <loc>{page_url}</loc>
+  <lastmod>{edit_date format="%Y-%m-%dT06:00:00+00:00"}</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.7</priority>
+</url>{/exp:channel:entries}
+{exp:channel:entries channel="demos" status="open" limit="1600"}
+<url>
+  <loc>{page_url}</loc>
+  <lastmod>{edit_date format="%Y-%m-%dT06:00:00+00:00"}</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.6</priority>
+</url>{/exp:channel:entries}
+{exp:channel:entries channel="custom_training" status="open"}
+<url>
+  <loc>{page_url}</loc>
+  <lastmod>{edit_date format="%Y-%m-%dT06:00:00+00:00"}</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.6</priority>
+</url>{/exp:channel:entries}
+{exp:channel:entries channel="contractor_program" status="open"}
+<url>
+  <loc>{page_url}</loc>
+  <lastmod>{edit_date format="%Y-%m-%dT06:00:00+00:00"}</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.5</priority>
+</url>{/exp:channel:entries}
+{exp:channel:entries channel="not_so_great_moments" status="open"}
+<url>
+  <loc>{page_url}</loc>
+  <lastmod>{edit_date format="%Y-%m-%dT06:00:00+00:00"}</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.5</priority>
+</url>{/exp:channel:entries}
+{exp:channel:entries channel="basic_page" status="open" entry_id="2|38|99|100|101|102"}
+<url>
+  <loc>{page_url}</loc>
+  <lastmod>{edit_date format="%Y-%m-%dT06:00:00+00:00"}</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.4</priority>
+</url>{/exp:channel:entries}
+{exp:channel:entries channel="basic_page" status="open" entry_id="1126"}
+<url>
+  <loc>{page_url}</loc>
+  <lastmod>{edit_date format="%Y-%m-%dT06:00:00+00:00"}</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.4</priority>
+</url>{/exp:channel:entries}
+{exp:channel:entries channel="faqs" status="open"}
+<url>
+  <loc>{page_url}</loc>
+  <lastmod>{edit_date format="%Y-%m-%dT06:00:00+00:00"}</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.4</priority>
+</url>{/exp:channel:entries}
+{exp:channel:entries channel="team" status="open"}
+<url>
+  <loc>{page_url}</loc>
+  <lastmod>{edit_date format="%Y-%m-%dT06:00:00+00:00"}</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.3</priority>
+</url>{/exp:channel:entries}
+</urlset>

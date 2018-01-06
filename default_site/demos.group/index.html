@@ -1,0 +1,21 @@
+<?php
+$cookie_name = "demo";
+if(isset($_COOKIE[$cookie_name])) {
+    header('Location: https://vividlearningsystems.com/demos/library');
+exit();
+}
+else
+{
+header('Location: https://vividlearningsystems.com/demos/sign-up');
+exit();
+}
+
+?>
+{!--<h1>Demos!</h1>
+
+<ul>
+{exp:channel:entries channel="demos"}
+<li><a href="page_url">{title}</a></li>
+
+{/exp:channel:entries}
+</ul>--}

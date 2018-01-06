@@ -1,0 +1,93 @@
+<?php
+/*$cookie_name = "demo";
+if(!isset($_COOKIE[$cookie_name])) {
+    header('Location: https://dev.vividlearningsystems.com/demos/sign-up');
+exit();
+}*/
+
+?>
+{embed="_includes/header"}
+	<!-- main container of all the page elements -->
+	<main id="main">
+		<div class="row bread">
+			<div class="medium-12 column">
+				<a href="{site_url}">Home</a> &raquo; 
+				<a href="{site_url}demos/library">Demo Library</a> &raquo; 
+				<span class="last">{exp:channel:entries channel="landing_page|demos" limit="1"}{title}{/exp:channel:entries}</span>
+			</div>
+		</div>
+		<div class="main-area">
+			<div class="row" style="padding-top:20px;">
+				<div class="medium-8 column" id="content">
+					{if segment_1 == "safety-toolbox"}
+						<p><a href="/safety-toolbox/">&lt; Back to Safety Toolbox</a></p>
+					{/if}
+
+					{exp:channel:entries channel="landing_page|demos" limit="1"}
+						<h1>{title}</h1>
+						<h2>{landing_page_subtitle}</h2>
+						{wistia}
+						{page_content}
+	
+						{if visually!=""}
+							{visually}
+						{/if}
+					
+						{related_course_detail_page}
+							<h2><a href="{related_course_detail_page:page_url}">Click here for more information about this course!</a></h2>
+						{/related_course_detail_page}
+
+					{/exp:channel:entries}
+
+					{if segment_1 == "safety-toolbox"}
+						<div class="row"><br /><br />
+						<ul class="small-block-grid-5" style="line-height: normal;">	
+							<li class="text-center">
+								<a href="https://twitter.com/share" class="twitter-share-button" data-url="{exp:channel:entries}{page_url}{/exp:channel:entries}?utm_source=twitter&utm_medium=social-share&utm_campaign=safety-toolbox/" data-via="learnatvivid" data-size="small" data-count="none">Share</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+							</li>
+							<li class="text-center">
+								<div class="fb-share-button" data-href="{exp:channel:entries}{page_url}{/exp:channel:entries}?utm_source=facebook&utm_medium=social-share&utm_campaign=safety-toolbox/" data-layout="button"></div>
+							</li>
+							<li class="text-center">
+								<!-- Place this tag where you want the share button to render. -->
+								<div class="g-plus" data-action="share" data-annotation="none" data-href="{exp:channel:entries}{page_url}{/exp:channel:entries}?utm_source=google-plus&utm_medium=social-share&utm_campaign=safety-toolbox/"></div>
+							</li>
+							<li class="text-center">
+								<script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
+								<script type="IN/Share" data-url="{exp:channel:entries}{page_url}{/exp:channel:entries}?utm_source=linkedin&utm_medium=social-share&utm_campaign=safety-toolbox/"></script>
+							</li class="text-center">
+							<li class="text-center">
+								<a href="mailto:?subject=I think you’d find this useful!&body=I found this great Safety Toolbox Tip to help promote safety awareness in the workplace. Check it out!%0D%0A%0D%0A{exp:channel:entries}{exp:url_encode}{page_url}{/exp:url_encode}{/exp:channel:entries}?utm_source=email%26utm_medium=personal-email%26utm_campaign=safety-toolbox" style="background-color: none;" class="fa fa-envelope fa-lg"> Email</a>
+							</li>
+						</ul>
+					</div>
+				{/if}
+			</div>
+							
+			<aside class="medium-4 column right-sidebar">
+				{exp:channel:entries channel="landing_page|demos" limit="1"}
+					{if segment_1 !="safety-toolbox"}        
+						{if form_header!=""}
+							<div style="padding-left:35px;">{form_header}</div>
+						{/if} 
+						
+						{if acton_image_asset !=""}
+							{acton_image_asset}
+								<img src="{acton_image_asset:ao_image_url}" alt="{acton_image_asset:ao_image_alt_tag}" title="{acton_image_asset:ao_image_alt_tag}" style="width:100%;" />
+							 {/acton_image_asset}
+						{/if}
+				
+						{if acton_demo_media_link!=""}
+							<p><a href="{acton_demo_media_link}" class="button" target="_blank" style="display: block; margin-left: auto; margin-right: auto; width: 305px; font-size: 1.75rem;">Start Preview ▸</a></p>
+						{/if}
+
+						<p><a href="{site_url}demos/?namesource=Demo%20Page%20Referral&leadtype=MQL&channel=Demo%20Download&ao_campid=70150000000xmET" class="button blue" style="display: block; margin-left: auto; margin-right: auto; width: 305px; font-size: 1.75rem;">More Previews ▸</a></p>
+					{/if}
+				{/exp:channel:entries}
+			</aside>	
+		</div>
+	</div>
+
+	<!-- Place this tag in your head or just before your close body tag. -->
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
+{embed="_includes/footer"}

@@ -1,0 +1,182 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+	<!-- set the encoding of your site -->
+	<meta charset="utf-8">
+	<!-- set the viewport width and initial-scale on mobile devices -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--[if (IE)&(lt IE 9) ]>
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8">
+	<![endif]-->
+	<!--[if (IE)&(gt IE 8) ]>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<![endif]-->
+	<!-- include the normalize stylesheet -->
+	<link rel="stylesheet" href="{site_url}assets/css/normalize.css">
+	<!-- include the Foundation stylesheet -->
+	<link rel="stylesheet" href="{site_url}assets/css/foundation.min.css">
+	<!-- include the facnybox stylesheet -->
+	<link rel="stylesheet" href="{site_url}assets/css/fancybox.css">
+	<!-- include the site stylesheet -->
+	<link rel="stylesheet" href="{site_url}assets/css/all.css">
+	<link rel="shortcut icon" href="favicon.png">
+	<!-- include modernizr JavaScript -->
+	<script src="{site_url}assets/js/vendor/modernizr.js"></script>
+	<!--[if lt IE 9]>
+		<link rel="stylesheet" href="{site_url}assets/css/ie.css" media="screen">
+	<![endif]-->
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+	<div class="off-canvas-wrap mobile-nav-canvas" data-offcanvas>
+		<div class="inner-wrap">
+			<!-- mobile main navigation -->
+			<div class="mobile-nav-panel right-off-canvas-menu">
+				<div class="panel-holder">
+					<nav>
+						<ul>
+							<li><a href="/index.php/">Home</a></li>
+							<li><a href="/index.php/why-vivid">Why Vivid</a></li>
+							<li>
+								<a href="/index.php/solutions">Solutions</a>
+							</li>
+							<li><a href="/index.php/case-studies">Case Studies</a></li>
+							<li><a href="/index.php/blog">Blog</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+			<div class="page">
+				<!-- header of the page -->
+				<header id="header">
+					<!-- top panel -->
+					<div class="top-panel" style="background-color:#009bde;">
+						<div class="row">
+							<div class="large-12 columns">
+								<span style="color:white;float:left;">Welcome to the Knowledge Base | <a style="color:white;" href="{path='logout'}">Log Out</a></span>								</div>
+							</div>
+						</div>
+					</div>
+					<!-- header area -->
+					<div class="kb_nav header-holder">
+						<div class="row">
+							<div class="large-12 columns">
+								<div class="holder">
+									<strong class="logo"><a href="/index.php">VIVID learning systems</a></strong>
+									<nav id="nav" class="hide-for-small-only">
+										<ul>
+											{exp:channel:category_archive channel="knowledge_base" style="linear" show_empty="yes"}
+											
+										         {categories}
+										            <li><a href="/knowledge-base/category/{category_url_title}"{if freebie_3 == category_url_title} class="active_nav"{/if}>{category_name}</a></li>
+										         {/categories}
+										    {/exp:channel:category_archive}
+										    <li><a href="http://vlssp/Sales/Marketing/default.aspx" target="_blank">SharePoint</a></li>
+										</ul>
+									</nav>
+									<a href="#" class="right-off-canvas-toggle nav-opener" >Menu</a>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+				</header>
+				<!-- main container of all the page elements -->
+				<main id="main">
+					<div class="main-area kb">
+
+							<div class="row">
+								<div class="medium-8 column">
+									<h1>Knowledge Base</h1>
+								</div>
+
+							</div>
+								
+								<div class="row">
+									<div class="large-4 medium-4 column">
+										{exp:member:login_form return="knowledge-base/category/branded-assets"}
+										  <p>
+										    <label>Username</label>
+										    <input type="text" name="username" value="" maxlength="32" size="25">
+										  </p>
+										  <p>
+										    <label>Password</label>
+										    <input type="password" name="password" value="" maxlength="32" size="25">
+										  </p>
+										  {if auto_login}
+										    <p><input type="checkbox" name="auto_login" value="1"> Auto-login on future visits</p>
+										  {/if}
+										
+										  <p><input type="checkbox" name="anon" value="1" checked="checked"> Show my name in the online users list</p>
+										  <p><input type="submit" name="submit" value="Submit"></p>
+										  <p><a href="{path='member/forgot_password'}">Forgot your password?</a></p>
+										{/exp:member:login_form}
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+<!-- contact section -->
+					
+				</main>
+				<!-- footer of the page -->
+				<footer id="footer" style="color:orange;">
+					<div class="row footer-area">
+						<!-- footer navigation -->
+						<div class="large-3 column show-for-large-up">
+							
+						</div>
+						<div class="large-4 medium-5 column">
+							
+						</div>
+						<div class="large-5 medium-7 column">
+						</div>
+					</div>
+					<div class="row">
+						
+					</div>
+				</footer>
+				
+				
+			</div>
+			<!-- close the off-canvas menu -->
+			<a class="exit-off-canvas"></a>
+		</div>
+	</div>
+		<!-- include jQuery library -->
+	<script>
+		if(window.addEventListener) { // W3C compatible browsers
+			document.write('<script src="{site_url}assets/js/vendor/jquery.js"><\/script>');
+		} else if(window.attachEvent) { // IE8 and less
+			document.write('<script src="{site_url}assets/js/vendor/jquery-1.11.1.min.js"><\/script>');
+		}
+	</script>
+	<!-- include Foundation JavaScript -->
+	<script src="{site_url}assets/js/foundation.min.js"></script>
+	<script src="{site_url}assets/js/vendor/placeholder.js"></script>
+	<!-- include custom JavaScript -->
+	<script src="{site_url}assets/js/jquery.main.js"></script>
+	<script>$(document).foundation();</script>
+	<!-- include rem units polyfill JavaScript -->
+	<script src="{site_url}assets/js/vendor/rem.min.js"></script>
+	<script type="text/javascript">
+ 
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-4461291-2']);
+  _gaq.push(['_trackPageview']);
+ 
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+ 
+</script>
+	<!-- include JavaScript for IE8 -->
+	<!--[if lt IE 9]>
+		<script src="//s3.amazonaws.com/nwapi/nwmatcher/nwmatcher-1.2.5-min.js"></script>
+		<script src="//html5base.googlecode.com/svn-history/r38/trunk/js/selectivizr-1.0.3b.js"></script>
+		<script src="{site_url}assets/js/vendor/respond-1.1.0.min.js"></script>
+	<![endif]-->
+</body>
+</html>

@@ -1,0 +1,131 @@
+{embed="_includes/header"}
+{exp:structure:first_child_redirect}
+				<!-- main container of all the page elements -->
+				<main id="main">
+					<section class="at-a-glance-section case_section">
+						<div class="row section-title">
+							<div class="small-12 columns">
+								<h1>Case Studies</h1>
+								<p>The return on investment is efficiency in action.</p>
+							</div>
+						</div>
+						<div class="row boxes-row">
+							<div class="small-12 column">
+								<div class="boxes-holder">	
+										{exp:channel:entries channel="case_studies" limit="1" dynamic="off" entry_id="302"}
+										<div class="item-box focal-box">
+											<div class="box-holder">
+												{case_study_bio_grid}
+													<strong class="logo-item"><a href="{page_url}">{exp:ed_imageresizer
+															    image="{case_study_bio_grid:image}"
+															    maxWidth="250"
+															    cropratio="250:100"
+																alt="{case_study_bio_grid:name}"
+																title="{case_study_bio_grid:name}"}</a></strong>
+												<div class="text-holder">
+													<blockquote>
+														{case_study_bio_grid:quote}
+														{if case_study_bio_grid:name != "" && case_study_bio_grid:title != ""}<cite><strong>{case_study_bio_grid:name}</strong>, {case_study_bio_grid:title}</cite>{/if}
+													</blockquote>
+												</div>
+												{/case_study_bio_grid}
+												<a href="{page_url}" class="button"><span><span>View Case Study</span></span></a>
+											</div>
+										</div>
+										{/exp:channel:entries}
+										{exp:channel:entries channel="case_studies" limit="1" dynamic="off"  entry_id="433"}
+										<div class="item-box">
+											<div class="box-holder">
+												{case_study_bio_grid}
+													<strong class="logo-item"><a href="{page_url}">{exp:ed_imageresizer
+															    image="{case_study_bio_grid:image}"
+															    maxWidth="250"
+															    cropratio="250:100"
+																alt="{case_study_bio_grid:name}"
+																title="{case_study_bio_grid:name}"}</a></strong>
+												<div class="text-holder">
+													<blockquote>
+														{case_study_bio_grid:quote}
+														{if case_study_bio_grid:name != "" && case_study_bio_grid:title != ""}<cite><strong>{case_study_bio_grid:name}</strong>, {case_study_bio_grid:title}</cite>{/if}
+													</blockquote>
+												</div>
+												{/case_study_bio_grid}
+												<a href="{page_url}" class="button"><span><span>View Case Study</span></span></a>
+											</div>
+										</div>
+										{/exp:channel:entries}
+										{exp:channel:entries channel="case_studies" limit="1" dynamic="off" entry_id="431"}
+										<div class="item-box">
+											<div class="box-holder">
+												{case_study_bio_grid}
+													<strong class="logo-item"><a href="{page_url}">{exp:ed_imageresizer
+															    image="{case_study_bio_grid:image}"
+															    maxWidth="250"
+															    cropratio="250:100"
+																alt="{case_study_bio_grid:name}"
+																title="{case_study_bio_grid:name}"}</a></strong>
+												<div class="text-holder">
+													<blockquote>
+														{case_study_bio_grid:quote}
+														{if case_study_bio_grid:name != "" && case_study_bio_grid:title != ""}<cite><strong>{case_study_bio_grid:name}</strong>, {case_study_bio_grid:title}</cite>{/if}
+													</blockquote>
+												</div>
+												{/case_study_bio_grid}
+												<a href="{page_url}" class="button"><span><span>View Case Study</span></span></a>
+											</div>
+										</div>
+										{!--<div class="item-box {if featured_case_study=='Main'}focal-box{/if}">
+											<div class="box-holder">
+												{case_study_bio_grid}
+													<strong class="logo-item"><a href="{page_url}">{exp:ed_imageresizer
+															    image="{case_study_bio_grid:image}"
+															    maxWidth="250"
+															    cropratio="250:100"
+																alt="{case_study_bio_grid:name}"
+																title="{case_study_bio_grid:name}"}</a></strong>
+												<div class="text-holder">
+													<blockquote>
+														{case_study_bio_grid:quote}
+														{if case_study_bio_grid:name != "" && case_study_bio_grid:title != ""}<cite><strong>{case_study_bio_grid:name}</strong>, {case_study_bio_grid:title}</cite>{/if}
+													</blockquote>
+												</div>
+												{/case_study_bio_grid}
+												<a href="#" class="button"><span><span>View Case Study</span></span></a>
+											</div>
+										</div>--}
+									{/exp:channel:entries}
+								</div>
+							</div>
+						</div>
+					</section>
+					<div class="main-area">
+						
+						<div class="row">
+							<div class="medium-12 column">
+								{exp:channel:entries channel="basic_page" limit="1"}
+									
+									{content}
+								{/exp:channel:entries}
+								
+									{exp:channel:entries channel="case_studies" dynamic="off" orderby="title" sort="asc"}
+									{if count % 4 == 1}
+						               <div class="row case_studies">
+						            {/if}
+										<div class="medium-3 column" style="float:left;">
+											<a href="{page_url}">{case_study_bio_grid}
+												{exp:ce_img:single src="{case_study_bio_grid:image}" max="500" width="318" height="221" crop="yes|center" attributes='class="blog_thumb" alt="{case_study_bio_grid:name}" title="{case_study_bio_grid:name}" '}
+												
+											{/case_study_bio_grid}</a>
+											<a href="{page_url}" style="text-align:center;"><h5>{title}</h5></a>
+											{if subtitle!=""}<p>{case_study_subtitle}</p>{/if}
+										</div>
+										{if count % 4 == 0 OR count == total_results}
+						                </div>
+						            {/if}
+									{/exp:channel:entries}
+							</div>
+							
+						</div>
+					</div>
+{embed="_includes/footer"}
+<!-- case_studies -->

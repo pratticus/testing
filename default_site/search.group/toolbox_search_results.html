@@ -1,0 +1,67 @@
+{embed="_includes/header"}
+				<!-- main container of all the page elements -->
+				<main id="main">
+					<div class="main-area">
+						<div class="row">
+							<div class="medium-12 column">
+								<h1>Search Results</h1>
+								
+							</div>
+						</div>
+						<div class="row">
+							<div class="medium-12 column landing_list_search">
+								<div class="medium-4 column"> 
+									<!-- search form -->
+									{exp:search:advanced_form channel="landing_page|case_studies" category="128|127|46|100|101|102|103|104|105|53|54|55|56|57|58|59|60|61|62|63|64|65|66|67" result_page="search/toolbox_search_results"}
+	<input type="search" name="keywords" id="keywords" value="" size="18" maxlength="100">
+							                <input type="submit" class="submit_btn" value="Go" />
+{/exp:search:advanced_form}
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="medium-8 column" id="content">
+								{exp:search:search_results}
+									{if count == 1}
+										<p>Search for: <strong><em>{exp:search:keywords}</em></strong>, {total_results} result{if total_results > 1}s{/if}.</p>
+  {/if}
+									{if count % 3 == 1}
+						                <div class="row" style="margin-top:30px;">
+						            {/if}
+										<div class="medium-4 column">
+	
+    										{if landing_thumbnail_grid !=""}
+                                            	<a href="{page_url}">
+                                                    {landing_thumbnail_grid}
+                                                        {exp:ed_imageresizer image="{landing_thumbnail_grid:landing_image}" default="/images/site/image_coming_soon.jpg" maxWidth="400" cropratio="400:316" class="blog_thumb" alt="{landing_thumbnail_grid:landing_alt_text}"}
+                                                    {/landing_thumbnail_grid}
+    			                                </a>
+                                            {if:else}
+                                            	<a href="{page_url}">
+                                                    {case_study_bio_grid}
+                                                        {exp:ed_imageresizer image="{case_study_bio_grid:image}" default="/images/site/image_coming_soon.jpg" maxWidth="400" cropratio="400:316" class="blog_thumb" alt="{name}" title="{name}"}
+                                                    {/case_study_bio_grid}
+    			                                </a>
+                                            {/if}
+											<a href="{page_url}"><span>{title}</span></a>
+										</div>
+									{if count % 3 == 0 OR count == total_results}
+						                </div>
+						            {/if}
+								    {paginate}
+								        <p>Page {current_page} of {total_pages} pages {pagination_links}</p>
+								    {/paginate}
+								{/exp:search:search_results}
+							</div>
+								<aside class="medium-3 column right-sidebar">
+									{social_sidebar}
+
+									<div class="additional-posts">
+										<h2>Also on Vivid</h2>
+										{blog_sidebar}
+									</div>
+								</aside>
+						</div>
+					</div>
+					
+{embed="_includes/footer"}

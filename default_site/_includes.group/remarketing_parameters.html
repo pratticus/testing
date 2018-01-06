@@ -1,0 +1,42 @@
+{if segment_1 == ''}
+<script>
+var google_tag_params = {
+  'dynx_itemid': 'Home Page',
+  'dynx_pagetype' : 'home'
+};
+</script>
+{/if}
+{if segment_1 == 'solutions' AND segment_2 == 'courses'}
+{exp:channel:entries}
+<script>
+var google_tag_params = {
+  'dynx_itemid': '{title}',
+  'dynx_pagetype' : 'offerdetail'
+};
+dataLayer = [];
+dataLayer.push({
+  'dynx_itemid': '{title}',
+  'dynx_pagetype' : 'offerdetail'
+});
+</script>
+
+{/exp:channel:entries}
+{/if}
+{if segment_1 == 'search'}
+<script>
+var google_tag_params = {
+  'dynx_itemid': 'Search Results',
+  'dynx_pagetype' : 'searchresults'
+};
+</script>
+{/if}
+{if segment_1 != 'solutions' AND segment_2 != 'courses' AND segment_1 != '' AND segment_1 != 'search'}
+{exp:channel:entries}
+<script>
+var google_tag_params = {
+  'dynx_itemid': '{title}',
+  'dynx_pagetype' : 'other'
+};
+</script>
+{/exp:channel:entries}
+{/if}

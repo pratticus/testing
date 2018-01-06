@@ -1,0 +1,84 @@
+<?php
+$cookie_name = "demo";
+if(!isset($_COOKIE[$cookie_name])) {
+    header('Location: https://vividlearningsystems.com/demos/sign-up');
+exit();
+}
+
+?>
+
+<!-- main/safety_resources -->
+{embed="_includes/header"}
+				<!-- main container of all the page elements -->
+				<main id="main">
+					<div class="main-area">
+						<div class="row">
+							<div class="medium-12 column">
+								{!--{exp:channel:entries channel="toolbox_resources"}
+									<h1>{title}</h1>
+									<h2>{subtitle}</h2>
+								{/exp:channel:entries}--}
+<h1>Deliver more engaging, memorable safety training to your workforce.</h1>
+<p>Employees want a better total training experience, safety professionals are looking for an easier way to get that training to their workers — that’s what we’re offering.</p>
+ 
+<p>Vivid's online safety courses bring interactivity and accountability to compliance training, with testing, storytelling, and industry specific scenarios.</p>
+							</div>
+						</div>
+						
+                        
+                        
+                        <div class="row">
+							<div class="medium-12 column landing_list_search">
+								<div class="medium-6 column"> 
+									<!-- search form -->
+                                  
+                                    
+                                    {exp:low_search:form query="{segment_3}" result_page="/demos/library"}
+                                    <select name="category[]" style="width:90%; float:left;">
+                                        <option value="">Sort by Industry</option>
+                                        {exp:channel:categories category_group="7" style="linear"}
+                                          <option value="{category_id}">
+                                            {category_name}
+                                          </option>
+                                        {/exp:channel:categories}
+                                      </select><input type="submit" value="GO" class="submit_btn" style="display:inline; margin:2px 0 0 5px;">
+                                      {/exp:low_search:form}
+                                   
+                                    
+	
+								</div>
+							</div>
+						</div>
+                        
+                        
+                        
+						<div class="row">
+							<div class="medium-12 column" id="content">
+								
+                                <!--<h1>Demos!</h1>-->
+                                
+                                <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4 toolbox-grid">
+                                 {exp:low_search:results query="{segment_3}" require_all="category" channel="demos" orderby_sort="title|asc" limit="300" parse="inwards"}
+                                	        <li>
+                                        	<!--<a href="{page_url}"><img src="https://dev.vividlearningsystems.com/images/ce_image/made/assets/uploads/images/safety_tip_videos_thumbnails/safety-tip-video-asbestos-exposure-prevention_155_155_80_s_c1.jpg" /></a>-->
+                                            {acton_image_asset}
+                                            	{if acton_image_asset:ao_image_url != ""}
+                                              <a href="{page_url}">
+                                                	<img src="{acton_image_asset:ao_image_url}" alt="{title} Demo" style="max-width:155px; border:none;" />
+                                            	</a>
+                                              {/if}
+                                                
+                                            {/acton_image_asset}
+                                        
+                                        	<a href="{page_url}" target="_blank"><span>{title}</span></a>
+                                        </li>
+                                 	
+                                 {/exp:low_search:results}
+                                </ul>
+                               	
+							</div>
+							
+						</div>
+					</div>				
+{embed="_includes/footer"}
+<!-- safety_resources -->

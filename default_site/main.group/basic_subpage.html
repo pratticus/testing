@@ -1,0 +1,214 @@
+<!-- basic_subpage -->
+{embed="_includes/header"}
+				<!-- main container of all the page elements -->
+				<main id="main">
+					<div class="main-area">
+						<div class="row" id="twocolumns">
+							<aside class="medium-4 column" id="sidebar">
+							{if segment_1!="thank-you"}
+								<nav class="side-menu">
+									{exp:structure:nav start_from="/{freebie_1}" max_depth="1" current_class="active"}
+								</nav>{/if}
+								{!--<div class="ad-box hide-for-small-only">
+									<a href="#"><img src="{site_url}assets/img/ad-01.jpg" width="253" height="214" alt="Wish you were here"></a>
+								</div>--}
+							</aside>
+							<div class="medium-8 column" id="content">
+								{exp:channel:entries channel="basic_page|news|events|careers" limit="1" show_future_entries="yes"}
+									<h1>{title}</h1>
+									{content}
+									
+									{if segment_2=="careers" && segment_3!=""}
+									{full_description}
+									<a href="http://go.vividlearningsystems.com/acton/form/2931/00f2:d-0001/0/index.htm" target="_blank">Get in touch</a>
+									{/if}
+								{/exp:channel:entries}
+                                 {if member_group=="1" && segment_1=="demos"}
+                                 	{exp:structure:entries parent_id="355"}
+                                    <p>{title}</p>
+                                    <p><a href="{page_uri}">{page_uri}</a></p>
+                                    {/exp:structure:entries}
+                                 {/if}
+
+								<!--Course Feed -->
+								{if segment_1=="courses" && segment_2!=""}
+										<div id="icons"><img src="{site_url}assets/img/completions.png" style="margin-left:0; "/> Most Completions <img src="{site_url}assets/img/views.png" /> Most Views <img src="{site_url}assets/img/top_10.png" /> Top 10</div>
+											<table width="100%" class="catalog">
+												<tr>
+													<th width="70%">Course Title</th>
+													<th>Details</th>
+												</tr>
+												{exp:channel:entries channel="{segment_2}_courses" dynamic="no"}
+														<tr>
+															<td width="50%"><a href="{page_url}">{title}</a></td>
+															<td>{if '{flags:selected option="Top 10"}'}
+																  <img src="{site_url}assets/img/top_10.png" />
+																{/if}
+																{if '{flags:selected option="Most Views"}'}
+																  <img src="{site_url}assets/img/views.png" />
+																{/if}
+																{if '{flags:selected option="Most Completions"}'}
+																  <img src="{site_url}assets/img/completions.png" />
+																{/if}
+															</td>
+														</tr>
+												{/exp:channel:entries}
+											</table>
+								{/if}
+								<!--Team Feed -->
+								{if segment_2=="our-team" && segment_3==""}
+                             <div class="row">
+									<div class="medium-12 columns">
+										<ul class="team-list small-block-grid-3 medium-block-grid-5">
+									{exp:channel:entries channel="team" dynamic="off" sort="asc" orderby="title"}
+										<li>
+											<a class="team-member" href="{page_url}">
+												<img src="{thumbnail}" class="myimgclass" alt="{title}" title="{title}" style="max-width: 120px; max-height: 120px;" />
+												
+												<!--<img src="{thumbnail}" alt="{title}" />-->
+												<span>{exp:eehive_hacksaw words="1"}{title}{/exp:eehive_hacksaw}</span></a>
+										</li>
+									{/exp:channel:entries}
+										</ul>
+									</div>
+								</div>
+                             
+								{/if}
+								{if segment_2=="news"}
+								{exp:md_detect_page_type url_segment="{segment_3}"}
+								
+								<!--News Feed -->
+								<div class="row">
+									<div class="small-12 medium-8 columns">
+									{if pagination_page OR segment_3 ==""}
+										<ul class="news">
+									{exp:channel:entries channel="news" dynamic="off" limit="6" paginate="bottom" entry_id="not 885"}
+										<li class="{switch='light|dark'}">
+											<div class="row">
+												<div class="small-10 columns">
+													<a class="news-title" href="{page_url}">{title}</a>
+													{exp:trunchtml chars="100" inline=" _| <a href='{page_url}'>Read More</a>"}{content}{/exp:trunchtml}
+												</div>
+												<div class="small-2 columns">
+													<span class="dates">{entry_date format="%M %j"}<br />{entry_date format="%Y"}</span>
+												</div>	
+											</div>
+										</li>
+										{paginate}
+										<table cellpadding="0" cellspacing="0" border="0" width="100%" style="border:none;">
+											<tr>
+												<td>
+											{if previous_page}
+												<a href="{auto_path}"><i class="fa fa-caret-left"></i> Newer Entries</a>
+											{/if}
+												</td>
+												<td align="right">
+											{if next_page}
+												<a href="{auto_path}">Older Entries <i class="fa fa-caret-right"></i></a>
+											{/if}
+												</td>
+											</tr>
+										</table>
+										{/paginate}
+									{/exp:channel:entries}
+										</ul>
+									{/if}	
+									</div>
+									{if pagination_page OR segment_3 == ""}
+									<div class="medium-4 columns show-for-medium-up">
+										<h4 class="side-news-header">Archive</h4>
+										<ul class="news-archive">
+										{exp:low_yearly_archives channel='news' start_month='1' end_month='12' sort='desc' entry_id="not 885"}
+											<li class="year">
+												<strong>{year}</strong>
+												<ul class="months">
+													{months}
+													<li class="news-month">
+													{if num_entries > 0}
+														<a href="{path='why-vivid/news/archives/{year}/{month_num}'}">{month}</a>
+													{if:else}
+														{month}
+													{/if}
+													</li>
+													{/months}
+												</ul>
+											</li>
+										{/exp:low_yearly_archives}
+										</ul>
+										<h4 class="side-news-header">Popular News</h4>
+										<ul class="popular-news">
+										{exp:channel:entries channel="news" dynamic="off" limit="3" orderby="view_count_one" sort="desc"}
+											<li>{title}<br /><a href="{page_url}">Read more</a></li>
+										{/exp:channel:entries}
+										</ul>
+									</div>
+									{/if}
+								</div>
+								
+								{/exp:md_detect_page_type}
+								{/if}
+								{if segment_2=="careers" && segment_3==""}
+									<div class="row">
+										<div class="medium-12 column">
+											<h2>Current Openings</h2>
+											<div class="row">
+												<div class="small-12 medium-8 columns">	
+													<ul class="career-opportunities">
+														{exp:channel:entries channel="careers" dynamic="off"}
+														<li class="{switch='light|dark'}"><a href="{page_url}" rel="nofollow">{title}</a>{if member_group == "2"}<span class="new">New</span>{/if}<span class="level show-for-large-up">{job_type}</span></li>
+														{if no_results}<li class="light no-openings">Sorry. We don't have any current openings.</li>{/if}
+														{/exp:channel:entries}
+													</ul>
+												</div>
+												<div class="medium-4 columns show-for-medium-up">
+													<div class="perks">
+														<h3>Some Perks</h3>
+														<ul>
+															<li>Excellent Benefits</li>
+															<li>Healthy Snacks</li>
+															<li>Flexible Work Schedule</li>
+															<li>Team Gatherings & Events</li>
+															<li>Health Club Membership</li>
+														</ul>
+													</div>
+												<!--	<div class="employee-quote">
+														<table cellpadding="0" cellspacing="0" border="0" >
+															<tr>
+																<td width="65" rowspan="2"><img src="https://s3.amazonaws.com/uifaces/faces/twitter/allisongrayce/128.jpg" width="65px" height="65px"></td>
+																<td>
+																	<p>"Working at Vivid is great because of so and so... employee quote here."</p>
+																</td>
+															</tr>
+															<tr>
+																<td align="right">
+																	<p><span>Jan, Designer</span></p>
+																</td>
+															</tr>
+														</table>
+													</div> -->
+												</div>
+											</div>
+										</div>
+									</div>
+								
+								{/if}
+								{!--<div class="visual-box">
+									<a href="#lightbox1" class="lightbox">
+										<img src="{site_url}assets/img/img-02.jpg" width="417" height="237" alt="image description">
+										<span class="button btn-play">Play</span>
+									</a>
+								</div>--}
+							</div>
+							<aside class="medium-4 column additional-sidebar">
+								<div class="additional-posts">
+									<h2>Also on Vivid</h2>
+									{blog_sidebar}
+								</div>
+							</aside>
+						</div>
+					</div>
+<!-- <div id="team-overlay" class="reveal-modal small" data-reveal>
+
+	<a class="close-reveal-modal">&#215;</a>
+</div> -->
+{embed="_includes/footer"}

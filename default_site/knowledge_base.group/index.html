@@ -1,0 +1,254 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+	<!-- set the encoding of your site -->
+	<meta charset="utf-8">
+	<!-- set the viewport width and initial-scale on mobile devices -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Welcome to the Knowledge Base!">
+	<!--[if (IE)&(lt IE 9) ]>
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8">
+	<![endif]-->
+	<!--[if (IE)&(gt IE 8) ]>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<![endif]-->
+	<!-- include the normalize stylesheet -->
+	<link rel="stylesheet" href="{site_url}assets/css/normalize.css">
+	<!-- include the Foundation stylesheet -->
+	<link rel="stylesheet" href="{site_url}assets/css/foundation.min.css">
+	<!-- include the facnybox stylesheet -->
+	<link rel="stylesheet" href="{site_url}assets/css/fancybox.css">
+	<!-- include the site stylesheet -->
+	<link rel="stylesheet" href="{site_url}assets/css/all.css">
+	<link rel="shortcut icon" href="favicon.png">
+	<!-- include modernizr JavaScript -->
+	<script src="{site_url}assets/js/vendor/modernizr.js"></script>
+	<!--[if lt IE 9]>
+		<link rel="stylesheet" href="{site_url}assets/css/ie.css" media="screen">
+	<![endif]-->
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+</head>
+<body>
+	<div class="off-canvas-wrap mobile-nav-canvas" data-offcanvas>
+		<div class="inner-wrap">
+			<!-- mobile main navigation -->
+			<div class="mobile-nav-panel right-off-canvas-menu">
+				<div class="panel-holder">
+					<nav>
+						{!--<ul>
+							<li><a href="/index.php/">Home</a></li>
+							<li><a href="/index.php/why-vivid">Why Vivid</a></li>
+							<li>
+								<a href="/index.php/solutions">Solutions</a>
+							</li>
+							<li><a href="/index.php/case-studies">Case Studies</a></li>
+							<li><a href="/index.php/blog">Blog</a></li>
+						</ul>--}
+					</nav>
+				</div>
+			</div>
+			<div class="page">
+				<!-- header of the page -->
+				<header id="header">
+					<!-- top panel -->
+					<div class="top-panel" style="background-color:#009bde;">
+						<div class="row">
+							<div class="large-12 columns">
+								<span style="color:white;float:left;">Welcome to the Knowledge Base | <a style="color:white;" href="{path='logout'}">Log Out</a></span>								</div>
+							</div>
+						</div>
+					</div>
+					<!-- header area -->
+					<div class="kb_nav header-holder">
+						<div class="row">
+							<div class="large-12 columns">
+								<div class="holder">
+									<strong class="logo"><a href="/index.php">VIVID learning systems</a></strong>
+									<nav id="nav" class="hide-for-small-only">
+										<ul>
+											{exp:channel:category_archive channel="knowledge_base" style="linear" show_empty="yes"}
+											
+										         {categories}
+										            <li><a href="/knowledge-base/category/{category_url_title}"{if freebie_3 == category_url_title} class="active_nav"{/if}>{category_name}</a></li>
+										         {/categories}
+										    {/exp:channel:category_archive}
+										    <!--<li><a href="http://vlssp2" target="_blank">SharePoint</a></li>-->
+										</ul>
+									</nav>
+									<a href="#" class="right-off-canvas-toggle nav-opener" >Menu</a>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+				</header>
+				<!-- main container of all the page elements -->
+				<main id="main">
+					<div class="main-area kb">
+
+							<div class="row">
+								<div class="medium-8 column">
+									<h1>Knowledge Base</h1>
+								</div>
+								<div class="medium-4 column">
+									<div class="search-panel" style="margin:0;">
+									<!-- search form -->
+									{exp:search:simple_form channel="knowledge_base" form_class="search-form" where="all" search_in="everywhere" result_page="knowledge_base/results"}
+										<fieldset>
+							                <input type="search" name="keywords" id="keywords" value="" size="18" maxlength="100">
+							                <input type="submit" value="GO" class="button">
+									      </fieldset>
+									{/exp:search:simple_form}
+									
+								</div>
+								</div>
+							</div>
+								
+								<div class="row">
+								{if "{freebie_2}" == ""}
+									{exp:channel:entries channel="knowledge_base" limit="1"}
+										{content}
+									{/exp:channel:entries}
+								<!-- Category Entries -->
+								{if:elseif "{freebie_2}" == "category"}
+								<div class="medium-12 column">
+									<h2>{exp:freebie:category_name segment='3'}</h2>
+										<table width="100%" id="myTable" class="tablesorter">
+											<thead>
+												<tr>
+													<th width="25%">Title</th>
+													<th width="60%">Description</th>
+													<th width="15%">Type</th>
+												</tr>
+											</thead>
+											<tbody>
+											{exp:channel:entries channel="knowledge_base" category="{exp:freebie:category_id segment='3'}" dynamic="no" parse="inward" paginate="bottom" limit="1000"}
+												<tr>
+													{!--<td>Icon</td>--}
+													{if file!=""}
+														<td><a href='{file}' target="_blank">{title}</a></td>
+													{if:else}
+														<td><a href='{link}' target="_blank">{title}</a></td>
+													{/if}
+													<td>{description}</td>
+													<td>{type}</td>
+												</tr>
+												{paginate}
+											        {if previous_page}
+											            <a href="{auto_path}">Previous Page</a> &nbsp;
+											        {/if}
+											        {if next_page}
+											            <a href="{auto_path}">Next Page</a>
+											        {/if}
+											    {/paginate}
+											   {/exp:channel:entries}
+											</tbody>
+										</table>
+										<a href="mailto:marketing@vividlearningsystems.com" class="button" style="float:right;"><span><span>Need help? Email us!</span></span></a>
+								</div>
+								{if:else}
+										{exp:md_detect_page_type url_segment="{segment_2}"}
+											{if pagination_page}
+											{exp:channel:entries channel="blog" limit="10" dynamic="off" paginate="bottom"}
+												<img src="{blog_image}" />
+												<h2>{title}</h2>
+												{exp:trunchtml chars="300" inline=" <a href='{page_url}'> Continue Reading></a>"}{blog_post} {/exp:trunchtml} 
+												{paginate}
+											        {if previous_page}
+											            <a href="{auto_path}">Previous Page</a> &nbsp;
+											        {/if}
+											        {if next_page}
+											            <a href="{auto_path}">Next Page</a>
+											        {/if}
+											    {/paginate}
+											{/exp:channel:entries}{/if}
+										{/exp:md_detect_page_type}
+											{exp:channel:entries channel="blog" dynamic="off" limit="1" url_title="{freebie_2}"}
+											
+												{exp:ed_imageresizer
+												    image="{blog_image}{blog_image}{/blog_image}"
+												    maxWidth="600"
+												    cropratio="600:275"
+												    class="blog_thumb blog_image"
+													alt="{title}"}
+												<h1>{title}</h1>
+												{blog_content}
+											{/exp:channel:entries}
+										{/if}
+								<!--Course Feed -->
+								</div>
+							</div>
+						</div>
+					</div>
+<!-- contact section -->
+					
+				</main>
+				<!-- footer of the page -->
+				<footer id="footer" style="color:orange;">
+					<div class="row footer-area">
+						<!-- footer navigation -->
+						<div class="large-3 column show-for-large-up">
+							
+						</div>
+						<div class="large-4 medium-5 column">
+							
+						</div>
+						<div class="large-5 medium-7 column">
+						</div>
+					</div>
+					<div class="row">
+						
+					</div>
+				</footer>
+				
+				
+			</div>
+			<!-- close the off-canvas menu -->
+			<a class="exit-off-canvas"></a>
+		</div>
+	</div>
+		<!-- include jQuery library -->
+	<script>
+		if(window.addEventListener) { // W3C compatible browsers
+			document.write('<script src="{site_url}assets/js/vendor/jquery.js"><\/script>');
+		} else if(window.attachEvent) { // IE8 and less
+			document.write('<script src="{site_url}assets/js/vendor/jquery-1.11.1.min.js"><\/script>');
+		}
+		
+	</script>
+	<!-- include Foundation JavaScript -->
+	<script src="{site_url}assets/js/foundation.min.js"></script>
+	<script src="{site_url}assets/js/vendor/placeholder.js"></script>
+	<!-- include custom JavaScript -->
+	<script src="{site_url}assets/js/jquery.main.js"></script>
+	<script type="text/javascript" src="{site_url}assets/js/table_sort/jquery.tablesorter.js"></script> 
+	<script>$(document).foundation();</script>
+	<!-- include rem units polyfill JavaScript -->
+	<script src="{site_url}assets/js/vendor/rem.min.js"></script>
+	<script type="text/javascript">
+ 
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-4461291-2']);
+  _gaq.push(['_trackPageview']);
+ 
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+ $(document).ready(function() 
+		    { 
+		        $("#myTable").tablesorter(); 
+		    } 
+		); 
+  
+</script>
+	<!-- include JavaScript for IE8 -->
+	<!--[if lt IE 9]>
+		<script src="//s3.amazonaws.com/nwapi/nwmatcher/nwmatcher-1.2.5-min.js"></script>
+		<script src="//html5base.googlecode.com/svn-history/r38/trunk/js/selectivizr-1.0.3b.js"></script>
+		<script src="{site_url}assets/js/vendor/respond-1.1.0.min.js"></script>
+	<![endif]-->
+</body>
+</html>

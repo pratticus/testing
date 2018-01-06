@@ -1,0 +1,55 @@
+{embed="_includes/header"}
+				<main id="main" class="blog">
+					{!--<div class="blog_row">
+						<div class="row">
+							<div class="medium-12 column">
+								<h1>Blog</h1>
+							</div>
+						</div>
+					</div>--}
+					<div class="row bread">
+						<div class="medium-12 column">
+							<a href="http://learnatvividdev.com.s118162.gridserver.com/index.php">Home</a> » <a href="/index.php/blog">Blog</a> » <span class="last">{exp:channel:entries channel="blog" limit="1"}{title}{/exp:channel:entries}</span>
+						</div>
+					</div>
+					<div class="main-area">
+						<div class="row" id="twocolumns">
+							<div class="medium-7 column">
+								{exp:channel:entries channel="blog" limit="1" url_title={segment_3}}
+									{exp:ed_imageresizer
+									    image="{blog_image}{blog_image}{/blog_image}"
+									    maxWidth="600"
+									    cropratio="600:275"
+									    class="blog_thumb blog_image"
+										alt="{title}"}
+									<h1>{title}</h1>
+									{blog_content}
+									{if logged_in}
+									<hr />
+									<div>
+										{exp:ce_img:single src="{blog_authors:author_image}" max="150" width="100" height="125" crop="yes|center" attributes='class="blog_thumb" alt="{blog_authors:title}" '}
+											<span><strong>Author:</strong> {blog_authors:title}</span>
+											<div class="blog_author">{blog_authors:author_description}</div>
+									</div>
+									{/if}
+								{/exp:channel:entries}
+								{disqus}		
+							</div>
+							<div class="medium-4 column">
+								<div class="additional-posts">
+									<h2>Categories</h2>
+										<ul style="padding-left:15px;">
+											{exp:channel:category_archive channel="blog" style="linear" show_empty="no"}
+											
+										         {categories}
+										            <li{if freebie_2 == category_url_title} class="here"{/if}><a href="/main/blog_placeholder/category/{category_url_title}">{category_name}</a></li>
+										         {/categories}
+										    {/exp:channel:category_archive}
+										</ul>
+									</div>
+
+							</div>
+						</div>
+						
+					</div>
+{embed="_includes/footer"}

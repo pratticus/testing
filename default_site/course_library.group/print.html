@@ -1,0 +1,296 @@
+<!doctype html>
+<html>
+<head>
+<title>Course Catalog | Vivid Learning Systems</title>
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,500,700?v=0.3" rel="stylesheet">
+	<link rel="stylesheet" href="https://vividlearningsystems.com/assets/css/courses_print.css?v=0.3.9" type="text/css" media="print,screen">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TWV373');</script>
+<!-- End Google Tag Manager -->
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TWV373"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<div id="compliance">
+		<div class="page-header">
+			<h1>Safety <span>Course Catalog</span></h1>
+			<img src="https://vividlearningsystems.com/assets/img/vls_logo_print_courses.png" height="45">
+		</div>
+		<div class="content">
+			<section class="osha-library">
+				{exp:channel:entries channel="course_library" entry_id="31"}<h3 class="library-title"><a class="course-library-link" href="{page_url}">{title}</a></h3>{/exp:channel:entries}
+				<ul>
+				{exp:channel:entries channel="osha-courses" dynamic="no" sort="asc" orderby="title" category_group="not 3"}
+					<li>
+						{if entry_id == "121" OR entry_id == "132" OR entry_id == "482"}<a href="{page_url}" class="group-header">{title}</a>{if:else}<a href="{page_url}">{title}{if {flags:selected option="Mobile"} }<span class="mobile">*</span>{/if}{if language!=""}<span class="multi-lang">*</span>{/if}{if {flags:selected option="5-Min Overview"} }<span class="has-overview">&dagger;</span>{/if}</a>{/if}
+						{if entry_id == "121"}
+							{embed="course_library/ppe_bundle"}
+						{/if}
+						{if entry_id == "132"}
+							{embed="course_library/first_aid_bundle"}
+						{/if}
+						{if entry_id == "482"}
+							{embed="course_library/forklift_bundle"}
+						{/if}
+					</li>
+				{/exp:channel:entries}
+				</ul>
+			</section>						
+	
+			<section class="environmental-management-library">
+				{exp:channel:entries channel="course_library" entry_id="22"}<h3 class="library-title"><a class="course-library-link" href="{page_url}">{title}</a></h3>{/exp:channel:entries}
+				<ul>
+				{exp:channel:entries channel="environmental-management-courses" dynamic="no" sort="asc" orderby="title" category_group="not 3"}
+					<li><a href="{page_url}">{title}{if {flags:selected option="Mobile"} }<span class="mobile">*</span>{/if}{if language!=""}<span class="multi-lang">*</span>{/if}{if {flags:selected option="5-Min Overview"} }<span class="has-overview">&dagger;</span>{/if}</a></li>
+				{/exp:channel:entries}
+				</ul>
+			</section>
+			
+			<section class="hr-library">
+				{exp:channel:entries channel="course_library" entry_id="21"}<h3 class="library-title"><a class="course-library-link" href="{page_url}">{title}</a></h3>{/exp:channel:entries}
+				<ul>
+				{exp:channel:entries channel="human-resources-compliance-courses" dynamic="no" sort="asc" orderby="title" category_group="not 3"}
+				{if special_link != ''}
+					<li><a href="{page_url}">{title}{if {flags:selected option="Mobile"} }<span class="mobile">*</span>{/if}{if language!=""}<span class="multi-lang">*</span>{/if}{if {flags:selected option="5-Min Overview"} }<span class="has-overview">&dagger;</span>{/if}</a></li>										
+				{if:elseif entry_id != "160"}
+					<li><a href="{page_url}">{title}{if {flags:selected option="Mobile"} }<span class="mobile">*</span>{/if}{if language!=""}<span class="multi-lang">*</span>{/if}{if {flags:selected option="5-Min Overview"} }<span class="has-overview">&dagger;</span>{/if}</a></li>
+				{/if}
+				{/exp:channel:entries}
+				</ul>
+			</section>
+			<section class="construction-library">
+				{exp:channel:entries channel="course_library" entry_id="14"}<h3 class="library-title"><a class="course-library-link" href="{page_url}">{title}</a></h3>{/exp:channel:entries}
+				<ul>
+				{exp:channel:entries channel="construction-safety-courses" dynamic="no" sort="asc" orderby="title" category_group="not 3"}
+					<li><a href="{page_url}">{title}{if {flags:selected option="Mobile"} }<span class="mobile">*</span>{/if}{if language!=""}<span class="multi-lang">*</span>{/if}{if {flags:selected option="5-Min Overview"} }<span class="has-overview">&dagger;</span>{/if}</a></li>
+				{/exp:channel:entries}
+				</ul>
+			</section>
+		</div>
+		<div class="page-footer">
+			<p><span class="mobile">*</span> Mobile Ready | <span class="multi-lang">*</span> Multi-Language | <span class="has-overview">&dagger;</span> Overview Course Available</p>
+<a href="{site_url}">vividlearningsystems.com</a>
+		</div>			
+	</div>
+
+	<div id="specialty-1">
+		<div class="page-header">
+			<h1>Specialty <span>Course Catalog</span></h1>
+			<img src="https://vividlearningsystems.com/assets/img/vls_logo_print_courses.png" height="45">
+		</div>
+		<div class="content">
+			<section class="ewt-library">
+				{exp:channel:entries channel="course_library" entry_id="36"}<h3 class="library-title"><a class="course-library-link" href="{page_url}">{title}</a></h3>{/exp:channel:entries}
+				<ul>
+				{exp:channel:entries channel="electric-utilities-courses" dynamic="no" sort="asc" orderby="title" category_group="not 3"}
+					<li><a href="{page_url}">{title}{if {flags:selected option="Mobile"} }<span class="mobile">*</span>{/if}{if language!=""}<span class="multi-lang">*</span>{/if}{if {flags:selected option="5-Min Overview"} }<span class="has-overview">&dagger;</span>{/if}</a></li>
+				{/exp:channel:entries}
+				</ul>
+			</section>
+			
+			<section class="NFPA70E-library">
+				{exp:channel:entries channel="course_library" entry_id="30"}<h3 class="library-title"><a class="course-library-link" href="{page_url}">{title}</a></h3>{/exp:channel:entries}
+				<ul>
+				{exp:channel:entries channel="nfpa-70e-courses" dynamic="no" sort="asc" orderby="title" category_group="not 3"}
+					<li><a href="{page_url}">{title}{if {flags:selected option="Mobile"} }<span class="mobile">*</span>{/if}{if language!=""}<span class="multi-lang">*</span>{/if}{if {flags:selected option="5-Min Overview"} }<span class="has-overview">&dagger;</span>{/if}</a></li>
+				{/exp:channel:entries}
+				</ul>
+			</section>
+			
+			<section class="msha-library">
+				{exp:channel:entries channel="course_library" entry_id="29"}<h3 class="library-title"><a class="course-library-link" href="{page_url}">{title}</a></h3>{/exp:channel:entries}
+				<ul>
+				{exp:channel:entries channel="msha-courses" dynamic="no" sort="asc" orderby="title" category_group="not 3"}
+					<li>
+						<a href="{page_url}" class="group-header">{title}</a>
+						{if entry_id == "112"}
+							{embed="course_library/msha_46_new_bundle"}
+						{if:elseif entry_id == "113"}
+							{embed="course_library/msha_46_refresher_bundle"}
+						{if:elseif entry_id == "114"}
+							{embed="course_library/msha_48_new_bundle"}
+						{if:elseif entry_id == "115"}
+							{embed="course_library/msha_48_refresher_bundle"}
+						{/if}
+					</li>
+				{/exp:channel:entries}
+				</ul>
+			</section>
+
+		</div>
+		<div class="page-footer">
+			<p><span class="mobile">*</span> Mobile Ready | <span class="multi-lang">*</span> Multi-Language | <span class="has-overview">&dagger;</span> Overview Course Available</p>
+<a href="{site_url}">vividlearningsystems.com</a>
+		</div>	
+	</div>
+	<div id="specialty-2">
+		<div class="page-header">
+			<h1>Specialty <span>Course Catalog</span></h1>
+			<img src="https://vividlearningsystems.com/assets/img/vls_logo_print_courses.png" height="45">
+		</div>	
+		<div class="content">	
+			<section class="food-safety-library">
+				{exp:channel:entries channel="course_library" entry_id="23"}<h3 class="library-title"><a class="course-library-link" href="{page_url}">{title}</a></h3>{/exp:channel:entries}
+				<ul>
+				{exp:channel:entries channel="food-safety-haccp-courses" dynamic="no" sort="asc" orderby="title" category_group="not 3"}
+					<li>
+						{if entry_id == "181" OR entry_id == "182"}<a href="{page_url}" class="group-header">{title}</a>{if:else}<a href="{page_url}">{title}{if {flags:selected option="Mobile"} }<span class="mobile">*</span>{/if}{if language!=""}<span class="multi-lang">*</span>{/if}{if {flags:selected option="5-Min Overview"} }<span class="has-overview">&dagger;</span>{/if}</a>{/if}
+						{if entry_id == "182"}
+							{embed="course_library/food_safety_manager_bundle"}
+						{if:elseif entry_id == "181"}
+							{embed="course_library/food_safety_operator_bundle"}
+						{/if}
+					</li>
+				{/exp:channel:entries}
+				</ul>
+			</section>
+					
+			<section class="lab-library">
+				{exp:channel:entries channel="course_library" entry_id="28"}<h3 class="library-title"><a class="course-library-link" href="{page_url}">{title}</a></h3>{/exp:channel:entries}
+				<ul>
+				{exp:channel:entries channel="higher-education-courses" dynamic="no" sort="asc" orderby="title" category_group="not 3"}
+					<li>
+						{if entry_id == "194"}<a href="{page_url}" class="group-header">{title}</a>{if:else}<a href="{page_url}">{title}{if {flags:selected option="Mobile"} }<span class="mobile">*</span>{/if}{if language!=""}<span class="multi-lang">*</span>{/if}{if {flags:selected option="5-Min Overview"} }<span class="has-overview">&dagger;</span>{/if}</a>{/if}
+						{if entry_id == "194"}
+							{embed="course_library/lab_safety_bundle"}
+						{/if}
+					</li>
+				{/exp:channel:entries}
+				</ul>
+			</section>
+			
+			<section class="hr-library specialty one-off">
+				{exp:channel:entries channel="course_library" entry_id="21"}<h3 class="library-title"><a class="course-library-link" href="{page_url}">{title}</a></h3>{/exp:channel:entries}
+				<ul>
+				{exp:channel:entries channel="human-resources-compliance-courses" dynamic="no" sort="asc" orderby="title" entry_id="160" category_group="not 3"}
+					<li><a href="{page_url}">{title}{if {flags:selected option="Mobile"} }<span class="mobile">*</span>{/if}{if language!=""}<span class="multi-lang">*</span>{/if}{if {flags:selected option="5-Min Overview"} }<span class="has-overview">&dagger;</span>{/if}</a></li>
+				{/exp:channel:entries}
+				</ul>
+			</section>
+			
+			<section class="osha1030-library">
+				{exp:channel:entries channel="course_library" entry_id="32"}<h3 class="library-title"><a class="course-library-link" href="{page_url}">{title}</a></h3>{/exp:channel:entries}
+				<ul>
+				{exp:channel:entries channel="osha-10-and-30-courses" dynamic="no" sort="asc" orderby="title" category_group="not 3"}
+					<li><a href="{page_url}">{title}{if {flags:selected option="Mobile"} }<span class="mobile">*</span>{/if}{if language!=""}<span class="multi-lang">*</span>{/if}{if {flags:selected option="5-Min Overview"} }<span class="has-overview">&dagger;</span>{/if}</a></li>
+				{/exp:channel:entries}
+				</ul>
+			</section>
+
+			<section class="transportation-library">
+				{exp:channel:entries channel="course_library" entry_id="35"}<h3 class="library-title"><a class="course-library-link" href="{page_url}">{title}</a></h3>{/exp:channel:entries}
+				<ul>
+				{exp:channel:entries channel="transportation-courses" dynamic="no" sort="asc" orderby="title" category_group="not 3"}
+					<li>
+						<a href="{page_url}" class="group-header">{title}</a>
+					{if entry_id == "206"}
+						{embed="course_library/dot_hazmat_bundle"}
+					{/if}
+					</li>
+				{/exp:channel:entries}
+				</ul>
+			</section>
+			
+			<section class="ca-osha-library">
+				{exp:channel:entries channel="course_library" entry_id="15"}<h3 class="library-title"><a class="course-library-link" href="{page_url}">{title}</a></h3>{/exp:channel:entries}
+				<ul>
+				{exp:channel:entries channel="canadian-safety-health-courses" dynamic="no" sort="asc" orderby="title" category_group="not 3"}
+					<li><a href="{page_url}">{title}{if {flags:selected option="Mobile"} }<span class="mobile">*</span>{/if}{if language!=""}<span class="multi-lang">*</span>{/if}{if {flags:selected option="5-Min Overview"} }<span class="has-overview">&dagger;</span>{/if}</a></li>
+				{/exp:channel:entries}
+				</ul>
+			</section>
+			
+			<section class="healthcare-library">
+				{exp:channel:entries channel="course_library" entry_id="27"}<h3 class="library-title"><a class="course-library-link" href="{page_url}">{title}</a></h3>{/exp:channel:entries}
+				<ul>
+				{exp:channel:entries channel="healthcare-courses" dynamic="no" sort="asc" orderby="title" category_group="not 3"}
+					<li>
+						{if entry_id == "187" OR entry_id == "191"}<a href="{page_url}" class="group-header">{title}</a>{if:else}<a href="{page_url}">{title}{if {flags:selected option="Mobile"} }<span class="mobile">*</span>{/if}{if language!=""}<span class="multi-lang">*</span>{/if}{if {flags:selected option="5-Min Overview"} }<span class="has-overview">&dagger;</span>{/if}</a>{/if}
+						{if entry_id == "187"}
+							{embed="course_library/bereavement_bundle"}
+						{if:elseif entry_id == "191"}
+							{embed="course_library/med_mandatory_bundle"}
+						{/if}
+					</li>
+				{/exp:channel:entries}
+				</ul>
+			</section>
+			<section class="hazwoper-library">
+				{exp:channel:entries channel="course_library" entry_id="26"}<h3 class="library-title"><a class="course-library-link" href="{page_url}">{title}</a></h3>{/exp:channel:entries}
+				<ul>
+				{exp:channel:entries channel="hazwoper-courses" dynamic="no" sort="asc" orderby="title" category_group="not 3"}
+					<li><a href="{page_url}">{title}{if {flags:selected option="Mobile"} }<span class="mobile">*</span>{/if}{if language!=""}<span class="multi-lang">*</span>{/if}{if {flags:selected option="5-Min Overview"} }<span class="has-overview">&dagger;</span>{/if}</a></li>
+				{/exp:channel:entries}
+				</ul>
+			</section>
+		</div>
+		<div class="page-footer">
+			<p><span class="mobile">*</span> Mobile Ready | <span class="multi-lang">*</span> Multi-Language | <span class="has-overview">&dagger;</span> Overview Course Available</p>
+<a href="{site_url}">vividlearningsystems.com</a>
+		</div>	
+	</div>
+	
+	<div id="bonus-1">
+		<div class="page-header">
+			<h1>Bonus <span>Course Catalog</span></h1>
+			<img src="https://vividlearningsystems.com/assets/img/vls_logo_print_courses.png" height="45">
+		</div>
+		<div class="content">
+			<section class="five-minute-library">
+				{exp:channel:entries channel="course_library" entry_id="1583"}<h3 class="library-title"><a class="course-library-link" href="{page_url}">{title}</a></h3>{/exp:channel:entries}
+				<ul>
+				{exp:channel:entries channel="5-minute-courses" dynamic="no" sort="asc" orderby="title" category_group="not 3"}
+					<li>
+						<a href="{page_url}">{title}{if {flags:selected option="Mobile"} }<span class="mobile">*</span>{/if}{if language!=""}<span class="multi-lang">*</span>{/if}{if {flags:selected option="5-Min Overview"} }<span class="has-overview">&dagger;</span>{/if}</a>
+					</li>
+				{/exp:channel:entries}
+				</ul>
+			</section>
+			<section class="supervisor-safety-videos">
+				<h3 class="library-title"><a class="course-library-link" href="https://vividlearningsystems.com/safety-toolbox/supervisor-safety-tips">Supervisor Safety Tip Videos</a></h3>
+				<ul>
+				{exp:channel:entries channel="landing_page" dynamic="off" category="127" orderby="title" sort="asc" sticky="no"}
+					<li>
+						<a href="{page_url}">{title}</a>
+					</li>	
+				{/exp:channel:entries}
+				</ul>
+			</section>
+		</div>
+		<div class="page-footer">
+			<p><span class="mobile">*</span> Mobile Ready | <span class="multi-lang">*</span> Multi-Language | <span class="has-overview">&dagger;</span> Overview Course Available</p>
+<a href="{site_url}">vividlearningsystems.com</a>
+		</div>	
+	</div>
+	<div id="bonus-2">
+		<div class="page-header">
+			<h1>Bonus <span>Course Catalog</span></h1>
+			<img src="https://vividlearningsystems.com/assets/img/vls_logo_print_courses.png" height="45">
+		</div>
+		<div class="content">			
+			<section class="safety-tip-videos">
+				<h3 class="library-title"><a class="course-library-link" href="https://vividlearningsystems.com/safety-toolbox/safety-tips">Safety Tip Videos</a></h3>
+				<ul>
+				{exp:channel:entries channel="landing_page" dynamic="off" category="128" orderby="title" sort="asc" sticky="no"}
+					<li>
+						<a href="{page_url}">{title}</a>
+					</li>	
+				{/exp:channel:entries}
+				</ul>
+			</section>
+
+		</div>
+		<div class="page-footer">
+			<p><span class="mobile">*</span> Mobile Ready | <span class="multi-lang">*</span> Multi-Language | <span class="has-overview">&dagger;</span> Overview Course Available</p>
+<a href="{site_url}">vividlearningsystems.com</a>
+		</div>	
+	</div>
+
+</body>
+</html>

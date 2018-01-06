@@ -1,0 +1,125 @@
+<!-- course_library/courses_main -->
+{embed="_includes/header"}
+				<!-- main container of all the page elements -->
+				<main id="main">						
+				{solutions_nav}
+					<div class="row bread">
+						<div class="medium-12 column">
+							{exp:structure:breadcrumb here_as_title="yes"}
+						</div>
+					</div>
+					<div class="main-area">
+						<div class="row" id="twocolumns">
+							<aside class="medium-4 column" id="sidebar">
+								<nav class="side-menu">
+									{exp:structure:nav start_from="/{segment_1}/{segment_2}" max_depth="1"}
+								</nav>
+
+							</aside>
+							<div class="medium-8 column" id="content">
+								{exp:channel:entries channel="course_library" limit="1"}
+									<h1>{title}</h1>
+									{!--<div class="course_thumb" style="background-image: url('{course_catalog_grid}{course_catalog_grid:catalog_image}{/course_catalog_grid}');">
+										<a href="{course_catalog_grid}{course_catalog_grid:course_catalog}{/course_catalog_grid}" target="_blank"><img src="{site_url}assets/img/download_icon.png" />View Infosheet</a>
+
+									</div>--}
+									{overview}
+									
+								{/exp:channel:entries}
+								
+								{if segment_2=="courses" && segment_3!=""}
+									
+									<div id="icons">{exp:ce_vars:get name="top_10"} {exp:ce_vars:get name="most_views"} {exp:ce_vars:get name="new"} {exp:ce_vars:get name="purchase"} {exp:ce_vars:get name="mobile"} {exp:ce_vars:get name="multi"} {exp:ce_vars:get name="ISS"} {exp:ce_vars:get name="5min"}</div>
+											<table width="100%" class="catalog">
+												<tr>
+													<th colspan="2">Course Title</th>
+												</tr>
+												{exp:channel:entries channel="{segment_3}-courses" dynamic="no" sort="asc" orderby="title" category_group="not 3"}
+														<tr>
+															{if special_link == ''}
+																<td><a href="{page_url}">{title}</a></td>
+															{if:else}
+																<td><a href="{special_link}">{title}</a></td>
+															{/if}
+															<td>
+																	{exp:ce_vars:alt_if parse="inward"}
+																		{alt:if} '{flags:selected option="Top 10"}'{/alt:if}
+																		<img src="{site_url}assets/img/top_10.png" alt="Top 10" title="Top 10" />
+																		{exp:ce_vars:top_10}<img src="{site_url}assets/img/top_10.png" alt="Top 10" title="Top 10" /><span>Top 10</span>{/exp:ce_vars:top_10}
+																		
+																	{/exp:ce_vars:alt_if}
+																	
+																	{exp:ce_vars:alt_if parse="inward"}
+																	{alt:if} '{flags:selected option="Most Views"}'{/alt:if}
+																	  <img src="{site_url}assets/img/views.png" alt="Most Views" title="Most Views" />
+																	  {exp:ce_vars:most_views}<img src="{site_url}assets/img/views.png" alt="Most Views" title="Most Views" /><span>Most Views</span>{/exp:ce_vars:most_views}
+																	{/exp:ce_vars:alt_if}
+																	
+																	{exp:ce_vars:alt_if parse="inward"}
+																		{alt:if} '{flags:selected option="New"}'{/alt:if}
+																	  <img src="{site_url}assets/img/completions.png" alt="New" title="New" />
+																	  {exp:ce_vars:new}<img src="{site_url}assets/img/completions.png" alt="New" title="New" /><span>New</span>{/exp:ce_vars:new}
+																	{/exp:ce_vars:alt_if}
+																	{exp:ce_vars:alt_if parse="inward"}
+																		{alt:if} '{flags:selected option="Purchase"}'{/alt:if}
+																			<img src="{site_url}assets/img/money_icon.png" alt="Buy Now" title="Buy Now" />
+																			{exp:ce_vars:purchase}<img src="{site_url}assets/img/money_icon.png" alt="Buy Now" title="Buy Now" /><span>Buy Now</span>{/exp:ce_vars:purchase}
+																			
+																	{/exp:ce_vars:alt_if}
+																	{exp:ce_vars:alt_if parse="inward"}
+																		{alt:if} '{flags:selected option="Mobile"}'{/alt:if}
+																			<img src="{site_url}assets/img/mobile.png" alt="Mobile" title="Mobile" />
+																			{exp:ce_vars:mobile}<img src="{site_url}assets/img/mobile.png" alt="Mobile" title="Mobile" /><span>Mobile</span>{/exp:ce_vars:mobile}
+																	{/exp:ce_vars:alt_if}
+																	
+																	{exp:ce_vars:alt_if parse="inward"}
+																		{alt:if} '{flags:selected option="Multi-language"}'{/alt:if}
+																			<img src="{site_url}assets/img/globe.png" alt="Multi-Language" title="Multi-Language" />
+																			{exp:ce_vars:multi}<img src="{site_url}assets/img/globe.png" alt="Multi-Language" title="Multi-Language" /><span>Multi-language</span>{/exp:ce_vars:multi}
+																	{/exp:ce_vars:alt_if}
+                                                             
+                                                             
+                                                                 {exp:ce_vars:alt_if parse="inward"}
+                                                                            {alt:if} '{flags:selected option="Instant Safety Video"}'{/alt:if}
+                                                                                <img src="{site_url}assets/img/iss-uhlec.png" alt="Safety Toolbox Video" />
+                                                                                {exp:ce_vars:ISS}<img src="{site_url}assets/img/iss-uhlec.png" alt="Safety Toolbox Video" /><span>Safety Toolbox Video</span>{/exp:ce_vars:ISS}
+                                                                        {/exp:ce_vars:alt_if}
+                                                                    {exp:ce_vars:alt_if parse="inward"}
+																		{alt:if} '{flags:selected option="5-Min Overview"}'{/alt:if}
+																			<img src="{site_url}assets/img/overview-yup1b.png" alt="5-Min Overview" title="5-Min Overview" />
+																			{exp:ce_vars:5min}<img src="{site_url}assets/img/overview-yup1b.png" alt="5-Min Overview" title="5-Min Overview" /><span>5 Min Overview</span>{/exp:ce_vars:5min}
+																		{/exp:ce_vars:alt_if}
+                                                             
+																
+															</td>
+														</tr>
+												{/exp:channel:entries}
+											</table>
+								{/if}
+								<div class="row">
+									{exp:channel:entries channel="course_library" limit="1"}
+										<div class="medium-6 column">
+											{!--<a href="{site_url}assets/uploads/kb/Vivid_On_Demand_Course_Catalog.pdf" target="_blank" onclick="_gaq.push(['_trackEvent','Downloads','PDF','{url_title}: Entire Catalog']);"><img src="{site_url}assets/img/pdf_icon.png" /> Download entire course catalog</a>--}
+											<a href="http://go.vividlearningsystems.com/acton/attachment/2931/f-0477/1/-/-/-/-/Vivid-On-Demand-Course-Catalog.pdf" target="_blank" onclick="_gaq.push(['_trackEvent','Downloads','PDF','{url_title}: Entire Catalog']);"><img src="{site_url}assets/img/pdf_icon.png" alt="Download entire course catalog" title="Download entire course catalog" /> Download entire course catalog</a>
+</div>
+									{/exp:channel:entries}
+									<div class="medium-6 column">
+										<a href="https://vividlearningsystems.com/landing-pages/contact-us?namesource=LearnAtVivid&asset=Contact%20Us%20Inquiryt&leadtype=MQL&channel=Web&ao_campid70150000001Cy3F" class="button" style="float:right;"><span><span>Need help? Contact Us.</span></span></a>
+									</div>
+								</div>
+								{exp:channel:entries channel="course_library" limit="1"}
+									{course_banner_grid}
+										<a href="{course_banner_grid:banner_link}"><img style="padding:30px 0;" src="{course_banner_grid:banner}" alt="banner_alt_text" /></a>
+									{/course_banner_grid}
+								{/exp:channel:entries}
+							</div>
+							<aside class="medium-4 column additional-sidebar">
+								<div class="additional-posts">
+									<h2>Also on Vivid</h2>
+									{blog_sidebar}
+								</div>
+							</aside>
+						</div>
+					</div>
+					
+{embed="_includes/footer"}

@@ -1,0 +1,137 @@
+<!-- new_blog/index/ -->
+{embed="_includes/header"}
+				<main id="main" class="blog">
+				<!--	{blog_subscribe}  -->
+					<div class="main-area" style="padding-top: 3.5625rem;">
+						<div class="row" id="twocolumns">
+							<div class="medium-12 large-9 column">
+								<div class="row most-recent">
+								{exp:channel:entries channel="blog" dynamic="off" limit="1"}
+										<div class="small-12 column">
+											<h2 class="section-header">Most Recent</h2>
+											{blog_image}
+												{if blog_url== ''}
+											{exp:ce_img:pair src='{blog_image}' max_width='763' max_height='516'}
+											<a class="big-image" href="{page_url}" style="background: url(/assets/img/post-overlay.png) center bottom repeat-x, url({made}) top center / cover no-repeat;">
+											{/exp:ce_img:pair}
+												{if:else}
+											{exp:ce_img:pair src='{blog_url}' max_width='763' max_height='516'}
+											<a class="big-image" href="{page_url}" style="background: url(/assets/img/post-overlay.png) center bottom repeat-x, url({made}) top center / cover no-repeat;">
+											{/exp:ce_img:pair}
+												{/if}
+											{/blog_image}
+												<h4 class="{light_dark}">{title}</h4>
+												<h5 class="blog_date {light_dark}">{if show_date == 'y' }{entry_date format="%F %n, %Y"}{/if}</h5>
+											</a>
+											{exp:trunchtml chars="1750" inline="..." ending="<br/><a href='{page_url}'>Read the full article ></a>"}
+											{blog_content}
+											{/exp:trunchtml}
+										</div>
+								{/exp:channel:entries}
+								</div>
+							</div>
+							<div class="medium-12 large-3 column">
+								<div class="row jill-corner">
+									<h2 class="section-header">Jill's Safety Corner</h2>
+									{exp:channel:entries channel="blog" dynamic="off" category="106" limit="2"}
+									<div class="small-12 medium-6 large-12 column {switch='underline|'}">
+									{blog_image}
+									{if blog_url== ''}
+										{exp:ce_img:pair src='{blog_image}' width='378' height='253' crop='yes|center,center|0,0|yes'}
+										<img src="{made}" alt="" height="{height}" width="{width}" />
+										{/exp:ce_img:pair}
+									{if:else}
+										{exp:ce_img:pair src='{blog_url}' width='378' height='253' crop='yes|center,center|0,0|yes'}
+										<img src="{made}" alt="" height="{height}" width="{width}" />
+										{/exp:ce_img:pair}
+									{/if}
+								{/blog_image}
+											<a href="{page_url}">
+												<h4>{title}</h4></a>
+												<h5 class="blog_date">{if show_date == 'y' }{entry_date format="%F %n, %Y"}{/if}</h5>
+												{exp:trunchtml chars="250" inline="..." ending="<br/><a href='{page_url}'>Read the full article ></a>"}
+													{blog_content}
+												{/exp:trunchtml}
+									</div>
+									{/exp:channel:entries}
+								</div>
+							</div>
+							<hr />
+						</div>
+						<div class="row recommended">
+							<h2 class="section-header">Recommended</h2>
+							{exp:channel:entries channel="blog" dynamic="off" category="107" orderby="date" limit="2"}
+<!--							<div class="large-6 columns full-image" style="background-image: url({blog_image}{if blog_url== ""}{blog_image}{if:else}{blog_url}{/if}{/blog_image});">  -->
+							<div class="medium-6 columns full-image">
+								<a class="overlay" href="{page_url}">
+									<div class="center-vert">
+										<h4>{title}</h4>
+										<h5 class="blog_date">{if show_date == 'y' }{entry_date format="%F %n, %Y"}{/if}</h5>
+									</div>
+								</a>
+								{blog_image}
+									{if blog_url== ''}
+										{exp:ce_img:pair src='{blog_image}' width='522' height='365' crop='yes|center,center|0,0|yes' filter='grayscale'}
+										<img src="{made}" alt="" height="{height}" width="{width}" />
+										{/exp:ce_img:pair}
+									{if:else}
+										{exp:ce_img:pair src='{blog_url}' width='522' height='365' crop='yes|center,center|0,0|yes' filter='grayscale'}
+										<img src="{made}" alt="" height="{height}" width="{width}" />
+										{/exp:ce_img:pair}
+									{/if}
+								{/blog_image}
+							</div>
+							{/exp:channel:entries}
+							<hr />
+						</div>
+						<div class="row blog-list">
+							<div class="small-12 columns">
+							{exp:channel:entries channel="blog" dynamic="off" orderby="date" offset="1" limit="5"}
+								<div class="row single-entry">
+									<div class="large-4 medium-5 small-4 columns">
+							{blog_image}
+									{if blog_url== ''}
+										{exp:ce_img:pair src='{blog_image}' width='333' height='222' crop='yes|center,center|0,0|yes'}
+										<img src="{made}" alt="" height="{height}" width="{width}" />
+										{/exp:ce_img:pair}
+									{if:else}
+										{exp:ce_img:pair src='{blog_url}' width='333' height='222' crop='yes|center,center|0,0|yes'}
+										<img src="{made}" alt="" height="{height}" width="{width}" />
+										{/exp:ce_img:pair}
+									{/if}
+								{/blog_image}
+									</div>
+									<div class="medium-7 small-8 columns">
+										<a href="{page_url}"><h4>{title}</h4></a>
+										<h5 class="blog_date">{if show_date == 'y' }{entry_date format="%F %n, %Y"}{/if}</h5>
+									</div>
+									<div class="large-8 medium-7 small-12 columns text-content">
+										{exp:trunchtml chars="250" inline="..." ending="<p><a href='{page_url}'>Read the full article ></a></p>"}
+											{blog_content}
+											{/exp:trunchtml}
+									</div>
+								</div>
+							{/exp:channel:entries}
+								<div class="row">
+									<div class="small-6 columns"></div>
+									<div class="small-6 columns more-posts"><a href="/blog/listing/">See more posts &#9656;</a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+<script type="text/javascript">
+			var aoProtocol = location.protocol;
+			if ( aoProtocol.indexOf('http') < 0 ) aoProtocol = 'http:';
+			var aoCAP = {
+			aid: '2931',
+			fid: '001c',
+			did: 'd-0001',
+			server: 'go.vividlearningsystems.com',
+			formId: 'blogNewsletter',
+			protocol: aoProtocol
+			};
+			document.write( '<script type="text/javascript" src="'+aoCAP.protocol+'//'+aoCAP.server+'/acton/js/formcap.min.js"><'+'/script>' );
+			
+			</script>
+{embed="_includes/footer"}
+<script async src="/assets/js/blog-script.js" type="text/javascript"></script>

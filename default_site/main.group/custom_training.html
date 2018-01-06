@@ -1,0 +1,79 @@
+{embed="_includes/header"}
+
+				<!-- main container of all the page elements -->
+				<main id="main">
+				{solutions_nav}
+					<div class="main-area section-custom-hero">
+						<div class="row">
+							<div class="large-5 large-push-7 medium-12 medium-push-0 column custom_training text-left" id="content">
+								{exp:channel:entries channel="custom_training" limit="1"}
+									<h1>{title}</h1>
+									<p>{custom_subtitle}</p>
+									<p>{custom_blurb}</p>
+								{/exp:channel:entries}
+							</div>
+							<div class="large-6 large-pull-12 hide-for-small-only column custom-hero-image text-center">
+								<figure class="custom-image"></figure>
+							</div>
+						</div>
+					</div>
+					<section class="testimonial-section different">
+						<div class="row section-title">
+							<div class="small-12 column">
+							<h1>So What Makes Us Different?</h1>
+							</div>
+						</div>
+						<div class="row" data-equalizer>
+							{exp:channel:entries channel="custom_training" limit="1"}
+							<ul class="small-block-grid-1 medium-block-grid-3 different systems-boxes">
+							{pvps_grid}
+								<li class="text-center">
+									<div>
+										<div data-equalizer-watch class="text-center">
+										<h2>{pvps_grid:title}</h2>
+											{if pvps_grid:icon !=''}<img class="show-for-medium-up" src="{pvps_grid:icon}" alt="{pvps_grid:title}" title="{pvps_grid:title}" />{/if}
+											{pvps_grid:text}
+										</div>
+											{!--<a href="#" class="button"><span><span>{pvps_grid:title}</span></span></a>--}
+									</div>
+								</li>
+									{/pvps_grid}
+							</ul>
+								{/exp:channel:entries}
+						</div>
+					</section><!--End section-->
+					<section id="custom-benefits">
+						<div class="row section-title">
+							<div class="medium-12 column" id="content">
+								<h1 style="text-align:center;">Our Approach</h1>
+								<h2 style="text-align:center;margin-top:0;margin-bottom:15px;">Nothing less than our full attention, undivided, to resolve your workforce training challenges. </h2>
+
+							</div>
+						</div>
+				{exp:channel:entries channel="custom_training" limit="1"}
+					{benefit_statements_grid}
+					{if benefit_statements_grid:field_row_count % 2 == 1}
+						<div class="row benefit-statements">
+							<div class="medium-4 column">
+								<img class="show-for-medium-up" src="{benefit_statements_grid:icon}" alt="{benefit_statements_grid:alt_text}" title="{benefit_statements_grid:alt_text}" />
+							</div>
+							<div class="medium-7 medium-offset-1 column">
+								{benefit_statements_grid:text}
+							</div>
+
+						</div>
+					{if:else}
+						<div class="row benefit-statements">
+							<div class="medium-7 column">
+								{benefit_statements_grid:text}
+							</div>
+							<div class="medium-4 medium-offset-1 column">
+								<img class="show-for-medium-up" src="{benefit_statements_grid:icon}" alt="{benefit_statements_grid:alt_text}" title="{benefit_statements_grid:alt_text}" />
+							</div>
+						</div>					
+					{/if}
+					{/benefit_statements_grid}
+				{/exp:channel:entries}
+					</section>
+{embed="_includes/footer"}
+<!-- custom_training -->

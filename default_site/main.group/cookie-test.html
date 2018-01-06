@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+</head>
+
+<body>
+
+<form id="cookieTest" name="cookieTest" class="cmxform" action="">
+<input type="submit">
+</form>
+<div id="sticky" style="height:300px; width:300px; display:block; background-color:#FC0105;">&nbsp;</div>
+<script type="text/javascript">
+	$(document).ready(function() {
+		//get cookie info if it exists.
+		var myCookie = getCookie("blogSignup");
+		if(myCookie == "")
+		{
+			alert("no cookie");
+		}
+		else if(myCookie != "")
+		{
+			alert("cookie exists");
+			document.getElementById("sticky").style.display = "none";
+		}
+	});
+	
+	
+	$( "#cookieTest" ).submit(function( event ) 
+	{
+  		/*if ( $( "#roi" ).valid() ) {
+       		compute();
+        	$('html, body').animate({ scrollTop: $("#results").offset().top }, 1000);
+      	}
+      return false;*/
+	
+	  setCookie();
+    });
+	
+	function setCookie()
+	{
+		
+		var d = new Date();
+		
+		//create date of expiration - 1 month
+		d.setTime(d.getTime() + (30*24*60*60*1000));
+		var expires = "expires="+d.toUTCString();
+		document.cookie = "blogSignup=yes; " + expires;
+	}
+	function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1);
+        if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+    }
+    return "";
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!-- course_library/test_courses_listing -->
+{embed="_includes/header"}
+				<!-- main container of all the page elements -->
+				<main id="main">
+					<div class="main-area" style="padding-top: 0;">
+						<div class="full-width">
+							<div class="medium-7 small-centered text-center columns intro-content">
+							<h1>Online Safety Training for a Safer, Smarter Workforce.</h1>
+<script src="//fast.wistia.com/embed/medias/fx20bywuoa.jsonp" async></script>
+<p><span class="wistia_embed wistia_async_fx20bywuoa popover=true popoverAnimateThumbnail=true" style="display:inline-block;height:153px;width:272px;float:right;margin-left:10px;margin-bottom:10px;">&nbsp;</span></p>
+
+<p align="left">Vivid Learning Systems provides OSHA safety training online and offers a wide range of online courses for companies looking to keep workers safe.</p>
+
+<p align="left">Vivid’s online safety courses offer the content and value of classroom training programs needed to keep workers and employees safe, all at the same time saving on travel time and cost.</p>
+
+<p align="left">We know that effective training delivers information in unique ways, creating lasting memorability to reach workers and influence behaviors.</p>
+
+<p align="left">In addition to <a href="https://vividlearningsystems.com/solutions/courses/osha" target="_blank">OSHA</a> courses, Vivid is a provider of the only <a href="https://vividlearningsystems.com/solutions/courses/msha" target="_blank">MSHA</a> approved course collection, the only <a href="https://vividlearningsystems.com/solutions/courses/electric-utilities" target="_blank">electrical worker training</a> program online, <a href="https://vividlearningsystems.com/solutions/courses/transportation" target="_blank">Department of Transportation (DOT)</a> and much more.</p>
+
+<p align="left">Take a look below or <a href="https://vividlearningsystems.com/demos/sign-up?namesource=Courses%20Page%20Referral&leadtype=MQL&channel=Marketing&asset=Course%20Demo" target="_blank">demo our courses</a> to see how Vivid’s online safety training can help you train a safer workforce.</p>								
+							</div>
+						</div>
+						<div class="row" id="course-libraries">
+							<div class="medium-7 small-centered text-center columns intro-content">
+								<p>
+									<div class="btn-group">
+										<a class="btn round compliance active" href="javascript:void(0)">Compliance</a>
+										<a class="btn round specialty hide" href="javascript:void(0)">Specialty</a>
+										<a class="btn round all-courses" href="javascript:void(0)">All Courses</a>
+									</div>
+								</p>
+							</div>
+							<div id="library-lists" class="">
+								<div class="grid-sizer"></div>
+								<section class="osha-library compliance">
+									{exp:channel:entries channel="course_library" entry_id="31"}<h3 class="library-title"><a class="course-library-link" href="{page_url}">{title}</a> <a class="view-course-button show-for-small-only" href="{page_url}">View Library</a></h3>{/exp:channel:entries}
+									<ul class="hide-for-small-only">
+									{exp:channel:entries channel="osha-courses" dynamic="no" sort="asc" orderby="title" category_group="not 3"}
+										<li>
+											{if entry_id == "121" OR entry_id == "132"}<a href="{page_url}" style="font-weight: bold;">{title}</a>{if:else}<a href="{page_url}">{title}</a>{/if}
+											{if entry_id == "121"}
+												{embed="course_library/ppe_bundle"}
+											{/if}
+											{if entry_id == "132"}
+												{embed="course_library/first_aid_bundle"}
+											{/if}
+										</li>
+									{/exp:channel:entries}
+									</ul>
+								</section>
+								
+								<section class="msha-library specialty">
+									{exp:channel:entries channel="course_library" entry_id="29"}<h3 class="library-title"><a class="course-library-link" href="{page_url}">{title}</a> <a class="view-course-button show-for-small-only" href="{page_url}">View Library</a></h3>{/exp:channel:entries}
+									<ul class="hide-for-small-only">
+									{exp:channel:entries channel="msha-courses" dynamic="no" sort="asc" orderby="title" category_group="not 3"}
+										<li>
+											<a href="{page_url}" style="font-weight: bold;">{title}</a>
+											{if entry_id == "112"}
+												{embed="course_library/msha_46_new_bundle"}
+											{if:elseif entry_id == "113"}
+												{embed="course_library/msha_46_refresher_bundle"}
+											{if:elseif entry_id == "114"}
+												{embed="course_library/msha_48_new_bundle"}
+											{if:elseif entry_id == "115"}
+												{embed="course_library/msha_48_refresher_bundle"}
+											{/if}
+										</li>
+									{/exp:channel:entries}
+									</ul>
+								</section>
+
+								<section class="hr-library compliance one-off">
+									{exp:channel:entries channel="course_library" entry_id="21"}<h3 class="library-title"><a class="course-library-link" href="{page_url}">{title}</a> <a class="view-course-button show-for-small-only" href="{page_url}">View Library</a></h3>{/exp:channel:entries}
+									<ul class="hide-for-small-only">
+									{exp:channel:entries channel="human-resources-compliance-courses" dynamic="no" sort="asc" orderby="title" entry_id="not 160" category_group="not 3"}
+									{if special_link != ''}
+										<li><a href="{special_link}">{title}</a></li>										
+									{if:else}
+										<li><a href="{page_url}">{title}</a></li>
+									{/if}
+									{/exp:channel:entries}
+									</ul>
+								</section>
+								
+								<section class="hr-library">
+									{exp:channel:entries channel="course_library" entry_id="21"}<h3 class="library-title"><a class="course-library-link" href="{page_url}">{title}</a> <a class="view-course-button show-for-small-only" href="{page_url}">View Library</a></h3>{/exp:channel:entries}
+									<ul class="hide-for-small-only">
+									{exp:channel:entries channel="human-resources-compliance-courses" dynamic="no" sort="asc" orderby="title" category_group="not 3"}
+									{if special_link != ''}
+										<li><a href="{special_link}">{title}</a></li>										
+									{if:else}
+										<li><a href="{page_url}">{title}</a></li>
+									{/if}
+									{/exp:channel:entries}
+									</ul>
+								</section>
+								
+								<section class="ewt-library specialty">
+									{exp:channel:entries channel="course_library" entry_id="36"}<h3 class="library-title"><a class="course-library-link" href="{page_url}">{title}</a> <a class="view-course-button show-for-small-only" href="{page_url}">View Library</a></h3>{/exp:channel:entries}
+									<ul class="hide-for-small-only">
+									{exp:channel:entries channel="electric-utilities-courses" dynamic="no" sort="asc" orderby="title" category_group="not 3"}
+										<li><a href="{page_url}">{title}</a></li>
+									{/exp:channel:entries}
+									</ul>
+								</section>
+								<section class="NFPA70E-library specialty">
+									{exp:channel:entries channel="course_library" entry_id="30"}<h3 class="library-title"><a class="course-library-link" href="{page_url}">{title}</a> <a class="view-course-button show-for-small-only" href="{page_url}">View Library</a></h3>{/exp:channel:entries}
+									<ul class="hide-for-small-only">
+									{exp:channel:entries channel="nfpa-70e-courses" dynamic="no" sort="asc" orderby="title" category_group="not 3"}
+										<li><a href="{page_url}">{title}</a></li>
+									{/exp:channel:entries}
+									</ul>
+								</section>
+								
+								<section class="construction-library compliance">
+									{exp:channel:entries channel="course_library" entry_id="14"}<h3 class="library-title"><a class="course-library-link" href="{page_url}">{title}</a> <a class="view-course-button show-for-small-only" href="{page_url}">View Library</a></h3>{/exp:channel:entries}
+									<ul class="hide-for-small-only">
+									{exp:channel:entries channel="construction-safety-courses" dynamic="no" sort="asc" orderby="title" category_group="not 3"}
+										<li><a href="{page_url}">{title}</a></li>
+									{/exp:channel:entries}
+									</ul>
+								</section>								
+
+								<section class="environmental-management-library compliance">
+									{exp:channel:entries channel="course_library" entry_id="22"}<h3 class="library-title"><a class="course-library-link" href="{page_url}">{title}</a> <a class="view-course-button show-for-small-only" href="{page_url}">View Library</a></h3>{/exp:channel:entries}
+									<ul class="hide-for-small-only">
+									{exp:channel:entries channel="environmental-management-courses" dynamic="no" sort="asc" orderby="title" category_group="not 3"}
+										<li><a href="{page_url}">{title}</a></li>
+									{/exp:channel:entries}
+									</ul>
+								</section>
+
+								<section class="osha1030-library specialty">
+									{exp:channel:entries channel="course_library" entry_id="32"}<h3 class="library-title"><a class="course-library-link" href="{page_url}">{title}</a> <a class="view-course-button show-for-small-only" href="{page_url}">View Library</a></h3>{/exp:channel:entries}
+									<ul class="hide-for-small-only">
+									{exp:channel:entries channel="osha-10-and-30-courses" dynamic="no" sort="asc" orderby="title" category_group="not 3"}
+										<li><a href="{page_url}">{title}</a></li>
+									{/exp:channel:entries}
+									</ul>
+								</section>
+								
+								<section class="hazwoper-library specialty">
+									{exp:channel:entries channel="course_library" entry_id="26"}<h3 class="library-title"><a class="course-library-link" href="{page_url}">{title}</a> <a class="view-course-button show-for-small-only" href="{page_url}">View Library</a></h3>{/exp:channel:entries}
+									<ul class="hide-for-small-only">
+									{exp:channel:entries channel="hazwoper-courses" dynamic="no" sort="asc" orderby="title" category_group="not 3"}
+										<li><a href="{page_url}">{title}</a></li>
+									{/exp:channel:entries}
+									</ul>
+								</section>								
+								
+								<section class="transportation-library specialty">
+									{exp:channel:entries channel="course_library" entry_id="35"}<h3 class="library-title"><a class="course-library-link" href="{page_url}">{title}</a> <a class="view-course-button show-for-small-only" href="{page_url}">View Library</a></h3>{/exp:channel:entries}
+									<ul class="hide-for-small-only">
+									{exp:channel:entries channel="transportation-courses" dynamic="no" sort="asc" orderby="title" category_group="not 3"}
+										<li>
+											<a href="{page_url}" style="font-weight: bold;">{title}</a>
+										{if entry_id == "206"}
+											{embed="course_library/dot_hazmat_bundle"}
+										{/if}
+										</li>
+									{/exp:channel:entries}
+									</ul>
+								</section>
+								<section class="hr-library specialty one-off">
+									{exp:channel:entries channel="course_library" entry_id="21"}<h3 class="library-title"><a class="course-library-link" href="{page_url}">{title}</a> <a class="view-course-button show-for-small-only" href="{page_url}">View Library</a></h3>{/exp:channel:entries}
+									<ul class="hide-for-small-only">
+									{exp:channel:entries channel="human-resources-compliance-courses" dynamic="no" sort="asc" orderby="title" entry_id="160" category_group="not 3"}
+										<li><a href="{page_url}">{title}</a></li>
+									{/exp:channel:entries}
+									</ul>
+								</section>
+								
+								<section class="lab-library specialty">
+									{exp:channel:entries channel="course_library" entry_id="28"}<h3 class="library-title"><a class="course-library-link" href="{page_url}">{title}</a> <a class="view-course-button show-for-small-only" href="{page_url}">View Library</a></h3>{/exp:channel:entries}
+									<ul class="hide-for-small-only">
+									{exp:channel:entries channel="higher-education-courses" dynamic="no" sort="asc" orderby="title" category_group="not 3"}
+										<li>
+											{if entry_id == "194"}<a href="{page_url}" style="font-weight: bold;">{title}</a>{if:else}<a href="{page_url}">{title}</a>{/if}
+											{if entry_id == "194"}
+												{embed="course_library/lab_safety_bundle"}
+											{/if}
+										</li>
+									{/exp:channel:entries}
+									</ul>
+								</section>
+
+								<section class="food-safety-library specialty">
+									{exp:channel:entries channel="course_library" entry_id="23"}<h3 class="library-title"><a class="course-library-link" href="{page_url}">{title}</a> <a class="view-course-button show-for-small-only" href="{page_url}">View Library</a></h3>{/exp:channel:entries}
+									<ul class="hide-for-small-only">
+									{exp:channel:entries channel="food-safety-haccp-courses" dynamic="no" sort="asc" orderby="title" category_group="not 3"}
+										<li>
+											{if entry_id == "181" OR entry_id == "182"}<a href="{page_url}" style="font-weight: bold;">{title}</a>{if:else}<a href="{page_url}">{title}</a>{/if}
+											{if entry_id == "182"}
+												{embed="course_library/food_safety_manager_bundle"}
+											{if:elseif entry_id == "181"}
+												{embed="course_library/food_safety_operator_bundle"}
+											{/if}
+										</li>
+									{/exp:channel:entries}
+									</ul>
+								</section>
+															
+								<section class="ca-osha-library specialty">
+									{exp:channel:entries channel="course_library" entry_id="15"}<h3 class="library-title"><a class="course-library-link" href="{page_url}">{title}</a> <a class="view-course-button show-for-small-only" href="{page_url}">View Library</a></h3>{/exp:channel:entries}
+									<ul class="hide-for-small-only">
+									{exp:channel:entries channel="canadian-safety-health-courses" dynamic="no" sort="asc" orderby="title" category_group="not 3"}
+										<li><a href="{page_url}">{title}</a></li>
+									{/exp:channel:entries}
+									</ul>
+								</section>
+								
+								<section class="healthcare-library specialty">
+									{exp:channel:entries channel="course_library" entry_id="27"}<h3 class="library-title"><a class="course-library-link" href="{page_url}">{title}</a> <a class="view-course-button show-for-small-only" href="{page_url}">View Library</a></h3>{/exp:channel:entries}
+									<ul class="hide-for-small-only">
+									{exp:channel:entries channel="healthcare-courses" dynamic="no" sort="asc" orderby="title" category_group="not 3"}
+										<li>
+											{if entry_id == "187" OR entry_id == "191"}<a href="{page_url}" style="font-weight: bold;">{title}</a>{if:else}<a href="{page_url}">{title}</a>{/if}
+											{if entry_id == "187"}
+												{embed="course_library/bereavement_bundle"}
+											{if:elseif entry_id == "191"}
+												{embed="course_library/med_mandatory_bundle"}
+											{/if}
+										</li>
+									{/exp:channel:entries}
+									</ul>
+								</section>
+								
+							</div>
+						</div>
+					</div>
+					
+{embed="_includes/footer"}

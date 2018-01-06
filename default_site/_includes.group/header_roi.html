@@ -1,0 +1,187 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<meta charset="utf-8">
+	<!--[if IE]><![endif]-->
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="white">
+	<!-- set the viewport width and initial-scale on mobile devices -->
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1, user-scalable=no">
+	<!--[if lt IE 9 ]>
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8">
+	<![endif]-->
+	{exp:channel:entries require_entry="yes"}
+	  {!--{if no_results}{redirect="404"}{/if}--}
+	    {exp:nsm_better_meta:template entry_id="{entry_id}"}
+	{/exp:channel:entries}
+{if segment_1=="roi"}
+	<link rel="canonical" href="https://vividlearningsystems.com/roi" />
+{/if}
+	{if freebie_1==""}
+		{!-- Override the page title and hide the default site title --}
+		  {exp:nsm_better_meta:template
+		    title="Online Safety Training Experts | Vivid Learning Systems"
+		    hide_site_title = "y"
+		    description="Vivid is an online safety training company. Making life easier for safety professionals is what we do. Call us at 1-800-956-0333."
+		  }
+	{/if}
+	{exp:minimee:css}
+	<link rel="stylesheet" href="{site_url}assets/css/normalize.css">
+	<link rel="stylesheet" href="{site_url}assets/css/foundation.min.css">
+	<link rel="stylesheet" href="{site_url}assets/css/fancybox.css">
+	<link rel="stylesheet" href="{site_url}assets/css/all.css">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	{/exp:minimee:css}
+	
+	<!-- RSS Syndication Links -->
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="https://vividlearningsystems.com/main/blog_rss" />
+	<!-- Favicon Link -->
+	<link rel="shortcut icon" href="favicon.png">
+	<!-- include modernizr JavaScript -->
+	<script async src="/assets/js/min/head-ck-min.js"></script>
+	<!--<script async src="/assets/js/vendor/modernizr.js"></script>
+	<script async type="text/javascript" language="JavaScript" src="https://share.vividlearningsystems.com/js/frs-app-96486.js"></script>--><!-- Sales Fusion Tracker -->
+
+    <!--[if lt IE 9]>
+		<link rel="stylesheet" href="{site_url}assets/css/ie.css" media="screen">
+	<![endif]-->
+<script async type="text/javascript">frt(96486);</script>
+<!-- Page hiding snippet (recommended)  -->
+<style>.async-hide { opacity: 0 !important} </style>
+<script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+(a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+})(window,document.documentElement,'async-hide','dataLayer',4000,
+{'GTM-TWV373':true});</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TWV373');</script>
+<!-- End Google Tag Manager --> 
+</head>
+<body class="{if segment_1 == 'solutions'}sols{/if}">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TWV373"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+	<div class="off-canvas-wrap mobile-nav-canvas" data-offcanvas>
+		<div class="inner-wrap">
+			<!-- mobile main navigation -->
+			<div class="mobile-nav-panel right-off-canvas-menu">
+				<div class="panel-holder">
+					<nav>
+						<ul>
+							<li><a href="{site_url}">Home</a></li>
+							<li><a href="{site_url}why-vivid">Why Vivid</a></li>
+							<li>
+								<a href="{site_url}solutions">Solutions</a>
+								{!--<ul>
+									<li>Test</li>
+								</ul>--}
+							</li>
+							<li><a href="{site_url}case-studies">Case Studies</a></li>
+							<li><a href="{site_url}blog">Blog</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+			<div class="page">
+				<!-- header of the page -->
+				<header id="header">
+					<!-- top panel -->
+					<div class="top-panel">
+						<div class="row">
+							<div class="large-12 columns">
+								<strong class="hide-for-small-only ico-logo">Vivid learning systems</strong>
+								<ul class="links">
+									<li><a href="{site_url}safety-toolbox">Safety Toolbox</a></li>
+									{!--<li><a href="{site_url}resources">Resources</a></li>--}
+								</ul>
+								<div class="links-holder">
+									<a href="tel:18009560333" onclick="_gaq.push(['_trackEvent','Click-to-Call','Header','800-956-0333']);" class="tel">1-800-956-0333</a>
+									<ul class="links">
+										<li><a href="{site_url}landing-pages/demo">Demo</a></li>
+										{!--<li class="hide-for-small-only login"><a href="https://www.vividlearningsystems.com/site/login/">Login</a></li>--}
+                                    {if segment_1==""}
+                                    	<li><a href="{site_url}knowledge-base">KnowledgeBase</a></li>
+                                    {/if}
+                                    {if logged_in}
+                                    	<li>You're logged in</li>
+                                    {/if}
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- header area -->
+					<div class="header-holder">
+						<div class="row">
+							<div class="large-12 columns">
+								<div class="holder">
+									<strong class="logo"><a href="{site_url}">Vivid learning systems</a></strong>
+									<nav class="hide-for-small-only drop">
+										<ul>
+											<li><a style="padding-left: 0;" {if segment_1=="why-vivid"}class="active_nav"{/if} href="{site_url}why-vivid">Why Vivid</a>
+												
+                                       		<ul class="dropdown">
+                                            	<li><a href="{site_url}why-vivid/events/">Events</a></li>
+                                                <li><a href="{site_url}why-vivid/careers/">Life at Vivid</a></li>
+                                                <li><a href="{site_url}why-vivid/news/">News</a></li>
+                                                <li><a href="{site_url}why-vivid/our-history/">Our History</a></li>
+                                                <li><a href="{site_url}why-vivid/our-service/">Our Service</a></li>
+                                                <li><a href="{site_url}why-vivid/our-team/">Our Team</a></li>
+                                                <li><a href="{site_url}why-vivid/about-vivid-learning-systems/">Who We Are</a></li>
+                                           </ul>     
+                                          
+                                       </li>
+											<li>
+												<a {if segment_1=="solutions"}class="active_nav"{/if} href="{site_url}solutions">Solutions</a>
+													<ul class="dropdown"> 
+													<li><a href="{site_url}solutions/courses ">Safety Training Courses</a> 
+														<ul> 
+															<li><a href="{site_url}solutions/courses/osha/">Course Library</a></li>
+														</ul>
+													</li>
+													<li><a href="{site_url}solutions/safety-training-systems">Safety Training Systems</a></li> 
+													<li><a href="{site_url}solutions/custom-training">Custom Training</a></li> 
+													<li><a href="{site_url}solutions/contractor-program">Contractor Program</a></li>
+                                                    
+                                                    <li><a href="#">Solutions by Industry</a>
+														<ul> 
+															<li><a href="{site_url}solutions/solutions-by-industry/colleges-universities/">Colleges & Universities</a></li> 
+															<li><a href="{site_url}solutions/solutions-by-industry/electric-utilities/">Electric Utilities</a></li> 
+															<li><a href="{site_url}solutions/solutions-by-industry/food-processing/">Food Processing</a></li> 
+															 <li><a href="{site_url}solutions/solutions-by-industry/general-industry/">General Industry</a></li>
+															<li><a href="{site_url}solutions/solutions-by-industry/government/">Government</a></li> 
+															<li><a href="{site_url}solutions/solutions-by-industry/mining">Mining</a></li> 
+														</ul>
+													</li> 
+                                                    
+                                                    <li><a href="{site_url}solutions/instant-safety-videos">Instant Safety Videos</a></li>
+                                                    						</ul> 
+											</li>
+											<li><a {if segment_1=="case-studies"}class="active_nav"{/if} href="{site_url}case-studies">Case Studies</a></li>
+											<li><a {if segment_1=="blog"}class="active_nav"{/if} href="{site_url}blog">Blog</a></li>
+										</ul>
+									</nav>
+									<a href="#" class="right-off-canvas-toggle nav-opener" >Menu</a>
+								</div>
+								<div class="search-panel">
+									<!-- search form -->
+									{exp:search:simple_form channel="basic_page|blog|canadian-safety-health-courses|case_studies|construction-safety-courses|course_library|custom_training|electric-utilities-courses|human-resources-compliance-courses|environmental-management-courses|food-safety-haccp-courses|forklift-safety-training-courses|gas-operations-courses|hazwoper-courses|healthcare-courses|industries|industry_solutions|higher-education-courses|msha-courses|news|nfpa-70e-arc-flash-courses|osha-courses|osha-10-and-30-courses|power-generation-courses|safety_training_courses|safety_training_systems|solutions|toolbox_resources|transportation-dot-courses|events|contractor_program" show_future_entries="yes" form_class="search-form" where="all" search_in="everywhere" result_page="search/results" no_result_page="search/no_results" results="10"}
+										<fieldset>
+							                <input type="search" name="keywords" id="keywords" value="Search" size="18" maxlength="100" onfocus="this.value='', this.className='focus'" value="Search" class="search_input">
+							                <input type="submit" value="GO" class="button">
+									      </fieldset>
+									{/exp:search:simple_form}
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</header>

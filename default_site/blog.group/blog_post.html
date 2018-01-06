@@ -1,0 +1,66 @@
+{embed="_includes/header"}
+
+				<main id="main" class="blog-post">
+					<section id="article">
+						<div class="row">
+							<article class="content">
+								{exp:channel:entries channel="blog" track_views="four"}
+									{if post_type == "Video"}
+									<div class='embed-container'>
+									{video_embed}
+									</div>
+									<br/>
+									{if:elseif post_type == "NSG"}
+									{blog_image_grid}
+										<img class="main-image nsg" src="{blog_image_grid:blog_image}" alt="{blog_image_grid:alt_text}" title="{blog_image_grid:alt_text}" />
+									{/blog_image_grid}
+									{if:else}
+									{blog_image_grid}
+										<img class="main-image" src="{blog_image_grid:blog_image}" alt="{blog_image_grid:alt_text}" title="{blog_image_grid:alt_text}" />
+									{/blog_image_grid}
+									{/if}
+								<h1>{title}</h1>
+									{if post_type == "NSG"}<h3 class="post-type">Not-So-Great Moments In Safety</h3>{/if}{if post_type == "Video"}<h3 class="post-type">Video</h3>{/if}
+									{if blog_authors != ""}
+									{blog_authors}
+									<item class="author">
+										<img src="{blog_authors:author_image}" alt="{blog_authors:title}" title="{blog_authors:title}">
+										<div class="bio">
+											<h4 class="name">{blog_authors:title}</h4>
+											<h5 class="job-title">{blog_authors:author_job_title}</h5>
+											{blog_authors:author_description}
+											{blog_authors:author_social_links}
+										</div>
+									</item>
+									{/blog_authors}
+									{if:else}
+									<br/>
+									{/if}
+									<div class="blog-post-text">
+									{blog_content}
+									</div>
+									{exp:stash:set name="entryID"}{entry_id}{/exp:stash:set}
+										
+								{/exp:channel:entries}
+	
+								<section class="comments">
+									{disqus}
+								</section>
+							</article>
+							<section id="other-posts">
+								<div class="container">
+									<h4 class="section-header">Related Posts</h4>
+									<ul>
+										{embed="blog/.related_template" entry_id="{stash:entryID}"}
+									</ul>
+								</div>
+							</section>
+						</div>
+					</section>
+{embed="_includes/footer"}
+
+<script async src="/assets/js/blog-script.js" type="text/javascript"></script>
+
+<script type="application/ld+json">
+{embed="blog/blog_structured_data"}
+</script>

@@ -1,0 +1,87 @@
+{embed="_includes/header"}
+
+				<!-- main container of all the page elements -->
+				<main id="main">
+				{solutions_nav}
+					<div class="main-area solutions_main">
+						<div class="row" id="twocolumnss">
+							<div class="medium-7 large-5 large-push-7 columns">
+								{exp:channel:entries channel="solutions" limit="1"}
+									{solutions_overview}
+								{/exp:channel:entries}
+							</div>
+							<div class="medium-5 large-7 large-pull-5 columns"></div>
+						</div>
+					</div>
+					<section class="testimonial-section simplicity">
+						<div class="row section-title">
+							<div class="small-12 columns">
+								<h1>Simplicity</h1>
+								{exp:channel:entries channel="solutions" limit="1"}
+								<p>{simplicity_subtitle}</p>
+								{/exp:channel:entries}
+							</div>
+						</div>
+						<div class="row" data-equalizer>
+							{exp:channel:entries channel="solutions" limit="1"}
+							<ul class="small-block-grid-1 medium-block-grid-3  simplicity-boxes">
+								{simplicity_boxes_grid}
+								<li class="text-center">
+									<div>
+										<div data-equalizer-watch>
+											<img src="{simplicity_boxes_grid:icon}" alt="{simplicity_boxes_grid:title}" title="{simplicity_boxes_grid:title}" />
+											{simplicity_boxes_grid:text}
+										</div>
+										<a href="{simplicity_boxes_grid:link}" class="button"><span><span>{simplicity_boxes_grid:title}</span></span></a>
+									</div>
+								</li>
+								{/simplicity_boxes_grid}
+							</ul>
+							{/exp:channel:entries}
+						</div>
+					</section>
+					<section class="testimonial-section different">
+						<div class="row section-title">
+							<div class="medium-12 columns">
+								{exp:channel:entries channel="solutions" limit="1"}
+								<h1>Who We Serve</h1>
+								<p>{who_we_serve_subtitle}</p>
+								{/exp:channel:entries}
+							</div>
+						</div>			
+						<div class="row course_icons">
+							<ul class="small-block-grid-2 medium-block-grid-3">
+								<li class="text-center"><img src="{site_url}assets/img/university-icon@3x.png" alt="Colleges & Universities" title="Colleges & Universities" /><br /><a href="/index.php/solutions/solutions-by-industry/colleges-universities/" class="button"><span><span>Colleges & Universities</span></span></a></li>
+								<li class="text-center"><img src="{site_url}assets/img/utility-icon@3x.png" alt="Electrical Safety" title="Electrical Safety" /><br /><a href="/index.php/solutions/solutions-by-industry/electric-utilities/" class="button"><span><span>Electric Utilities</span></span></a></li>
+								<li class="text-center"><img src="{site_url}assets/img/food-icon@3x.png" alt="Food Processing" title="Food Processing" /><br /><a href="/index.php/solutions/solutions-by-industry/food-processing/" class="button"><span><span>Food Processing</span></span></a></li>
+								<li class="text-center"><img src="{site_url}assets/img/general-icon@3x.png" alt="General Industry" title="General Industry" /><br /><a href="/index.php/solutions/solutions-by-industry/general-industry/" class="button"><span><span>General Industry</span></span></a></li>
+								<li class="text-center"><img src="{site_url}assets/img/gov-icon@3x.png" alt="Government" title="Government" /><br /><a href="/index.php/solutions/solutions-by-industry/government/" class="button"><span><span>Government</span></span></a></li>
+								<li class="text-center"><img src="{site_url}assets/img/msha-surface-icon@3x.png" alt="Mining Safety" title="Mining Safety" /><br /><a href="/index.php/solutions/solutions-by-industry/mining" class="button"><span><span>Mining</span></span></a></li>
+							</ul>
+						</div>
+					</section><!--End section-->
+					<section class="testimonial-section on-demand">
+						<div class="main-area">
+							<div class="row on_demand">
+								<div class="medium-12 columns">
+									<h1>On demand is the better way forward</h1>
+									{exp:channel:entries channel="solutions" limit="1"}
+									<p>{on_demand_subtitle}</p>
+									<div class="row">
+								
+										{on_demand_lists_grid}
+										<div class="medium-6 columns left_list">
+											{on_demand_lists_grid:left_list}
+										</div>
+										<div class="medium-6 columns right_list">
+											{on_demand_lists_grid:right_list}
+										</div>
+										{/on_demand_lists_grid}
+										{/exp:channel:entries}
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>	<!--End section-->
+{embed="_includes/footer"}
+<!-- solutions -->

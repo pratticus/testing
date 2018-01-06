@@ -1,0 +1,122 @@
+{embed="_includes/header"}
+				<!-- main container of all the page elements -->
+				<main id="main">
+					<div class="row bread">
+						<div class="medium-8 column">
+							{exp:structure:breadcrumb here_as_title="yes"}
+						</div>
+						{exp:channel:entries channel="{segment_3}-courses" limit="1"}
+							{categories}
+								{if parent_id !=0}
+							      {if category_name=="MSHA Part 48 Surface New Miner Training"}
+							     	<a href="https://vividlearningsystems.com/part-48-purchase?namesource=LearnAtVivid&asset=Part%2048%20New%20Miner%20Sign%20Up&leadtype=MSHA&channel=Web&ao_campid=70150000000xlo1" class="button" style="margin:0;width: 200px;float: right;"><span><span>Buy Now</span></span></a>
+							     
+							     {if:else}
+							     	<a href="/index.php/landing-pages/demo" class="button" style="margin:0;"><span><span>Need help? Request a demo.</span></span></a>
+							     {/if} 
+							     {/if}
+								{/categories}
+								{if segment_4=="part-48-surface-new-miner-training"}
+									<div class="medium-4 column"><a href="https://vividlearningsystems.com/part-48-purchase?namesource=LearnAtVivid&asset=Part%2048%20New%20Miner%20Sign%20Up&leadtype=MSHA&channel=Web&ao_campid=70150000000xlo1" class="button" style="margin:0;float:right;margin-top: -10px;margin-bottom: -25px;"><span><span>Buy Now</span></span></a></div>
+
+{/if}
+{if segment_3=="food-safety-haccp" && segment_4=="managers"}
+	<div class="medium-4 column"><a href="http://ondemand.vividlms.com/?utm_source=learnatvivid&utm_medium=website&utm_campaign=%20HACCP%20for%20Managers" class="button" style="margin:0;float:right;margin-top: -10px;margin-bottom: -25px;"><span><span>Buy Now</span></span></a></div>
+{if:elseif segment_3=="food-safety-haccp" && segment_4=="operators"}
+<div class="medium-4 column"><a href="http://ondemand.vividlms.com/?utm_source=learnatvivid&utm_medium=website&utm_campaign=%20HACCP%20for%20Operators" class="button" style="margin:0;float:right;margin-top: -10px;margin-bottom: -25px;"><span><span>Buy Now</span></span></a></div>
+
+{/if}
+
+								{/exp:channel:entries}						
+					</div>
+					<div class="row gallery">
+						{exp:channel:entries channel="{segment_3}-courses" limit="1"}
+							{course_images}
+								<img src="{image}" alt="{image_description}" title="{image_description}" />
+							{/course_images}
+						{/exp:channel:entries}
+					</div>						
+					<div class="main-area">
+						<div class="row" id="twocolumns">
+							{!--<aside class="medium-4 column" id="sidebar">
+								<nav class="side-menu">
+									{exp:structure:nav start_from="/{segment_1}/{segment_2}" max_depth="1" exclude="15|26|27|32|35"}
+								</nav>
+
+							</aside>--}
+							<div class="medium-12 column" id="content">
+								{exp:channel:entries channel="{segment_3}-courses" limit="1"}
+									<h1>{title}</h1>
+									<h2>{course_sub_title}</h2>
+									{course_information}
+								{/exp:channel:entries}
+								
+								{if segment_2=="courses" && segment_3!=""}
+									{if segment_4!="forklift-operator"}
+                                    
+                                    <table width="100%" class="catalog">
+                                            <tr>
+                                                <th width="70%">Course Title</th>
+                                            </tr>
+                                            {exp:channel:entries channel="{segment_3}-courses" dynamic="no" sort="asc" orderby="title" category="{exp:freebie:category_id segment='4'}" parse="inward"}
+                                                    <tr>
+                                                        <td width="40%"><a href="{page_url}">{title}</a></td>
+                                                    </tr>
+                                            {/exp:channel:entries}
+                                            {if segment_4 == "dot-hazmat"}
+                                            		<tr>
+                                                        <td width="50%">DOT: Identifying Hazardous Materials (To be released in June 2016)</td>
+                                            		</tr>
+                                            		<tr>
+                                                        <td width="50%">DOT: Packaging Hazardous Materials (To be released in July 2016)</td>
+                                            		</tr>
+                                            		<tr>
+                                                        <td width="50%">DOT: Driver and Carrier Responsibilities (To be released in September 2016)</td>
+                                            		</tr>
+                                            		<tr>
+                                                        <td width="50%">DOT: Incident Response and Transport Security (To be released in October 2016)</td>
+                                                    </tr>
+                                           {/if}
+                                            
+										</table>
+									{if:elseif segment_4=="forklift-operator"}
+                                    <table width="100%" class="catalog">
+                                            <tr>
+                                                <th width="70%">Course Title</th>
+                                            </tr>
+                                            {exp:channel:entries channel="{segment_4}-courses" dynamic="no" sort="asc" orderby="title" category="{exp:freebie:category_id segment='4'}" parse="inward"}
+                                                    <tr>
+                                                        <td width="50%"><a href="{page_url}">{title}</a></td>
+                                                    </tr>
+                                            {/exp:channel:entries}
+										</table>
+                                    
+                                {/if}
+    							{/if}
+								
+								{exp:channel:entries channel="{segment_3}-courses" limit="1"}
+									{course_quote}
+										<hr />
+										<div class="course_quote">	
+											{course_quote}
+											<p><cite><strong>—{course_quote_auth}</strong>, {course_quote_co}</cite></p>
+										</div>
+										
+										<hr />
+									{/course_quote}
+								{/exp:channel:entries}
+								
+								<div class="row">
+									<div class="medium-6 column">
+										<a href="{site_url}assets/uploads/course_catalog/Vivid_On_Demand_Course_Catalog.pdf" target="_blank" onclick="_gaq.push(['_trackEvent','Downloads','PDF','{url_title}: Entire Catalog']);"><img src="{site_url}assets/img/pdf_icon.png" alt="Download entire course catalog" title="Download entire course catalog" /> Download entire course catalog</a>
+									</div>
+									<div class="medium-6 column">
+										
+										<a href="{site_url}landing-pages/demo" class="button" style="float:right;"><span><span>Need help? Request a demo.</span></span></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+{embed="_includes/footer"}

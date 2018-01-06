@@ -1,0 +1,52 @@
+<!-- main/news_events -->
+{embed="_includes/header"}
+				<!-- main container of all the page elements -->
+				<main id="main">
+					<div class="main-area">
+						<div class="row" id="twocolumns">
+							<aside class="medium-4 column" id="sidebar">
+								<nav class="side-menu">
+									{exp:structure:nav start_from="/{freebie_1}" max_depth="1" current_class="active"}
+								</nav>
+								{!--<div class="ad-box hide-for-small-only">
+									<a href="#"><img src="{site_url}assets/img/ad-01.jpg" width="253" height="214" alt="Wisth you were here"></a>
+								</div>--}
+							</aside>
+							<div class="medium-8 column" id="content">			
+								{if segment_2=="events" && segment_3==""}
+								<!--News Feed -->
+								<div class="row">
+										<div class="medium-12 column">
+											<h1>Events</h1>
+											<ul class="events">
+												{exp:channel:entries channel="events" dynamic="off" show_future_entries="yes" sort="asc" orderby="starting_date"}
+												<li class="{switch='light|dark'}">
+													<a href="{link_to_event}" target="_blank">{title}</a><span class="dates">{starting_date format="%M %j"}{if ending_date != ""} - {ending_date format="%j"}{/if}</span><span class="event-location">{if type_of_event == "online"}<img data-interchange="[/assets/img/cloud.png, (default)], [/assets/img/cloud@2x.png, (retina)]" alt="Online">{if:else}<img data-interchange="[/assets/img/location.png, (default)], [/assets/img/location@2x.png, (retina)]" alt="Location">{/if}&nbsp;&nbsp;{event_location}</span></li>
+								 {if no_results}<li class="light no-events">Sorry. We don't have any events scheduled.</li>{/if}
+												{/exp:channel:entries}
+											</ul>
+											
+										</div>
+									
+								</div>
+								{/if}
+								
+								<!--Course Feed -->
+								<!--Team Feed -->
+								
+								{!--<div class="visual-box">
+									<a href="#lightbox1" class="lightbox">
+										<img src="{site_url}assets/img/img-02.jpg" width="417" height="237" alt="image description">
+										<span class="button btn-play">Play</span>
+									</a>
+								</div>--}
+							</div>
+							<aside class="medium-4 column additional-sidebar">
+								<div class="additional-posts">
+									<h2>Also on Vivid</h2>
+									{blog_sidebar}
+								</div>
+							</aside>
+						</div>
+					</div>
+{embed="_includes/footer"}

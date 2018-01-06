@@ -1,0 +1,42 @@
+<div class="row">
+{exp:channel:entries channel="blog" dynamic="off" orderby="date" offset="1" limit="12" paginate="bottom"}
+<item>
+	<div>
+	<a href="{page_url}">
+	{blog_image_grid}
+		<img src="{blog_image_grid:blog_image}" alt="{blog_image_grid:alt_text}" title="{blog_image_grid:alt_text}" />
+	{/blog_image_grid}
+	</a>
+	
+	<h5>{if post_type == "NSG"}Not-So-Great-Moments in Safety: {/if}{title}{if post_type == "Video"} - Video{/if}</h5>
+	</div>
+	<a class="read-more" href="{page_url}">Read the full article</a>
+</item>
+
+{paginate}
+<div class="pagination">
+	{pagination_links page_padding="3"}
+	
+	<div class="pagination-previous-container">
+	{previous_page}
+	<a href="{pagination_url}" class="page-previous">Previous</a>
+	{/previous_page}
+	</div>
+	
+	<div class="pagination-number-container">
+	{page}
+	<a href="{pagination_url}" class="page-number {if current_page}active{/if}">{pagination_page_number}</a>
+	{/page}
+	</div>
+	
+	<div class="pagination-next-container">
+	{next_page}
+	<a href="{pagination_url}" class="page-next">Next</a>
+	{/next_page}
+	</div>
+		
+	{/pagination_links}			                
+</div>
+{/paginate}
+{/exp:channel:entries}
+</div>
